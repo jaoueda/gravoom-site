@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Devenir Gravoomer · Gravoom</title>
-<meta name="description" content="Vous habitez le Douaisis ? Prenez soin de tombes près de chez vous pour des familles qui vivent loin, et gagnez un complément de revenu. Particuliers et professionnels bienvenus.">
+<meta name="description" content="Partout en France, prenez soin de tombes près de chez vous pour des familles qui vivent loin, et gagnez un complément de revenu. Inscription gratuite en 2 minutes, particuliers et professionnels.">
 <meta property="og:title" content="Devenez Gravoomer · Prenez soin d’une tombe voisine">
 <meta property="og:description" content="Des familles qui vivent loin vous confient la tombe de leurs proches. Près de chez vous, quand vous voulez, payé à chaque visite.">
 <meta property="og:type" content="website">
@@ -30,7 +30,7 @@
       <a href="#avantages">Avantages</a>
       <a href="#revenus">Revenus</a>
       <a href="#faq">Questions</a>
-      <a class="btn btn-primary" data-mail="gravoomer" href="mailto:info@advaltis.com?subject=Devenir%20Gravoomer">Je postule</a>
+      <a class="btn btn-primary" href="#inscription">M’inscrire</a>
     </nav>
   </div>
 </header>
@@ -38,17 +38,100 @@
 <main>
   <div class="hero-wrap">
   <div class="wrap hero-join">
-    <p class="eyebrow">Devenir Gravoomer · Douaisis</p>
+    <p class="eyebrow">Devenir Gravoomer · Partout en France</p>
     <h1>Vous allez déjà au cimetière&nbsp;? <em>Prenez soin d’une tombe voisine.</em></h1>
-    <p class="lead">Partout en France, des familles vivent loin de la tombe de leurs proches. Dans le Douaisis, Gravoom leur propose quelqu’un d’ici pour l’entretenir. Ce quelqu’un, ce peut être vous&nbsp;: près de chez vous, quand vous le souhaitez, et payé à chaque visite.</p>
+    <p class="lead">Partout en France, des familles vivent loin de la tombe de leurs proches. Gravoom leur trouve quelqu’un près du cimetière pour l’entretenir. Ce quelqu’un, ce peut être vous&nbsp;: près de chez vous, quand vous le souhaitez, et payé à chaque visite. L’inscription est gratuite et prend deux minutes.</p>
     <div class="ctas">
-      <a class="btn btn-primary" data-mail="gravoomer" href="mailto:info@advaltis.com?subject=Devenir%20Gravoomer">Je deviens Gravoomer</a>
-      <a class="btn btn-ghost" href="#profils">Je suis un professionnel</a>
+      <a class="btn btn-primary" href="#inscription" data-profil="Particulier">M’inscrire en 2 minutes <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn btn-ghost" href="#inscription" data-profil="Professionnel">Je suis un professionnel</a>
     </div>
   </div>
   </div>
 
-  <section id="profils" class="band">
+  <section id="inscription" class="band">
+    <div class="wrap signup">
+      <div class="side">
+        <p class="eyebrow">Inscription</p>
+        <h2>Rejoignez Gravoom en 2 minutes</h2>
+        <p>Où que vous soyez en France, remplissez ces quelques lignes. Votre message part directement sur WhatsApp ou par e-mail, et nous vous rappelons pour faire connaissance.</p>
+        <ul class="promise">
+          <li><span class="tick">✓</span>Gratuit, sans abonnement ni commission à payer</li>
+          <li><span class="tick">✓</span>Sans exclusivité et sans minimum de missions</li>
+          <li><span class="tick">✓</span>Vous choisissez votre zone et vos jours</li>
+          <li><span class="tick">✓</span>Payé pour chaque visite réalisée</li>
+          <li><span class="tick">✓</span>Statut, assurance&nbsp;: on vous guide pas à pas</li>
+        </ul>
+      </div>
+      <div>
+      <form class="jf" id="jf" novalidate>
+        <div class="jf-body">
+          <fieldset>
+            <legend>Vous êtes</legend>
+            <div class="seg">
+              <label class="pill"><input type="radio" name="profil" value="Particulier" checked><span>Particulier</span></label>
+              <label class="pill"><input type="radio" name="profil" value="Professionnel"><span>Professionnel</span></label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="row2">
+          <div class="f" data-f="nom"><label class="lab" for="jf-nom">Prénom et nom</label><input type="text" id="jf-nom" autocomplete="name" required><p class="err">Indiquez votre prénom et votre nom.</p></div>
+          <div class="f" data-f="tel"><label class="lab" for="jf-tel">Téléphone</label><input type="tel" id="jf-tel" autocomplete="tel" inputmode="tel" required><p class="err">Indiquez un numéro pour vous rappeler.</p></div>
+        </div>
+        <div class="f" data-f="societe" hidden><label class="lab" for="jf-societe">Nom de votre entreprise</label><input type="text" id="jf-societe" autocomplete="organization"></div>
+        <div class="row2 cp">
+          <div class="f" data-f="cp"><label class="lab" for="jf-cp">Code postal</label><input type="text" id="jf-cp" inputmode="numeric" autocomplete="postal-code" maxlength="5" pattern="[0-9]{5}" required><p class="err">Cinq chiffres, par exemple 59490.</p></div>
+          <div class="f" data-f="commune"><label class="lab" for="jf-commune">Commune</label><select id="jf-commune" disabled><option value="">Saisissez d’abord le code postal</option></select></div>
+        </div>
+        <fieldset>
+          <legend>Jusqu’à quelle distance&nbsp;?</legend>
+          <div class="pills">
+            <label class="pill"><input type="radio" name="rayon" value="5 km"><span>5 km</span></label>
+            <label class="pill"><input type="radio" name="rayon" value="10 km" checked><span>10 km</span></label>
+            <label class="pill"><input type="radio" name="rayon" value="20 km"><span>20 km</span></label>
+            <label class="pill"><input type="radio" name="rayon" value="30 km et plus"><span>30 km et plus</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Ce que vous proposez</legend>
+          <div class="pills">
+            <label class="pill"><input type="checkbox" name="service" value="Nettoyage" checked><span>Nettoyage</span></label>
+            <label class="pill"><input type="checkbox" name="service" value="Fleurissement" checked><span>Fleurissement</span></label>
+            <label class="pill"><input type="checkbox" name="service" value="Bougie"><span>Bougie</span></label>
+            <label class="pill"><input type="checkbox" name="service" value="Rénovation, gravure"><span>Rénovation, gravure</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Vos disponibilités</legend>
+          <div class="pills">
+            <label class="pill"><input type="radio" name="dispo" value="En semaine"><span>En semaine</span></label>
+            <label class="pill"><input type="radio" name="dispo" value="Le week-end"><span>Le week-end</span></label>
+            <label class="pill"><input type="radio" name="dispo" value="Les deux" checked><span>Les deux</span></label>
+          </div>
+        </fieldset>
+        <div class="f"><label class="lab" for="jf-statut">Votre statut</label>
+          <select id="jf-statut">
+            <option>Pas encore de statut, j’aimerais être guidé</option>
+            <option>Je suis micro-entrepreneur</option>
+            <option>J’ai déjà une entreprise</option>
+          </select>
+        </div>
+        <div class="send">
+          <button class="btn btn-wa" type="submit" data-via="wa"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Envoyer sur WhatsApp</button>
+          <button class="btn btn-ghost" type="submit" data-via="mail">Par e-mail</button>
+        </div>
+        <p class="fine">Vos réponses servent uniquement à vous recontacter. Rien n’est enregistré sur ce site.</p>
+      </form>
+      <div class="jf done" id="jf-done" hidden tabindex="-1">
+        <div class="big-tick" aria-hidden="true">✓</div>
+        <h3>Votre message est prêt</h3>
+        <p>Il ne vous reste qu’à appuyer sur «&nbsp;Envoyer&nbsp;» dans WhatsApp ou dans votre messagerie. Nous vous rappelons très vite.</p>
+        <p style="margin-top:18px"><button class="btn btn-ghost" type="button" id="jf-again">Modifier mes réponses</button></p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="profils">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Deux façons de nous rejoindre</p>
@@ -65,7 +148,7 @@
             <li>Un complément de revenu, tout près de chez vous</li>
             <li>On vous guide pour le statut et l’assurance</li>
           </ul>
-          <a class="btn btn-primary" data-mail="gravoomer" href="mailto:info@advaltis.com?subject=Devenir%20Gravoomer">Je deviens Gravoomer</a>
+          <a class="btn btn-primary" href="#inscription" data-profil="Particulier">Je deviens Gravoomer</a>
         </article>
         <article class="track dark">
           <span class="tag tag--moss">Professionnel</span>
@@ -73,18 +156,18 @@
           <p class="who">Entretien de sépultures, fleuriste, marbrier, services à la personne… Vous avez déjà votre activité.</p>
           <ul>
             <li>Des clients en plus, sans démarchage</li>
-            <li>Des familles de toute la France, que vous ne toucheriez pas seul</li>
+            <li>Des familles de toute la France et de l’étranger, que vous ne toucheriez pas seul</li>
             <li>Un paiement garanti, sans relance</li>
             <li>Des abonnements qui remplissent l’agenda en dehors de la Toussaint</li>
             <li>Vos propres clients restent les vôtres</li>
           </ul>
-          <a class="btn btn-ghost" data-mail="partenaire" href="mailto:info@advaltis.com?subject=Partenariat%20professionnel%20Gravoom">Devenir partenaire</a>
+          <a class="btn btn-ghost" href="#inscription" data-profil="Professionnel">Devenir partenaire</a>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="avantages">
+  <section id="avantages" class="band">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Pourquoi Gravoom</p>
@@ -184,8 +267,8 @@
         <h2>De votre premier message à votre première mission</h2>
       </div>
       <ol class="steps steps--4">
-        <li><h3>Vous nous écrivez</h3><p>Un e-mail ou un message WhatsApp&nbsp;: votre commune, vos disponibilités et quelques mots sur vous.</p></li>
-        <li><h3>On fait connaissance</h3><p>Un échange, puis une première visite ensemble pour partager notre façon de faire.</p></li>
+        <li><h3>Vous vous inscrivez</h3><p>Deux minutes avec le formulaire ci-dessus&nbsp;: votre commune, votre zone, vos disponibilités.</p></li>
+        <li><h3>On fait connaissance</h3><p>Un appel de dix minutes, et nous vous envoyons notre guide de visite, simple et illustré.</p></li>
         <li><h3>Vous recevez des missions</h3><p>Près de chez vous, avec tout le détail&nbsp;: la tombe, son emplacement, les fleurs, le petit mot de la famille.</p></li>
         <li><h3>Vous êtes payé</h3><p>Vous envoyez les photos avant et après, la famille est rassurée, et la visite vous est payée.</p></li>
       </ol>
@@ -228,10 +311,9 @@
     <div class="wrap">
       <p class="eyebrow">Contact</p>
       <h2 style="margin-top:12px">Envie de nous rejoindre&nbsp;?</h2>
-      <p>Écrivez-nous en quelques lignes&nbsp;: votre commune, vos disponibilités et ce qui vous motive. Nous vous répondons rapidement.</p>
+      <p>Le plus simple, c’est le formulaire d’inscription. Une question avant de vous lancer&nbsp;? Écrivez-nous, nous vous répondons rapidement.</p>
       <div class="ctas">
-        <a class="btn btn-primary" data-mail="gravoomer" href="mailto:info@advaltis.com?subject=Devenir%20Gravoomer">Je deviens Gravoomer</a>
-        <a class="btn btn-ghost" data-mail="partenaire" href="mailto:info@advaltis.com?subject=Partenariat%20professionnel%20Gravoom">Devenir partenaire</a>
+        <a class="btn btn-primary" href="#inscription">M’inscrire en 2 minutes <span class="arrow" aria-hidden="true">→</span></a>
       </div>
       <div class="contact-chips">
         <a class="chip-link" data-mail="gravoomer" href="mailto:info@advaltis.com?subject=Devenir%20Gravoomer">
@@ -255,7 +337,7 @@
   <div class="wrap cols">
     <div>
       <span class="logo" role="img" aria-label="Gravoom"></span>
-      <p class="tagline">Prenez soin d’une tombe voisine pour une famille qui vit loin. Près de chez vous, dans le Douaisis.</p>
+      <p class="tagline">Prenez soin d’une tombe voisine pour une famille qui vit loin. Près de chez vous, partout en France.</p>
     </div>
     <div>
       <p class="links"><a href="/">Gravoom pour les familles</a><a href="/devenir-gravoomer/">Devenir Gravoomer</a><a href="#revenus">Vos revenus</a><a href="#contact">Contact</a></p>
@@ -281,6 +363,60 @@
   document.querySelectorAll('[data-wa]').forEach(function(a){
     a.href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent('Bonjour, j’aimerais devenir Gravoomer. J’habite à : ');
   });
+
+  var form = document.getElementById('jf'), done = document.getElementById('jf-done');
+  var cp = document.getElementById('jf-cp'), commune = document.getElementById('jf-commune'), societe = form.querySelector('[data-f=societe]');
+  function profil(){ return form.querySelector('input[name=profil]:checked').value; }
+  function syncProfil(){ societe.hidden = profil() !== 'Professionnel'; }
+  form.querySelectorAll('input[name=profil]').forEach(function(r){ r.addEventListener('change', syncProfil); });
+  document.querySelectorAll('[data-profil]').forEach(function(a){
+    a.addEventListener('click', function(){ var r = form.querySelector('input[name=profil][value="' + a.getAttribute('data-profil') + '"]'); if (r){ r.checked = true; syncProfil(); } });
+  });
+  var lastCp = '';
+  cp.addEventListener('input', function(){
+    cp.value = cp.value.replace(/\D/g, '').slice(0, 5);
+    if (cp.value.length !== 5 || cp.value === lastCp) return;
+    lastCp = cp.value;
+    commune.disabled = true; commune.innerHTML = '<option value="">Recherche…</option>';
+    fetch('https://geo.api.gouv.fr/communes?codePostal=' + cp.value + '&fields=nom')
+      .then(function(r){ return r.json(); })
+      .then(function(list){
+        commune.innerHTML = '';
+        if (!list.length){ commune.innerHTML = '<option value="">Code postal inconnu</option>'; return; }
+        list.sort(function(a, b){ return a.nom.localeCompare(b.nom, 'fr'); }).forEach(function(c){ var o = document.createElement('option'); o.textContent = c.nom; commune.appendChild(o); });
+        commune.disabled = false;
+      })
+      .catch(function(){ commune.innerHTML = '<option value="">Commune indiquée avec le code postal</option>'; });
+  });
+  var via = 'wa';
+  form.querySelectorAll('button[type=submit]').forEach(function(b){ b.addEventListener('click', function(){ via = b.getAttribute('data-via'); }); });
+  function check(id, ok){ var f = form.querySelector('[data-f=' + id + ']'), i = f.querySelector('input'); f.classList.toggle('has-err', !ok); i.setAttribute('aria-invalid', String(!ok)); return ok; }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var nom = document.getElementById('jf-nom').value.trim(), tel = document.getElementById('jf-tel').value.trim();
+    var ok = [check('nom', nom.length > 1), check('tel', tel.replace(/\D/g, '').length >= 9), check('cp', /^\d{5}$/.test(cp.value))];
+    if (ok.indexOf(false) !== -1){ form.querySelector('[aria-invalid=true]').focus(); return; }
+    var services = [].map.call(form.querySelectorAll('input[name=service]:checked'), function(c){ return c.value; });
+    var lines = [
+      'Bonjour, je souhaite devenir ' + (profil() === 'Professionnel' ? 'partenaire' : 'Gravoomer') + '.',
+      '',
+      '• Profil : ' + profil() + (profil() === 'Professionnel' && document.getElementById('jf-societe').value.trim() ? ' (' + document.getElementById('jf-societe').value.trim() + ')' : ''),
+      '• Nom : ' + nom,
+      '• Commune : ' + cp.value + ' ' + (commune.disabled ? '' : commune.value),
+      '• Distance : jusqu’à ' + form.querySelector('input[name=rayon]:checked').value,
+      '• Je propose : ' + (services.join(', ') || 'à voir ensemble'),
+      '• Disponibilités : ' + form.querySelector('input[name=dispo]:checked').value,
+      '• Statut : ' + document.getElementById('jf-statut').value,
+      '• Téléphone : ' + tel
+    ];
+    var text = lines.join('\n');
+    var url = via === 'mail'
+      ? 'mailto:' + to + '?subject=' + encodeURIComponent((profil() === 'Professionnel' ? 'Partenariat' : 'Devenir Gravoomer') + ' – ' + cp.value) + '&body=' + encodeURIComponent(text + '\n\nMerci et à bientôt,\n')
+      : 'https://wa.me/' + wa + '?text=' + encodeURIComponent(text);
+    if (via === 'mail') window.location.href = url; else window.open(url, '_blank', 'noopener');
+    form.hidden = true; done.hidden = false; done.focus();
+  });
+  document.getElementById('jf-again').addEventListener('click', function(){ done.hidden = true; form.hidden = false; document.getElementById('jf-nom').focus(); });
 
   var range = document.getElementById('visits'), out = document.getElementById('visits-out');
   var total = document.getElementById('total'), detail = document.getElementById('detail');

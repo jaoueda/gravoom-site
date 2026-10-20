@@ -38,6 +38,7 @@ a{color:inherit}
 img,svg{max-width:100%}
 :focus-visible{outline:2px solid var(--chrys);outline-offset:3px;border-radius:8px}
 .wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .logo{display:block;height:34px;aspect-ratio:1117/359;background:var(--ink);-webkit-mask:url(brand/gravoom-logo.png) left center/contain no-repeat;mask:url(brand/gravoom-logo.png) left center/contain no-repeat}
 .ico{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
 
@@ -273,6 +274,51 @@ footer p + p{margin-top:8px}
 .asks li b{display:block;color:var(--ink);font-size:17px;margin-bottom:4px}
 .asks .dot{flex:none;width:34px;height:34px;border-radius:50%;background:var(--moss);color:var(--on-moss);display:grid;place-items:center;font-weight:800;font-size:14px}
 
+
+/* sign-up form */
+.signup{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:start}
+.signup .side{position:sticky;top:104px}
+.signup h2{font-size:clamp(32px,4vw,48px);margin-top:12px}
+.signup .side p{color:var(--ink-2);margin-top:14px;font-size:17px}
+.promise{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px}
+.promise li{display:flex;gap:12px;align-items:center;font-weight:600}
+.promise .tick{width:24px;height:24px;border-radius:8px;font-size:13px}
+.jf{background:var(--raised);border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:var(--shadow-lg);display:grid;gap:20px}
+.jf fieldset{border:0;margin:0;padding:0;min-width:0}
+.jf legend,.jf .lab{display:block;font-weight:700;font-size:14.5px;margin-bottom:8px;padding:0}
+.jf .opt{font-weight:500;color:var(--ink-3)}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.row2.cp{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)}
+.jf input[type=text],.jf input[type=tel],.jf input[type=email],.jf select{width:100%;height:52px;padding:0 16px;font:inherit;font-size:16px;color:var(--ink);background:var(--band);border:1.5px solid var(--line);border-radius:14px;transition:border-color 160ms ease,background-color 160ms ease;appearance:none;-webkit-appearance:none}
+.jf select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236E7B75' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:18px;padding-right:42px}
+.jf input:focus,.jf select:focus{outline:none;border-color:var(--ink);background-color:var(--raised)}
+.jf [aria-invalid=true]{border-color:#C2412D}
+.jf .err{display:none;color:#B33A27;font-size:13px;margin-top:6px}
+.jf .has-err .err{display:block}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{position:relative}
+.pill input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.pill span{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--band);font-weight:600;font-size:15px;transition:border-color 160ms ease,background-color 160ms ease,color 160ms ease}
+.pill input:checked + span{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
+.pill input:focus-visible + span{outline:2px solid var(--chrys);outline-offset:2px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg .pill span{width:100%;justify-content:center;min-height:52px;border-radius:14px}
+.jf .send{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:4px}
+.jf .send .btn{width:100%}
+.jf .fine{font-size:13px;color:var(--ink-3)}
+.jf [hidden],.jf[hidden]{display:none!important}
+.done{text-align:center;padding:26px 6px}
+.done .big-tick{width:64px;height:64px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;margin:0 auto 16px;font-size:30px;font-weight:800}
+.done h3{font-size:26px}
+.done p{color:var(--ink-2);margin-top:10px}
+.lookup{display:flex;gap:10px;margin-top:30px;max-width:560px;background:var(--raised);border:1px solid var(--line);border-radius:999px;padding:7px;box-shadow:var(--shadow-md)}
+.lookup input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:16px;padding:0 18px;color:var(--ink)}
+.lookup input:focus{outline:none}
+.lookup:focus-within{border-color:var(--ink-3)}
+.lookup .btn{min-height:48px;padding:0 20px}
+.lookup-note{margin-top:12px;font-size:14px;color:var(--ink-3)}
+.lookup-note a{color:var(--ink-2);font-weight:600}
+
 /* ---------- hover (pointer devices only) ---------- */
 @media (hover:hover) and (pointer:fine){
   nav a:not(.btn):hover{color:var(--ink)}
@@ -286,6 +332,7 @@ footer p + p{margin-top:8px}
   .btn-glass:hover{background:rgba(255,255,255,.22)}
   .fab:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(37,211,102,.45),0 2px 6px rgba(0,0,0,.12)}
   .choice button:hover{border-color:var(--ink-3)}
+  .pill:hover input:not(:checked) + span{border-color:var(--ink-3)}
   .choice button[aria-pressed=true]:hover{border-color:var(--ink)}
   footer .links a:hover{text-decoration:underline}
 }
@@ -312,6 +359,9 @@ footer p + p{margin-top:8px}
   .sec-head{margin-bottom:32px}
   footer .cols{grid-template-columns:1fr;gap:28px}
   .hero-join{padding-block:48px 40px}
+  .signup{grid-template-columns:1fr;gap:28px}
+  .signup .side{position:static}
+  .jf{padding:20px;border-radius:22px}
   .estimator{padding:22px;gap:22px}
   .track{padding:26px}
   .vs th,.vs td{padding:12px;font-size:14px}
@@ -320,6 +370,10 @@ footer p + p{margin-top:8px}
   .fab .fab-label{display:none}
 }
 @media (max-width:520px){
+  .row2,.row2.cp{grid-template-columns:1fr}
+  .jf .send{grid-template-columns:1fr}
+  .lookup{flex-direction:column;border-radius:22px}
+  .lookup input{height:48px}
   .trust{grid-template-columns:1fr}
   .chip-link{width:100%}
   .ctas .btn{width:100%}
