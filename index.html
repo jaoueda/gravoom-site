@@ -15,127 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400..700&display=swap">
-<style>
-/* Layout: one calm column on a limestone ground; prices as three cards; generous whitespace. */
-:root{
-  --ground:#EDF0EB; --surface:#FAFBF8; --raised:#FFFFFF; --sunk:#E3E9E3;
-  --ink:#17211D; --ink-2:#4C5A54; --ink-3:#6E7B75; --line:#D8E0D9; --on-ink:#FAFBF8;
-  --chrys:#D8861A; --chrys-soft:#FAEBD3; --chrys-ink:#8F520A;
-  --moss:#2D6A54; --moss-soft:#D9EAE1; --on-moss:#FFFFFF;
-  --font-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
-  --font-ui:"Figtree","Segoe UI",system-ui,-apple-system,sans-serif;
-  --ease-out:cubic-bezier(.23,1,.32,1);
-}
-@media (prefers-color-scheme:dark){
-  :root{
-    --ground:#0D1210; --surface:#141B18; --raised:#1B2420; --sunk:#111815;
-    --ink:#E6EDE9; --ink-2:#AAB8B1; --ink-3:#86938D; --line:#29342F; --on-ink:#0F1513;
-    --chrys:#EEA33C; --chrys-soft:#3A2A13; --chrys-ink:#F3BB68;
-    --moss:#5BB391; --moss-soft:#163328; --on-moss:#0D1210;
-    color-scheme:dark;
-  }
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font-ui);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:var(--font-display);line-height:1.08;letter-spacing:-.015em;margin:0;text-wrap:balance}
-p{margin:0}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--chrys);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
-.logo{display:block;height:34px;aspect-ratio:1117/359;background:var(--ink);-webkit-mask:url(brand/gravoom-logo.png) left center/contain no-repeat;mask:url(brand/gravoom-logo.png) left center/contain no-repeat}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 22px;border-radius:14px;font-weight:700;font-size:16px;text-decoration:none;transition:transform 160ms var(--ease-out),background-color 160ms ease}
-.btn:active{transform:scale(.97)}
-.btn-primary{background:var(--ink);color:var(--on-ink)}
-.btn-ghost{border:1.5px solid var(--line);color:var(--ink)}
-.eyebrow{font-size:12.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3)}
-
-header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--ground) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
-nav{display:flex;align-items:center;gap:22px;font-size:15px;font-weight:600}
-nav a{text-decoration:none;color:var(--ink-2)}
-nav .btn{min-height:42px;padding:0 16px;font-size:15px;color:var(--on-ink)}
-
-.hero{padding-block:72px 64px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:48px;align-items:center}
-.hero h1{font-size:clamp(38px,5.6vw,62px);font-weight:800}
-.hero h1 em{font-style:normal;color:var(--chrys-ink)}
-.lead{font-size:clamp(17px,1.6vw,20px);color:var(--ink-2);margin-top:20px;max-width:34em}
-.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.zone{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;padding:0;list-style:none}
-.zone li{font-size:13.5px;font-weight:600;color:var(--ink-2);background:var(--raised);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
-.card-report{background:var(--raised);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 2px 6px rgba(20,30,25,.05),0 24px 48px rgba(20,30,25,.08)}
-.card-report .row{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line);font-size:15px}
-.card-report .row:first-of-type{border-top:0}
-.tick{flex:none;width:24px;height:24px;border-radius:8px;background:var(--moss);color:var(--on-moss);display:grid;place-items:center;font-size:14px;font-weight:800}
-.card-report h3{font-size:19px;margin-bottom:6px}
-.card-report .meta{font-size:13px;color:var(--ink-3);margin-bottom:8px}
-
-section{padding-block:72px}
-.sec-head{max-width:640px;margin-bottom:36px}
-.sec-head h2{font-size:clamp(30px,3.6vw,42px);margin-top:8px}
-.sec-head p{color:var(--ink-2);margin-top:12px}
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;counter-reset:s}
-.steps li{background:var(--raised);border:1px solid var(--line);border-radius:20px;padding:24px}
-.steps li::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--chrys-soft);color:var(--chrys-ink);font-weight:800;margin-bottom:14px}
-.steps h3{font-size:20px;margin-bottom:8px}
-.steps p{color:var(--ink-2);font-size:15.5px}
-
-.prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
-.price{display:flex;flex-direction:column;background:var(--raised);border:1px solid var(--line);border-radius:22px;padding:26px}
-.price.pop{border:2px solid var(--ink)}
-.tag{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--chrys-ink);background:var(--chrys-soft);padding:4px 9px;border-radius:7px;margin-bottom:12px}
-.price h3{font-size:21px}
-.amount{font-family:var(--font-display);font-size:44px;font-weight:800;margin:10px 0 2px;font-variant-numeric:tabular-nums}
-.amount small{font-family:var(--font-ui);font-size:15px;font-weight:600;color:var(--ink-3)}
-.price ul{list-style:none;margin:14px 0 22px;padding:0;display:grid;gap:8px;color:var(--ink-2);font-size:15px}
-.price li{display:flex;gap:9px}
-.price li::before{content:"✓";color:var(--moss);font-weight:800}
-.price .btn{margin-top:auto}
-.extras{margin-top:20px;color:var(--ink-2);font-size:15px}
-
-.why{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.why div{background:var(--raised);border:1px solid var(--line);border-radius:20px;padding:24px}
-.why h3{font-size:19px;margin-bottom:8px}
-.why p{color:var(--ink-2);font-size:15.5px}
-
-.join{background:var(--moss);color:var(--on-moss);border-radius:28px;padding:44px;display:grid;grid-template-columns:minmax(0,1.4fr) auto;gap:28px;align-items:center}
-.join h2{font-size:clamp(28px,3.2vw,38px)}
-.join p{margin-top:12px;opacity:.9;max-width:36em}
-.join .btn{background:var(--on-moss);color:var(--moss)}
-
-.faq{display:grid;gap:10px;max-width:760px}
-details{background:var(--raised);border:1px solid var(--line);border-radius:16px;padding:0 20px}
-summary{cursor:pointer;list-style:none;font-weight:700;padding:18px 0;display:flex;justify-content:space-between;gap:16px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-size:22px;line-height:1;color:var(--ink-3);transition:transform 200ms var(--ease-out)}
-details[open] summary::after{transform:rotate(45deg)}
-details p{color:var(--ink-2);padding-bottom:18px;font-size:15.5px}
-
-.contact{text-align:center}
-.contact h2{font-size:clamp(30px,3.6vw,42px)}
-.contact p{color:var(--ink-2);margin:14px auto 26px;max-width:32em}
-.mail{font-weight:700}
-
-footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:13.5px;color:var(--ink-3)}
-footer .cols{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:start}
-footer .logo{height:26px}
-footer h4{margin:0 0 6px;font-size:13.5px;color:var(--ink-2)}
-footer p + p{margin-top:6px}
-
-@media (hover:hover) and (pointer:fine){
-  nav a:not(.btn):hover{color:var(--ink)}
-  .btn-ghost:hover{background:var(--sunk)}
-}
-@media (max-width:880px){
-  .hero{grid-template-columns:1fr;padding-block:44px 40px;gap:32px}
-  .steps,.prices,.why{grid-template-columns:1fr}
-  .join{grid-template-columns:1fr;padding:30px}
-  nav a:not(.btn){display:none}
-  section{padding-block:52px}
-  footer .cols{grid-template-columns:1fr}
-}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-</style>
+<link rel="stylesheet" href="/site.css">
 </head>
 <body>
 <header>
@@ -145,6 +25,7 @@ footer p + p{margin-top:6px}
       <a href="#fonctionnement">Comment ça se passe</a>
       <a href="#tarifs">Nos tarifs</a>
       <a href="#faq">Vos questions</a>
+      <a href="/devenir-gravoomer/">Devenir Gravoomer</a>
       <a class="btn btn-primary" data-mail="visite" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">Réserver une visite</a>
     </nav>
   </div>
@@ -244,9 +125,9 @@ footer p + p{margin-top:6px}
         <div>
           <p class="eyebrow" style="color:inherit;opacity:.8">On recrute dans le Douaisis</p>
           <h2>Devenez Gravoomer</h2>
-          <p>Vous êtes du coin, minutieux et disponible quelques heures par semaine&nbsp;? Rejoignez-nous pour prendre soin des tombes de familles qui vivent loin. Un travail utile, près de chez vous, et qui a du sens.</p>
+          <p>Vous allez déjà au cimetière&nbsp;? Prenez soin d’une tombe voisine pour une famille qui vit loin, et gagnez un complément de revenu près de chez vous. Particuliers et professionnels, il y a une place pour vous.</p>
         </div>
-        <a class="btn" data-mail="gravoomer" href="mailto:info@advaltis.com?subject=Devenir%20Gravoomer">Je propose ma candidature</a>
+        <a class="btn" href="/devenir-gravoomer/">Découvrir les avantages</a>
       </div>
     </div>
   </section>
@@ -284,6 +165,7 @@ footer p + p{margin-top:6px}
   <div class="wrap cols">
     <span class="logo" role="img" aria-label="Gravoom"></span>
     <div>
+      <p style="margin-bottom:10px"><a href="/">Gravoom pour les familles</a> · <a href="/devenir-gravoomer/">Devenir Gravoomer</a></p>
       <h4>Mentions légales</h4>
       <p>Gravoom est une marque exploitée par Advaltis Limited, société de droit anglais immatriculée au Companies House sous le numéro 11823905, dont le siège est situé 124-128 City Road, Londres EC1V 2NX, Royaume-Uni. Contact&nbsp;: info@advaltis.com, +44 7717 536635 (WhatsApp). Directeur de la publication&nbsp;: Jaoued Ahmed.</p>
       <p>Hébergement&nbsp;: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
