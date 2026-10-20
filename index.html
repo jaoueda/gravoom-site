@@ -50,25 +50,26 @@
           <li>Somain</li><li>Villers-Campeau</li><li>Aniche</li><li>Fenain</li><li>Abscon</li><li>Marchiennes</li><li>Douai</li><li>Denain</li>
         </ul>
       </div>
-      <aside class="report" aria-label="Exemple de compte rendu de visite">
-        <div class="rep-head">
-          <span class="rep-mark" aria-hidden="true"><span></span></span>
-          <div><b>Compte rendu de visite</b><small>Cimetière de Somain · aujourd’hui</small></div>
-          <span class="rep-pill">Terminée</span>
-        </div>
-        <div class="shots" aria-hidden="true">
-          <div class="shot-tile shot-before"><span class="lbl">Avant</span></div>
-          <div class="shot-tile shot-after"><span class="lbl">Après</span></div>
-        </div>
-        <ul class="rep-list">
-          <li><span class="tick">✓</span><span>Fleurs fanées et feuilles mortes retirées</span></li>
-          <li><span class="tick">✓</span><span>Pierre et plaque lavées à l’eau claire, à la brosse douce</span></li>
-          <li><span class="tick">✓</span><span>Un chrysanthème déposé, la bougie allumée</span></li>
-          <li><span class="tick">✓</span><span>Votre petit mot, recopié à la main, posé sur la tombe</span></li>
-        </ul>
-        <p class="rep-foot">Exemple de compte rendu</p>
-        <span class="badge-float"><span class="dot"></span>Photos envoyées</span>
-      </aside>
+      <div class="showcase">
+        <figure class="ba" aria-label="Exemple de tombe avant et après une visite">
+          <img src="/photos/ba-apres.jpg" alt="Tombe nettoyée, avec une couronne de fleurs fraîches" width="960" height="1200" fetchpriority="high">
+          <img class="ba-before" src="/photos/ba-avant.jpg" alt="La même tombe avant la visite, couverte de lichen, avec des fleurs fanées" width="960" height="1200">
+          <span class="ba-tag l">Avant</span><span class="ba-tag r">Après</span>
+          <span class="ba-line" aria-hidden="true"></span>
+          <span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+          <input type="range" min="0" max="100" value="50" aria-label="Glisser pour comparer avant et après">
+          <span class="ba-note">Photo d’illustration</span>
+        </figure>
+        <div class="glass sent" aria-hidden="true"><span class="ci ci-wa"><svg viewBox="0 0 24 24"><use href="#wa"/></svg></span>Photos envoyées <small>10:42</small></div>
+        <aside class="glass rep-card" aria-label="Exemple de compte rendu de visite">
+          <div class="rep-top"><span class="rep-mark" aria-hidden="true"><span></span></span><div><b>Compte rendu de visite</b><small>Cimetière de Somain · aujourd’hui</small></div></div>
+          <ul class="rep-list">
+            <li><span class="tick">✓</span>Pierre lavée à l’eau claire, à la brosse douce</li>
+            <li><span class="tick">✓</span>Fleurs fanées retirées, fleurs fraîches déposées</li>
+            <li><span class="tick">✓</span>Votre petit mot posé sur la tombe</li>
+          </ul>
+        </aside>
+      </div>
     </div>
     <ul class="wrap trust" aria-label="Nos engagements en bref">
       <li><span class="ib"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.8l1.5-2h6.4l1.5 2h1.8A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.5" r="3.5"/></svg></span>Photos avant et après, à chaque visite</li>
@@ -92,7 +93,23 @@
     </div>
   </section>
 
-  <section id="tarifs">
+  <section id="attentions">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Les petites attentions</p>
+        <h2>Comme si vous étiez là</h2>
+        <p>Des fleurs de saison, une bougie qui veille, une allée balayée&nbsp;: les gestes que vous feriez vous-même, faits avec le même soin.</p>
+      </div>
+      <div class="gallery">
+        <figure class="shot"><img src="/photos/g-fleurs.jpg" alt="Chrysanthèmes jaunes et pourpres" width="800" height="1000" loading="lazy"><figcaption><b>Des fleurs de saison</b><span>Chrysanthèmes, bouquets&nbsp;: vous choisissez.</span></figcaption></figure>
+        <figure class="shot"><img src="/photos/g-bougies.jpg" alt="Bougies de cimetière parmi les feuilles d’automne" width="800" height="1000" loading="lazy"><figcaption><b>Une bougie allumée</b><span>Une petite lumière, pour 4&nbsp;€.</span></figcaption></figure>
+        <figure class="shot"><img src="/photos/g-allee.jpg" alt="Allée de cimetière bordée d’arbres en automne" width="800" height="1000" loading="lazy"><figcaption><b>Partout dans le Douaisis</b><span>Somain, Douai, Aniche, Denain et alentours.</span></figcaption></figure>
+      </div>
+      <p class="photo-credit">Photos d’illustration (Pexels).</p>
+    </div>
+  </section>
+
+  <section id="tarifs" class="band">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Nos tarifs</p>
@@ -124,7 +141,7 @@
     </div>
   </section>
 
-  <section class="band">
+  <section>
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Notre engagement</p>
@@ -136,6 +153,19 @@
         <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><h3>Des gens d’ici</h3><p>Nos Gravoomers habitent le Douaisis. Ils connaissent ses cimetières, et chaque tombe est traitée avec le respect qu’elle mérite.</p></div>
         <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span><h3>La pierre ménagée</h3><p>Une brosse douce et de l’eau claire, rien de plus. S’il faut réparer la pierre ou reprendre une gravure, nous vous orientons vers un marbrier.</p></div>
         <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.6.8 2.6 2.6 3 5.2"/></svg></span><h3>Toute la famille réunie</h3><p>Les photos se partagent en un geste avec vos frères, vos sœurs ou vos enfants, où qu’ils vivent.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cine" aria-label="Nous y allons pour vous">
+    <img src="/photos/band-allee.jpg" alt="" width="1800" height="990" loading="lazy">
+    <div class="wrap">
+      <p class="eyebrow">Douaisis · Nord</p>
+      <h2>Vous êtes loin. <em>Nous y allons pour vous.</em></h2>
+      <p>Une visite, des fleurs, quelques photos le jour même&nbsp;: la distance se fait un peu plus douce.</p>
+      <div class="ctas">
+        <a class="btn btn-wa" data-wa="visite" href="https://wa.me/447717536635" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Écrire sur WhatsApp</a>
+        <a class="btn btn-glass" data-mail="visite" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">Demander une visite</a>
       </div>
     </div>
   </section>
@@ -232,6 +262,20 @@
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
   if ('IntersectionObserver' in window && fab && contact){
     new IntersectionObserver(function(e){ fab.classList.toggle('is-hidden', e[0].isIntersecting); }).observe(contact);
+  }
+  var ba = document.querySelector('.ba');
+  if (ba){
+    var input = ba.querySelector('input');
+    function setPos(v){ v = Math.max(0, Math.min(100, v)); ba.style.setProperty('--pos', v + '%'); input.value = Math.round(v); }
+    input.addEventListener('input', function(){ setPos(+input.value); });
+    function fromEvent(e){ var r = ba.getBoundingClientRect(); setPos((e.clientX - r.left) / r.width * 100); }
+    ba.addEventListener('pointerdown', function(e){ ba.classList.add('is-drag'); ba.setPointerCapture(e.pointerId); fromEvent(e); e.preventDefault(); });
+    ba.addEventListener('pointermove', function(e){ if (ba.classList.contains('is-drag')) fromEvent(e); });
+    ['pointerup','pointercancel'].forEach(function(t){ ba.addEventListener(t, function(){ ba.classList.remove('is-drag'); }); });
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      var t0 = null; setPos(88);
+      setTimeout(function(){ requestAnimationFrame(function step(t){ if (!t0) t0 = t; var k = Math.min(1, (t - t0) / 1400), e = 1 - Math.pow(1 - k, 4); if (!ba.classList.contains('is-drag')) setPos(88 - 38 * e); if (k < 1) requestAnimationFrame(step); }); }, 500);
+    }
   }
   var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
 })();
