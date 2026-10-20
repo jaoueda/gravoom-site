@@ -14,10 +14,14 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M10 25V12a6 6 0 0 1 12 0v13' fill='none' stroke='%2317211D' stroke-width='2'/%3E%3Crect x='7' y='25.5' width='18' height='2.5' fill='none' stroke='%2317211D' stroke-width='1.6'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400..800&display=swap">
 <link rel="stylesheet" href="/site.css">
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+</svg>
+
 <header>
   <div class="wrap bar">
     <a href="#" aria-label="Gravoom, retour en haut de la page"><span class="logo" role="img" aria-label="Gravoom"></span></a>
@@ -32,32 +36,49 @@
 </header>
 
 <main>
-  <div class="wrap hero">
-    <div>
-      <p class="eyebrow">Douaisis · Nord</p>
-      <h1>Loin des yeux, <em>jamais loin du cœur.</em></h1>
-      <p class="lead">La vie nous éloigne parfois de là où reposent les nôtres. Gravoom entretient et fleurit leur tombe partout dans le Douaisis, avec le même soin que vous y mettriez. Après chaque passage, vous recevez des photos pour voir le travail accompli.</p>
-      <div class="ctas">
-        <a class="btn btn-primary" data-mail="visite" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">Demander une visite</a>
-        <a class="btn btn-ghost" href="#tarifs">Découvrir nos tarifs</a>
+  <div class="hero-wrap">
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow">Douaisis · Nord</p>
+        <h1>Loin des yeux, <em>jamais loin du cœur.</em></h1>
+        <p class="lead">La vie nous éloigne parfois de là où reposent les nôtres. Gravoom entretient et fleurit leur tombe partout dans le Douaisis, avec le même soin que vous y mettriez. Après chaque passage, vous recevez des photos pour voir le travail accompli.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" data-mail="visite" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">Demander une visite <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#tarifs">Découvrir nos tarifs</a>
+        </div>
+        <ul class="zone" aria-label="Communes où nous intervenons">
+          <li>Somain</li><li>Villers-Campeau</li><li>Aniche</li><li>Fenain</li><li>Abscon</li><li>Marchiennes</li><li>Douai</li><li>Denain</li>
+        </ul>
       </div>
-      <ul class="zone" aria-label="Communes où nous intervenons">
-        <li>Somain</li><li>Villers-Campeau</li><li>Aniche</li><li>Fenain</li><li>Abscon</li><li>Marchiennes</li><li>Douai</li><li>Denain</li>
-      </ul>
+      <aside class="report" aria-label="Exemple de compte rendu de visite">
+        <div class="rep-head">
+          <span class="rep-mark" aria-hidden="true"><span></span></span>
+          <div><b>Compte rendu de visite</b><small>Cimetière de Somain · aujourd’hui</small></div>
+          <span class="rep-pill">Terminée</span>
+        </div>
+        <div class="shots" aria-hidden="true">
+          <div class="shot-tile shot-before"><span class="lbl">Avant</span></div>
+          <div class="shot-tile shot-after"><span class="lbl">Après</span></div>
+        </div>
+        <ul class="rep-list">
+          <li><span class="tick">✓</span><span>Fleurs fanées et feuilles mortes retirées</span></li>
+          <li><span class="tick">✓</span><span>Pierre et plaque lavées à l’eau claire, à la brosse douce</span></li>
+          <li><span class="tick">✓</span><span>Un chrysanthème déposé, la bougie allumée</span></li>
+          <li><span class="tick">✓</span><span>Votre petit mot, recopié à la main, posé sur la tombe</span></li>
+        </ul>
+        <p class="rep-foot">Exemple de compte rendu</p>
+        <span class="badge-float"><span class="dot"></span>Photos envoyées</span>
+      </aside>
     </div>
-    <aside class="card-report" aria-label="Exemple de compte rendu de visite">
-      <p class="eyebrow">Exemple de compte rendu</p>
-      <h3>Votre visite de ce matin</h3>
-      <p class="meta">Cimetière de Somain · photos avant et après jointes</p>
-      <div class="row"><span class="tick">✓</span><span>Les fleurs fanées et les feuilles mortes ont été retirées</span></div>
-      <div class="row"><span class="tick">✓</span><span>La pierre et la plaque ont été lavées à l’eau claire, à la brosse douce</span></div>
-      <div class="row"><span class="tick">✓</span><span>L’entourage a été désherbé et balayé</span></div>
-      <div class="row"><span class="tick">✓</span><span>Un chrysanthème a été déposé et la bougie allumée</span></div>
-      <div class="row"><span class="tick">✓</span><span>Votre petit mot, recopié à la main, a été posé sur la tombe</span></div>
-    </aside>
+    <ul class="wrap trust" aria-label="Nos engagements en bref">
+      <li><span class="ib"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.8l1.5-2h6.4l1.5 2h1.8A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.5" r="3.5"/></svg></span>Photos avant et après, à chaque visite</li>
+      <li><span class="ib"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>Des personnes de la région</li>
+      <li><span class="ib"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 6.6A7 7 0 1 0 17.5 17.4"/><path d="M4.5 10.2h9M4.5 13.8h9"/></svg></span>Prix clairs, déplacement compris</li>
+      <li><span class="ib"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 12a8.5 8.5 0 0 1-12.3 7.6L3.5 21l1.4-4.5A8.5 8.5 0 1 1 20.5 12z"/></svg></span>Par e-mail ou sur WhatsApp</li>
+    </ul>
   </div>
 
-  <section id="fonctionnement">
+  <section id="fonctionnement" class="band">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Comment ça se passe</p>
@@ -103,7 +124,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="band">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Notre engagement</p>
@@ -111,10 +132,10 @@
         <p>Beaucoup d’entre nous vivent loin de là où reposent leurs parents ou grands-parents. Gravoom est né pour que la distance ne soit plus une source d’inquiétude.</p>
       </div>
       <div class="why">
-        <div><h3>Vous voyez tout</h3><p>Chaque visite est photographiée avant et après, avec la date, l’heure et le lieu. Rien n’est laissé au hasard.</p></div>
-        <div><h3>Des gens d’ici</h3><p>Nos Gravoomers habitent le Douaisis. Ils connaissent ses cimetières, et chaque tombe est traitée avec le respect qu’elle mérite.</p></div>
-        <div><h3>La pierre ménagée</h3><p>Une brosse douce et de l’eau claire, rien de plus. S’il faut réparer la pierre ou reprendre une gravure, nous vous orientons vers un marbrier.</p></div>
-        <div><h3>Toute la famille réunie</h3><p>Les photos se partagent en un geste avec vos frères, vos sœurs ou vos enfants, où qu’ils vivent.</p></div>
+        <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.8l1.5-2h6.4l1.5 2h1.8A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.5" r="3.5"/></svg></span><h3>Vous voyez tout</h3><p>Chaque visite est photographiée avant et après, avec la date, l’heure et le lieu. Rien n’est laissé au hasard.</p></div>
+        <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><h3>Des gens d’ici</h3><p>Nos Gravoomers habitent le Douaisis. Ils connaissent ses cimetières, et chaque tombe est traitée avec le respect qu’elle mérite.</p></div>
+        <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span><h3>La pierre ménagée</h3><p>Une brosse douce et de l’eau claire, rien de plus. S’il faut réparer la pierre ou reprendre une gravure, nous vous orientons vers un marbrier.</p></div>
+        <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.6.8 2.6 2.6 3 5.2"/></svg></span><h3>Toute la famille réunie</h3><p>Les photos se partagent en un geste avec vos frères, vos sœurs ou vos enfants, où qu’ils vivent.</p></div>
       </div>
     </div>
   </section>
@@ -123,16 +144,16 @@
     <div class="wrap">
       <div class="join">
         <div>
-          <p class="eyebrow" style="color:inherit;opacity:.8">On recrute dans le Douaisis</p>
+          <p class="eyebrow">On recrute dans le Douaisis</p>
           <h2>Devenez Gravoomer</h2>
           <p>Vous allez déjà au cimetière&nbsp;? Prenez soin d’une tombe voisine pour une famille qui vit loin, et gagnez un complément de revenu près de chez vous. Particuliers et professionnels, il y a une place pour vous.</p>
         </div>
-        <a class="btn" href="/devenir-gravoomer/">Découvrir les avantages</a>
+        <a class="btn btn-light" href="/devenir-gravoomer/">Découvrir les avantages <span class="arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
 
-  <section id="faq">
+  <section id="faq" class="band">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Vos questions</p>
@@ -150,22 +171,35 @@
 
   <section class="contact" id="contact">
     <div class="wrap">
-      <h2>Parlons-en simplement</h2>
+      <p class="eyebrow">Contact</p>
+      <h2 style="margin-top:12px">Parlons-en simplement</h2>
       <p>Dites-nous le nom inscrit sur la tombe, le cimetière et la date qui vous convient. Nous vous répondons rapidement, et avec plaisir.</p>
-      <div class="ctas" style="justify-content:center">
-        <a class="btn btn-primary" data-mail="visite" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">Nous écrire un e-mail</a>
-        <a class="btn btn-ghost" data-wa="visite" href="https://wa.me/447717536635" target="_blank" rel="noopener">Nous écrire sur WhatsApp</a>
+      <div class="contact-chips">
+        <a class="chip-link" data-mail="visite" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">
+          <span class="ci ci-mail"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg></span>
+          <span><small>E-mail</small><b>info@advaltis.com</b></span>
+        </a>
+        <a class="chip-link" data-wa="visite" href="https://wa.me/447717536635" target="_blank" rel="noopener">
+          <span class="ci ci-wa"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg></span>
+          <span><small>WhatsApp</small><b>+44 7717 536635</b></span>
+        </a>
       </div>
-      <p class="mail" style="margin-top:18px">info@advaltis.com · WhatsApp&nbsp;: +44 7717 536635</p>
     </div>
   </section>
 </main>
 
+<a class="fab" data-wa="visite" href="https://wa.me/447717536635" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp">
+  <span class="wa-dot"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg></span><span class="fab-label">WhatsApp</span>
+</a>
+
 <footer>
   <div class="wrap cols">
-    <span class="logo" role="img" aria-label="Gravoom"></span>
     <div>
-      <p style="margin-bottom:10px"><a href="/">Gravoom pour les familles</a> · <a href="/devenir-gravoomer/">Devenir Gravoomer</a></p>
+      <span class="logo" role="img" aria-label="Gravoom"></span>
+      <p class="tagline">Loin des yeux, jamais loin du cœur. Entretien et fleurissement de tombes dans le Douaisis.</p>
+    </div>
+    <div>
+      <p class="links"><a href="/">Gravoom pour les familles</a><a href="/devenir-gravoomer/">Devenir Gravoomer</a><a href="#tarifs">Nos tarifs</a><a href="#contact">Contact</a></p>
       <h4>Mentions légales</h4>
       <p>Gravoom est une marque exploitée par Advaltis Limited, société de droit anglais immatriculée au Companies House sous le numéro 11823905, dont le siège est situé 124-128 City Road, Londres EC1V 2NX, Royaume-Uni. Contact&nbsp;: info@advaltis.com, +44 7717 536635 (WhatsApp). Directeur de la publication&nbsp;: Jaoued Ahmed.</p>
       <p>Hébergement&nbsp;: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
@@ -192,6 +226,13 @@
   document.querySelectorAll('[data-wa]').forEach(function(a){
     a.href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent('Bonjour, je souhaiterais que vous preniez soin de la tombe de mes proches, au cimetière de : ');
   });
+
+  var header = document.querySelector('header'), fab = document.querySelector('.fab'), contact = document.getElementById('contact');
+  function onScroll(){ header.classList.toggle('is-scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  if ('IntersectionObserver' in window && fab && contact){
+    new IntersectionObserver(function(e){ fab.classList.toggle('is-hidden', e[0].isIntersecting); }).observe(contact);
+  }
   var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
 })();
 </script>
