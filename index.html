@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400..800&display=swap">
-<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/site.css?v=20261021c">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -30,7 +30,7 @@
       <a href="#tarifs">Nos tarifs</a>
       <a href="#faq">Vos questions</a>
       <a href="/devenir-gravoomer/">Devenir Gravoomer</a>
-      <a class="btn btn-primary" data-mail="visite" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">Réserver une visite</a>
+      <a class="btn btn-primary" data-mail="visite" data-finder="visite" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">Réserver une visite</a>
     </nav>
   </div>
 </header>
@@ -47,7 +47,7 @@
           <input id="lookup-q" type="text" placeholder="Commune du cimetière, ex. Somain" autocomplete="off">
           <button class="btn btn-primary" type="submit">Demander une visite <span class="arrow" aria-hidden="true">→</span></button>
         </form>
-        <p class="lookup-note">Réponse rapide sur WhatsApp. Vous préférez l’e-mail&nbsp;? <a data-mail="visite" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">Écrivez-nous</a> · <a href="#tarifs">Voir les tarifs</a></p>
+        <p class="lookup-note">Choisissez le cimetière sur la carte, et même l’emplacement de la tombe. Vous préférez l’e-mail&nbsp;? <a data-mail="visite" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">Écrivez-nous</a> · <a href="#tarifs">Voir les tarifs</a></p>
       </div>
       <div class="showcase">
         <figure class="ba" aria-label="Exemple de tombe avant et après une visite">
@@ -120,20 +120,20 @@
           <h3>L’entretien</h3>
           <p class="amount">69&nbsp;€</p>
           <ul><li>Pierre, plaque et entourage nettoyés</li><li>Eau claire, sans produit agressif</li><li>Photos avant et après</li></ul>
-          <a class="btn btn-ghost" data-mail="nettoyage" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">Choisir l’entretien</a>
+          <a class="btn btn-ghost" data-mail="nettoyage" data-finder="nettoyage" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">Choisir l’entretien</a>
         </article>
         <article class="price pop">
           <span class="tag">La plus demandée</span>
           <h3>Entretien et fleurs</h3>
           <p class="amount">89&nbsp;€</p>
           <ul><li>Tout l’entretien</li><li>Un chrysanthème ou un bouquet de saison</li><li>Photos avant et après</li></ul>
-          <a class="btn btn-primary" data-mail="fleurs" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">Choisir entretien et fleurs</a>
+          <a class="btn btn-primary" data-mail="fleurs" data-finder="fleurs" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">Choisir entretien et fleurs</a>
         </article>
         <article class="price">
           <h3>Les quatre saisons</h3>
           <p class="amount">296&nbsp;€ <small>par an</small></p>
           <ul><li>Une visite à chaque saison</li><li>Des fleurs de saison à chaque passage</li><li>Une tombe soignée toute l’année</li></ul>
-          <a class="btn btn-ghost" data-mail="saisons" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">Choisir les quatre saisons</a>
+          <a class="btn btn-ghost" data-mail="saisons" data-finder="saisons" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">Choisir les quatre saisons</a>
         </article>
       </div>
       <p class="extras">Petit plus&nbsp;: une bougie allumée pour 4&nbsp;€. Et si vous le souhaitez, nous recopions à la main un mot de votre part sur une carte, posée sur la tombe, sans supplément.</p>
@@ -164,7 +164,7 @@
       <p>Une visite, des fleurs, quelques photos le jour même&nbsp;: la distance se fait un peu plus douce.</p>
       <div class="ctas">
         <a class="btn btn-wa" data-wa="visite" href="https://wa.me/447717536635" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Écrire sur WhatsApp</a>
-        <a class="btn btn-glass" data-mail="visite" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">Demander une visite</a>
+        <a class="btn btn-glass" data-mail="visite" data-finder="visite" href="mailto:info@advaltis.com?subject=Demande%20de%20visite%20Gravoom">Demander une visite</a>
       </div>
     </div>
   </section>
@@ -189,7 +189,7 @@
         <h2>Ce que l’on nous demande souvent</h2>
       </div>
       <div class="faq">
-        <details><summary>Et si je ne sais plus exactement où se trouve la tombe&nbsp;?</summary><p>Ce n’est pas grave, cela arrive souvent. Donnez-nous ce dont vous vous souvenez&nbsp;; au besoin, nous consultons le registre du cimetière auprès de la mairie.</p></details>
+        <details><summary>Et si je ne sais plus exactement où se trouve la tombe&nbsp;?</summary><p>Ce n’est pas grave, cela arrive souvent. Sur la carte, placez un repère là où vous pensez qu’elle se trouve, et dites-nous ce dont vous vous souvenez&nbsp;; au besoin, nous consultons le registre du cimetière auprès de la mairie.</p></details>
         <details><summary>Où intervenez-vous&nbsp;?</summary><p>Partout en France. Indiquez-nous la commune du cimetière&nbsp;: nous vous confirmons rapidement qui peut s’en charger, près de chez eux.</p></details>
         <details><summary>Et s’il n’y a encore personne près du cimetière&nbsp;?</summary><p>Nous vous le disons franchement, et nous cherchons quelqu’un dans le secteur. Vous ne payez rien tant que la visite n’est pas confirmée.</p></details>
         <details><summary>Puis-je choisir les fleurs&nbsp;?</summary><p>Bien sûr. Chrysanthème jaune, bronze ou violet, ou bouquet de saison&nbsp;: dites-nous simplement ce qui leur aurait plu.</p></details>
@@ -218,6 +218,48 @@
   </section>
 </main>
 
+<dialog class="finder" id="finder" aria-labelledby="finder-title">
+  <div class="fd-head">
+    <div><p class="eyebrow">Demande de visite</p><h2 id="finder-title">Où repose votre proche&nbsp;?</h2></div>
+    <button class="fd-close" type="button" aria-label="Fermer">×</button>
+  </div>
+  <div class="fd-body">
+    <div class="fd-map-wrap">
+      <div class="fd-map" id="fd-map" role="application" aria-label="Carte des cimetières"></div>
+      <div class="fd-layers" role="group" aria-label="Type de carte"><button type="button" data-layer="plan" aria-pressed="true">Plan</button><button type="button" data-layer="photo" aria-pressed="false">Vue aérienne</button></div>
+      <p class="fd-hint" id="fd-hint" aria-live="polite"></p>
+    </div>
+    <div class="fd-side">
+      <p class="fd-step"><i>1</i>La commune du cimetière</p>
+      <form class="fd-town" id="fd-town">
+        <label class="sr" for="fd-q">Commune ou code postal</label>
+        <input id="fd-q" type="text" placeholder="Commune ou code postal" autocomplete="off">
+        <button class="btn btn-primary" type="submit">Chercher</button>
+      </form>
+      <div class="fd-towns" id="fd-towns" role="group" aria-label="Communes trouvées"></div>
+      <p class="fd-step"><i>2</i>Le cimetière</p>
+      <div id="fd-cems"><p class="fd-empty">Indiquez d’abord la commune.</p></div>
+      <p class="fd-step"><i>3</i>La tombe <span class="opt">(facultatif)</span></p>
+      <p class="fd-pin-status" id="fd-pin">Touchez la carte à l’endroit de la tombe pour y placer un repère. Vous pourrez le déplacer.</p>
+      <p class="fd-step"><i>4</i>Quelques détails</p>
+      <label class="sr" for="fd-nom">Nom inscrit sur la tombe</label>
+      <input id="fd-nom" type="text" placeholder="Nom inscrit sur la tombe (facultatif)">
+      <label class="sr" for="fd-formule">Formule</label>
+      <select id="fd-formule">
+        <option value="">Formule&nbsp;: je ne sais pas encore</option>
+        <option value="nettoyage">L’entretien, 69&nbsp;€</option>
+        <option value="fleurs">Entretien et fleurs, 89&nbsp;€</option>
+        <option value="saisons">Les quatre saisons, 296&nbsp;€ par an</option>
+      </select>
+      <p class="fd-err" id="fd-err" aria-live="assertive"></p>
+      <div class="fd-send">
+        <button class="btn btn-wa" type="button" data-send="wa"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Envoyer sur WhatsApp</button>
+        <button class="btn btn-ghost" type="button" data-send="mail">Par e-mail</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
 <a class="fab" data-wa="visite" href="https://wa.me/447717536635" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp">
   <span class="wa-dot"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg></span><span class="fab-label">WhatsApp</span>
 </a>
@@ -233,7 +275,7 @@
       <h4>Mentions légales</h4>
       <p>Gravoom est une marque exploitée par Advaltis Limited, société de droit anglais immatriculée au Companies House sous le numéro 11823905, dont le siège est situé 124-128 City Road, Londres EC1V 2NX, Royaume-Uni. Contact&nbsp;: info@advaltis.com. Directeur de la publication&nbsp;: le représentant légal d’Advaltis Limited.</p>
       <p>Hébergement&nbsp;: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
-      <p>Ce site n’utilise ni cookies ni outil de suivi. © <span id="year">2026</span> Gravoom.</p>
+      <p>Ce site n’utilise ni cookies ni outil de suivi. La carte des cimetières utilise les services de l’IGN (Géoplateforme) et de l’État (geo.api.gouv.fr), chargés seulement quand vous l’ouvrez. © <span id="year">2026</span> Gravoom.</p>
     </div>
   </div>
 </footer>
@@ -257,11 +299,160 @@
     a.href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent('Bonjour, je souhaiterais que vous preniez soin de la tombe de mes proches, au cimetière de : ');
   });
 
-  var lookup = document.getElementById('lookup');
-  lookup.addEventListener('submit', function(e){
-    e.preventDefault();
-    var q = document.getElementById('lookup-q').value.trim();
-    window.open('https://wa.me/' + wa + '?text=' + encodeURIComponent('Bonjour, je souhaiterais que vous preniez soin de la tombe de mes proches, au cimetière de : ' + (q || '')), '_blank', 'noopener');
+  /* ---------- cemetery finder ---------- */
+  var finder = document.getElementById('finder'), map, layers, cemLayer, pin, leafletReady;
+  var st = {town: null, cems: [], cem: null, pin: null};
+  var $ = function(id){ return document.getElementById(id); };
+  var hint = $('fd-hint'), err = $('fd-err');
+  var IGN = 'https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&LAYER=';
+  function loadLeaflet(){
+    if (leafletReady) return leafletReady;
+    leafletReady = new Promise(function(res, rej){
+      var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css'; document.head.appendChild(l);
+      var sc = document.createElement('script'); sc.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js'; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc);
+    });
+    return leafletReady;
+  }
+  function initMap(){
+    if (map) return;
+    map = L.map('fd-map', {zoomControl: true, attributionControl: true}).setView([46.6, 2.4], 6);
+    map.attributionControl.setPrefix('');
+    layers = {
+      plan: L.tileLayer(IGN + 'GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&FORMAT=image/png', {maxZoom: 19, maxNativeZoom: 19, attribution: '© IGN'}),
+      photo: L.tileLayer(IGN + 'ORTHOIMAGERY.ORTHOPHOTOS&FORMAT=image/jpeg', {maxZoom: 20, maxNativeZoom: 19, attribution: '© IGN'})
+    };
+    layers.plan.addTo(map);
+    map.on('click', function(e){ placePin(e.latlng); });
+  }
+  function setLayer(name){
+    ['plan', 'photo'].forEach(function(k){ if (k === name) layers[k].addTo(map); else map.removeLayer(layers[k]); });
+    finder.querySelectorAll('[data-layer]').forEach(function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-layer') === name)); });
+  }
+  finder.querySelectorAll('[data-layer]').forEach(function(b){ b.addEventListener('click', function(){ setLayer(b.getAttribute('data-layer')); }); });
+  var pinIcon = function(){ return L.divIcon({className: 'fd-pin', iconSize: [34, 44], iconAnchor: [17, 42], html: '<svg viewBox="0 0 34 44"><path d="M17 43s15-14.6 15-26A15 15 0 0 0 2 17c0 11.4 15 26 15 26z" fill="#D8861A" stroke="#fff" stroke-width="2.5"/><circle cx="17" cy="17" r="5.5" fill="#fff"/></svg>'}); };
+  function placePin(ll){
+    st.pin = ll;
+    if (!pin){ pin = L.marker(ll, {icon: pinIcon(), draggable: true, keyboard: false}).addTo(map); pin.on('dragend', function(){ st.pin = pin.getLatLng(); }); }
+    else pin.setLatLng(ll);
+    var s = $('fd-pin'); s.textContent = '✓ Repère placé. Faites-le glisser pour l’ajuster.'; s.classList.add('ok');
+    hint.textContent = ''; err.textContent = '';
+  }
+  function inRing(pt, ring){ var x = pt[1], y = pt[0], inside = false; for (var i = 0, j = ring.length - 1; i < ring.length; j = i++){ var xi = ring[i][0], yi = ring[i][1], xj = ring[j][0], yj = ring[j][1]; if (((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi)) inside = !inside; } return inside; }
+  function inTown(pt, g){ if (!g) return true; var polys = g.type === 'MultiPolygon' ? g.coordinates : [g.coordinates]; return polys.some(function(p){ return inRing(pt, p[0]); }); }
+  function centroid(ring){ var x = 0, y = 0; ring.forEach(function(p){ x += p[0]; y += p[1]; }); return [y / ring.length, x / ring.length]; }
+  function outerRing(g){ return g.type === 'MultiPolygon' ? g.coordinates[0][0] : g.coordinates[0]; }
+  function searchTown(q){
+    q = q.trim(); if (!q) return;
+    hint.textContent = 'Recherche de la commune…'; $('fd-towns').innerHTML = '';
+    var url = 'https://geo.api.gouv.fr/communes?fields=nom,code,codesPostaux,centre,bbox,contour,codeDepartement,population&limit=6&' + (/^\d{5}$/.test(q) ? 'codePostal=' + q : 'nom=' + encodeURIComponent(q) + '&boost=population');
+    fetch(url).then(function(r){ return r.json(); }).then(function(list){
+      if (/^\d{5}$/.test(q)) list.sort(function(a, b){ return (b.population || 0) - (a.population || 0); });
+      if (!list.length){ hint.textContent = 'Commune introuvable. Vérifiez l’orthographe ou essayez le code postal.'; return; }
+      var box = $('fd-towns');
+      if (list.length > 1) list.forEach(function(t, i){
+        var b = document.createElement('button'); b.type = 'button'; b.textContent = t.nom + ' (' + t.codeDepartement + ')';
+        b.setAttribute('aria-pressed', String(i === 0)); b.addEventListener('click', function(){ box.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed', String(x === b)); }); selectTown(t); });
+        box.appendChild(b);
+      });
+      selectTown(list[0]);
+    }).catch(function(){ hint.textContent = 'La recherche ne répond pas. Réessayez dans un instant.'; });
+  }
+  function selectTown(t){
+    st.town = t; st.cem = null; st.cems = [];
+    var c = t.bbox.coordinates[0], minX = c[0][0], minY = c[0][1], maxX = c[2][0], maxY = c[2][1];
+    map.invalidateSize(); map.fitBounds([[minY, minX], [maxY, maxX]]); setLayer('plan');
+    if (cemLayer){ map.removeLayer(cemLayer); cemLayer = null; }
+    $('fd-cems').innerHTML = '<p class="fd-empty">Recherche des cimetières…</p>';
+    hint.textContent = 'Recherche des cimetières de ' + t.nom + '…';
+    var pad = 0.004;
+    var wfs = 'https://data.geopf.fr/wfs/ows?SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=BDTOPO_V3:cimetiere&OUTPUTFORMAT=application/json&SRSNAME=EPSG:4326&COUNT=40&BBOX=' + [minY - pad, minX - pad, maxY + pad, maxX + pad].join(',') + ',urn:ogc:def:crs:EPSG::4326';
+    fetch(wfs).then(function(r){ return r.json(); }).then(function(fc){
+      var feats = (fc.features || []).map(function(f){ return {f: f, c: centroid(outerRing(f.geometry))}; });
+      var ctr = t.centre.coordinates;
+      feats.sort(function(a, b){ return Math.hypot(a.c[0] - ctr[1], a.c[1] - ctr[0]) - Math.hypot(b.c[0] - ctr[1], b.c[1] - ctr[0]); });
+      var own = feats.filter(function(x){ x.own = inTown(x.c, t.contour); return x.own; });
+      feats = (own.length ? own : feats).slice(0, 10);
+      return Promise.all(feats.map(function(x){
+        return fetch('https://data.geopf.fr/geocodage/reverse?index=address&limit=1&lat=' + x.c[0] + '&lon=' + x.c[1]).then(function(r){ return r.json(); }).then(function(g){
+          var p = g.features && g.features[0] && g.features[0].properties; x.street = p && p.street; x.city = p && p.city; x.citycode = p && p.citycode; return x;
+        }).catch(function(){ return x; });
+      }));
+    }).then(function(feats){
+      st.cems = feats;
+      renderCems();
+    }).catch(function(){ st.cems = []; renderCems(); });
+  }
+  function cemName(x){ return x.f.properties.toponyme || ('Cimetière' + (x.street ? ', ' + x.street : '')); }
+  function renderCems(){
+    var t = st.town, box = $('fd-cems');
+    if (cemLayer) map.removeLayer(cemLayer);
+    cemLayer = L.featureGroup().addTo(map);
+    if (!st.cems.length){
+      box.innerHTML = '<p class="fd-empty">Aucun cimetière n’est répertorié ici. Touchez la carte à l’endroit du cimetière, nous ferons le reste.</p>';
+      hint.textContent = 'Touchez la carte à l’endroit du cimetière.'; return;
+    }
+    var ul = document.createElement('ul'); ul.className = 'fd-list';
+    st.cems.forEach(function(x, i){
+      x.poly = L.geoJSON(x.f, {style: {color: '#2D6A54', weight: 2, fillColor: '#2D6A54', fillOpacity: .18}}).addTo(cemLayer);
+      x.num = L.marker(x.c, {icon: L.divIcon({className: '', html: '<div class="fd-num">' + (i + 1) + '</div>', iconSize: [30, 30], iconAnchor: [15, 15]})}).addTo(cemLayer);
+      x.poly.on('click', function(e){ if (st.cem !== x){ L.DomEvent.stop(e); chooseCem(x); } });
+      x.num.on('click', function(){ chooseCem(x); });
+      var li = document.createElement('li'), b = document.createElement('button');
+      b.type = 'button'; b.setAttribute('aria-pressed', 'false');
+      b.innerHTML = '<span class="n">' + (i + 1) + '</span><span><b></b><small></small></span>';
+      b.querySelector('b').textContent = cemName(x);
+      b.querySelector('small').textContent = (x.f.properties.toponyme && x.street ? x.street + ', ' : '') + (x.own ? t.nom : (x.city || 'commune voisine'));
+      b.addEventListener('click', function(){ chooseCem(x); });
+      x.btn = b; li.appendChild(b); ul.appendChild(li);
+    });
+    box.innerHTML = ''; box.appendChild(ul);
+    hint.textContent = st.cems.length > 1 ? 'Choisissez le cimetière dans la liste ou sur la carte.' : 'Touchez le cimetière pour l’ouvrir.';
+    map.invalidateSize(); map.fitBounds(cemLayer.getBounds(), {padding: [40, 40], maxZoom: 16});
+  }
+  function chooseCem(x){
+    st.cem = x; err.textContent = '';
+    st.cems.forEach(function(y){
+      var on = y === x;
+      y.btn.setAttribute('aria-pressed', String(on));
+      y.poly.setStyle(on ? {color: '#D8861A', weight: 3, fillOpacity: .06} : {color: '#2D6A54', weight: 2, fillOpacity: .18});
+      y.num.getElement() && y.num.getElement().firstChild.classList.toggle('on', on);
+    });
+    setLayer('photo');
+    map.flyToBounds(x.poly.getBounds(), {padding: [30, 30], maxZoom: 19, duration: .9});
+    if (!st.pin) hint.textContent = 'Touchez l’endroit de la tombe pour y placer un repère (facultatif).';
+  }
+  function openFinder(q, kind){
+    finder.showModal();
+    if (kind && kind !== 'visite') $('fd-formule').value = kind;
+    if (q) $('fd-q').value = q;
+    hint.textContent = 'Chargement de la carte…';
+    loadLeaflet().then(function(){
+      initMap(); map.invalidateSize(); hint.textContent = '';
+      if ($('fd-q').value.trim() && (!st.town || q)) searchTown($('fd-q').value); else if (!st.town){ hint.textContent = 'Indiquez la commune du cimetière.'; $('fd-q').focus(); }
+    }).catch(function(){ hint.textContent = 'La carte n’a pas pu se charger. Vous pouvez nous écrire directement.'; });
+  }
+  $('fd-town').addEventListener('submit', function(e){ e.preventDefault(); if (map) searchTown($('fd-q').value); });
+  finder.querySelector('.fd-close').addEventListener('click', function(){ finder.close(); });
+  finder.addEventListener('click', function(e){ if (e.target === finder) finder.close(); });
+  document.getElementById('lookup').addEventListener('submit', function(e){ e.preventDefault(); openFinder(document.getElementById('lookup-q').value.trim(), 'visite'); });
+  document.querySelectorAll('[data-finder]').forEach(function(a){
+    a.addEventListener('click', function(e){ if (!window.HTMLDialogElement) return; e.preventDefault(); openFinder('', a.getAttribute('data-finder')); });
+  });
+  function gmaps(ll){ return 'https://www.google.com/maps?q=' + ll.lat.toFixed(6) + ',' + ll.lng.toFixed(6); }
+  finder.querySelectorAll('[data-send]').forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!st.town){ err.textContent = 'Indiquez d’abord la commune du cimetière.'; $('fd-q').focus(); return; }
+      if (!st.cem && !st.pin){ err.textContent = st.cems.length ? 'Choisissez le cimetière, ou placez un repère sur la carte.' : 'Touchez la carte à l’endroit du cimetière.'; return; }
+      var t = st.town, lines = ['Bonjour, je souhaiterais que vous preniez soin de la tombe de mes proches.', ''];
+      lines.push('• Cimetière : ' + (st.cem ? cemName(st.cem) + (st.cem.f.properties.toponyme && st.cem.street ? ' (' + st.cem.street + ')' : '') + ', ' : '') + (st.cem && !st.cem.own && st.cem.city || t.nom) + ' (' + (t.codesPostaux[0] || t.codeDepartement) + ')');
+      if (st.pin) lines.push('• Emplacement de la tombe (repère sur la carte) : ' + gmaps(st.pin));
+      else lines.push('• Plan du cimetière : ' + gmaps({lat: st.cem.c[0], lng: st.cem.c[1]}));
+      var nom = $('fd-nom').value.trim(); if (nom) lines.push('• Nom inscrit sur la tombe : ' + nom);
+      var f = $('fd-formule').value; lines.push('• Formule : ' + (services[f] || 'je ne sais pas encore'));
+      var text = lines.join('\n');
+      if (b.getAttribute('data-send') === 'mail') window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent('Demande de visite – ' + t.nom) + '&body=' + encodeURIComponent(text + '\n\nMerci beaucoup,\n');
+      else window.open('https://wa.me/' + wa + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+    });
   });
 
   var header = document.querySelector('header'), fab = document.querySelector('.fab'), contact = document.getElementById('contact');
