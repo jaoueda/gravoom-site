@@ -61,6 +61,7 @@ header.is-scrolled{border-bottom-color:var(--line);box-shadow:0 6px 24px rgba(22
 .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
 nav{display:flex;align-items:center;gap:26px;font-size:15px;font-weight:600}
 nav a{text-decoration:none;color:var(--ink-2);transition:color 160ms ease}
+nav a.lang{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:36px;padding:0 10px;border:1.5px solid var(--line);border-radius:999px;font-size:13px;font-weight:800;letter-spacing:.06em;color:var(--ink)}
 nav .btn{min-height:44px;padding:0 20px;font-size:15px;color:var(--on-ink)}
 
 /* ---------- hero ---------- */
@@ -380,6 +381,7 @@ footer p + p{margin-top:8px}
   nav a:not(.btn):hover{color:var(--ink)}
   .btn-primary:hover{box-shadow:0 10px 26px rgba(22,32,28,.24)}
   .btn-ghost:hover{border-color:var(--ink-3)}
+  nav a.lang:hover{border-color:var(--ink-3)}
   .btn:hover .arrow{transform:translateX(3px)}
   .why > div:hover,.benefit:hover,.steps li:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
   .chip-link:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
@@ -410,7 +412,8 @@ footer p + p{margin-top:8px}
   .steps,.steps--4,.prices,.why,.benefits,.tracks,.estimator,.asks{grid-template-columns:1fr}
   .price.pop{transform:none}
   .join{grid-template-columns:1fr;padding:34px}
-  nav a:not(.btn){display:none}
+  nav a:not(.btn):not(.lang){display:none}
+  nav{gap:10px}
   section{padding-block:64px}
   .sec-head{margin-bottom:32px}
   footer .cols{grid-template-columns:1fr;gap:28px}
