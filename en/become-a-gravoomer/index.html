@@ -359,7 +359,7 @@
   var to = 'info@advaltis.com', wa = '447717536635';
   var mails = {
     gravoomer: {s:'Become a Gravoomer', b:'Hello,\n\nI would like to become a Gravoomer.\n\n• I live in:\n• Cemeteries near me:\n• My availability:\n• My phone number:\n• A few words about me:\n\nThank you,\n'},
-    partenaire: {s:'Professional partnership – Gravoom', b:'Hello,\n\nI run a business and would like to become a Gravoom partner.\n\n• My company:\n• My trade (grave maintenance, florist, stonemason…):\n• Towns I cover:\n• My phone number:\n\nKind regards,\n'}
+    partenaire: {s:'Gravoom professional partnership', b:'Hello,\n\nI run a business and would like to become a Gravoom partner.\n\n• My company:\n• My trade (grave maintenance, florist, stonemason…):\n• Towns I cover:\n• My phone number:\n\nKind regards,\n'}
   };
   document.querySelectorAll('[data-mail]').forEach(function(a){
     var m = mails[a.getAttribute('data-mail')] || mails.gravoomer;
@@ -416,7 +416,7 @@
     ];
     var text = lines.join('\n');
     var url = via === 'mail'
-      ? 'mailto:' + to + '?subject=' + encodeURIComponent((profil() === 'Professional' ? 'Partnership' : 'Become a Gravoomer') + ' – ' + cp.value) + '&body=' + encodeURIComponent(text + '\n\nThank you,\n')
+      ? 'mailto:' + to + '?subject=' + encodeURIComponent((profil() === 'Professional' ? 'Partnership' : 'Become a Gravoomer') + ': ' + cp.value) + '&body=' + encodeURIComponent(text + '\n\nThank you,\n')
       : 'https://wa.me/' + wa + '?text=' + encodeURIComponent(text);
     if (via === 'mail') window.location.href = url; else window.open(url, '_blank', 'noopener');
     form.hidden = true; done.hidden = false; done.focus();

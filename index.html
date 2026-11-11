@@ -305,7 +305,7 @@
       subject = 'Devenir Gravoomer';
       body = 'Bonjour,\n\nJ’aimerais devenir Gravoomer.\n\n• J’habite à :\n• Mes disponibilités :\n• Mon numéro de téléphone :\n• Quelques mots sur moi :\n\nMerci et à bientôt,\n';
     } else {
-      subject = 'Demande de visite – Gravoom';
+      subject = 'Demande de visite Gravoom';
       body = 'Bonjour,\n\nJe souhaiterais que vous preniez soin de la tombe de mes proches.\n\n• Nom inscrit sur la tombe :\n• Cimetière (commune) :\n• Emplacement, si vous le connaissez (allée, rang, repère) :\n• Formule : ' + (services[kind] || 'L’entretien (79 €) / Entretien et fleurs (99 €) / Les quatre saisons (349 € par an)') + '\n• Fleurs souhaitées :\n• Date souhaitée :\n• Un petit mot à déposer (facultatif) :\n\nMerci beaucoup,\n';
     }
     a.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
@@ -467,7 +467,7 @@
       var nom = $('fd-nom').value.trim(); if (nom) lines.push('• Nom inscrit sur la tombe : ' + nom);
       var f = $('fd-formule').value; lines.push('• Formule : ' + (services[f] || 'je ne sais pas encore'));
       var text = lines.join('\n');
-      if (b.getAttribute('data-send') === 'mail') window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent('Demande de visite – ' + t.nom) + '&body=' + encodeURIComponent(text + '\n\nMerci beaucoup,\n');
+      if (b.getAttribute('data-send') === 'mail') window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent('Demande de visite : ' + t.nom) + '&body=' + encodeURIComponent(text + '\n\nMerci beaucoup,\n');
       else window.open('https://wa.me/' + wa + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
     });
   });
