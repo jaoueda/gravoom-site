@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gravoom.com/sitemap.xml

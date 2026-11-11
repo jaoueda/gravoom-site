@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400..800&display=swap">
-<link rel="stylesheet" href="/site.css?v=20261109">
+<link rel="stylesheet" href="/site.css?v=20261111">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -118,28 +118,35 @@
       <div class="sec-head">
         <p class="eyebrow">Prices</p>
         <h2>Clear prices, no surprises</h2>
-        <p>Travel, cleaning and photos are always included. Prices in euros.</p>
+        <p>Travel, cleaning and photos are always included. Prices in euros. You only pay once the visit is confirmed.</p>
       </div>
       <div class="prices">
+        <article class="price pop">
+          <span class="tag">Our pick</span>
+          <h3>Four seasons</h3>
+          <p class="amount">€349 <small>per year</small></p>
+          <ul><li>One visit every season, with flowers</li><li>A well-kept grave all year round</li><li>€47 less than four separate visits</li></ul>
+          <a class="btn btn-primary" data-mail="saisons" data-finder="saisons" href="mailto:info@advaltis.com?subject=Gravoom%20visit%20request">Choose four seasons</a>
+        </article>
+        <article class="price">
+          <h3>Cleaning and flowers</h3>
+          <p class="amount">€99</p>
+          <ul><li>Full cleaning</li><li>A chrysanthemum or a seasonal bouquet</li><li>Before and after photos</li></ul>
+          <a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" href="mailto:info@advaltis.com?subject=Gravoom%20visit%20request">Choose cleaning and flowers</a>
+        </article>
         <article class="price">
           <h3>Cleaning</h3>
-          <p class="amount">€69</p>
+          <p class="amount">€79</p>
           <ul><li>Headstone, plaque and surround cleaned</li><li>Clear water, no harsh products</li><li>Before and after photos</li></ul>
           <a class="btn btn-ghost" data-mail="nettoyage" data-finder="nettoyage" href="mailto:info@advaltis.com?subject=Gravoom%20visit%20request">Choose cleaning</a>
         </article>
-        <article class="price pop">
-          <span class="tag">Most popular</span>
-          <h3>Cleaning and flowers</h3>
-          <p class="amount">€89</p>
-          <ul><li>Full cleaning</li><li>A chrysanthemum or a seasonal bouquet</li><li>Before and after photos</li></ul>
-          <a class="btn btn-primary" data-mail="fleurs" data-finder="fleurs" href="mailto:info@advaltis.com?subject=Gravoom%20visit%20request">Choose cleaning and flowers</a>
-        </article>
-        <article class="price">
-          <h3>Four seasons</h3>
-          <p class="amount">€296 <small>per year</small></p>
-          <ul><li>One visit every season</li><li>Seasonal flowers at each visit</li><li>A well-kept grave all year round</li></ul>
-          <a class="btn btn-ghost" data-mail="saisons" data-finder="saisons" href="mailto:info@advaltis.com?subject=Gravoom%20visit%20request">Choose four seasons</a>
-        </article>
+      </div>
+      <div class="price-wide">
+        <div>
+          <h3>A grave left untended for a long time?</h3>
+          <p>A first restoring visit, from <b>€129</b>: moss and lichen removed with a soft brush, the surround weeded and cleared. Send us a photo if you have one, the quote is free.</p>
+        </div>
+        <a class="btn btn-ghost" data-mail="remise" data-finder="remise" href="mailto:info@advaltis.com?subject=Gravoom%20visit%20request">Ask for a restoring visit</a>
       </div>
       <p class="extras">Extra: a lit candle for €4. And if you wish, we handwrite your message on a card and leave it on the grave, at no extra cost.</p>
     </div>
@@ -199,6 +206,8 @@
         <details><summary>What if there is nobody near the cemetery yet?</summary><p>We will tell you honestly and look for someone in the area. You pay nothing until the visit is confirmed.</p></details>
         <details><summary>Can I choose the flowers?</summary><p>Of course. A yellow, bronze or purple chrysanthemum, or a seasonal bouquet: just tell us what they would have liked.</p></details>
         <details><summary>Can I leave a message?</summary><p>Yes. Send us your words and we handwrite them on a card that we leave on the grave, in French or English. You will see it in the photos.</p></details>
+        <details><summary>How do I pay?</summary><p>You pay nothing when you send your request. Once the visit is confirmed, we send you a secure link to pay by card; a bank transfer is also possible. If the visit cannot take place after all, you are refunded in full. The details are in our <a href="/en/terms/">terms of sale</a>.</p></details>
+        <details><summary>What if I’m not happy with the result?</summary><p>Tell us within seven days of receiving the photos: we go back at no charge, or we refund you.</p></details>
         <details><summary>When will I get the photos?</summary><p>On the day of the visit, by email or WhatsApp, with a note of what was done.</p></details>
       </div>
     </div>
@@ -252,9 +261,10 @@
       <label class="sr" for="fd-formule">Service</label>
       <select id="fd-formule">
         <option value="">Service: not sure yet</option>
-        <option value="nettoyage">Cleaning, €69</option>
-        <option value="fleurs">Cleaning and flowers, €89</option>
-        <option value="saisons">Four seasons, €296 per year</option>
+        <option value="saisons">Four seasons, €349 per year</option>
+        <option value="fleurs">Cleaning and flowers, €99</option>
+        <option value="nettoyage">Cleaning, €79</option>
+        <option value="remise">Restoring visit, from €129</option>
       </select>
       <p class="fd-err" id="fd-err" aria-live="assertive"></p>
       <div class="fd-send">
@@ -276,7 +286,7 @@
       <p class="tagline">Far away, never forgotten. Grave care and flowers anywhere in France.</p>
     </div>
     <div>
-      <p class="links"><a href="/en/">Gravoom for families</a><a href="/en/become-a-gravoomer/">Become a Gravoomer</a><a href="#tarifs">Prices</a><a href="#contact">Contact</a><a href="/" hreflang="fr" lang="fr">Version française</a></p>
+      <p class="links"><a href="/en/">Gravoom for families</a><a href="/en/become-a-gravoomer/">Become a Gravoomer</a><a href="#tarifs">Prices</a><a href="#contact">Contact</a><a href="/en/terms/">Terms of sale</a><a href="/" hreflang="fr" lang="fr">Version française</a></p>
       <h4>Legal notice</h4>
       <p>Gravoom is a brand operated by Advaltis Limited, a company registered in England and Wales at Companies House under number 11823905, with its registered office at 124-128 City Road, London EC1V 2NX, United Kingdom. Contact: info@advaltis.com. Publication director: the legal representative of Advaltis Limited.</p>
       <p>Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States.</p>
@@ -288,7 +298,7 @@
 <script>
 (function(){
   var to = 'info@advaltis.com', wa = '447717536635';
-  var services = {visite:'', nettoyage:'Cleaning (€69)', fleurs:'Cleaning and flowers (€89)', saisons:'Four seasons (€296 per year)'};
+  var services = {visite:'', nettoyage:'Cleaning (€79)', fleurs:'Cleaning and flowers (€99)', saisons:'Four seasons (€349 per year)', remise:'Restoring visit (from €129)'};
   document.querySelectorAll('[data-mail]').forEach(function(a){
     var kind = a.getAttribute('data-mail'), subject, body;
     if (kind === 'gravoomer'){
@@ -296,7 +306,7 @@
       body = 'Hello,\n\nI would like to become a Gravoomer.\n\n• I live in:\n• My availability:\n• My phone number:\n• A few words about me:\n\nThank you,\n';
     } else {
       subject = 'Visit request – Gravoom';
-      body = 'Hello,\n\nI would like you to look after my loved one’s grave.\n\n• Name on the grave:\n• Cemetery (town):\n• Location, if you know it (row, section, landmark):\n• Service: ' + (services[kind] || 'Cleaning (€69) / Cleaning and flowers (€89) / Four seasons (€296 per year)') + '\n• Flowers you would like:\n• Preferred date:\n• A message to leave (optional):\n\nThank you very much,\n';
+      body = 'Hello,\n\nI would like you to look after my loved one’s grave.\n\n• Name on the grave:\n• Cemetery (town):\n• Location, if you know it (row, section, landmark):\n• Service: ' + (services[kind] || 'Cleaning (€79) / Cleaning and flowers (€99) / Four seasons (€349 per year)') + '\n• Flowers you would like:\n• Preferred date:\n• A message to leave (optional):\n\nThank you very much,\n';
     }
     a.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   });
@@ -439,6 +449,8 @@
   $('fd-town').addEventListener('submit', function(e){ e.preventDefault(); if (map) searchTown($('fd-q').value); });
   finder.querySelector('.fd-close').addEventListener('click', function(){ finder.close(); });
   finder.addEventListener('click', function(e){ if (e.target === finder) finder.close(); });
+  var qp = new URLSearchParams(window.location.search).get('commune');
+  if (qp && window.HTMLDialogElement) openFinder(qp.slice(0, 60), 'visite');
   document.getElementById('lookup').addEventListener('submit', function(e){ e.preventDefault(); openFinder(document.getElementById('lookup-q').value.trim(), 'visite'); });
   document.querySelectorAll('[data-finder]').forEach(function(a){
     a.addEventListener('click', function(e){ if (!window.HTMLDialogElement) return; e.preventDefault(); openFinder('', a.getAttribute('data-finder')); });
