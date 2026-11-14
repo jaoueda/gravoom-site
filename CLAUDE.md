@@ -1,0 +1,27 @@
+# Gravoom site: notes for Claude
+
+Static site on GitHub Pages (gravoom.com). Plain HTML and one shared stylesheet, `site.css`. There is no build step, no bundler and no React. French pages live at the root and English pages under `/en/`. When you change one language, change the other one too.
+
+## Design setup
+
+The setup has three parts.
+
+1. **Animations: Motion.** Motion is the framework-agnostic successor to Framer Motion. Load it as an ES module from a pinned CDN version. Don't use npm, since there is no build step:
+
+   ```html
+   <script type="module">
+     import { animate, inView, stagger } from "https://cdn.jsdelivr.net/npm/motion@14.9.0/+esm";
+   </script>
+   ```
+
+   - Respect `prefers-reduced-motion`. Skip the effect or snap to its end state.
+   - Content must be visible without JS. Only hide elements from a script that will reveal them.
+   - Use restraint: this is a grave-care service for grieving families. Prefer one calm, orchestrated moment and motion that answers user actions (FAQ open, form steps, confirmations) over scattered entrance effects.
+
+2. **Design: the `frontend-design` skill** (`.claude/skills/frontend-design/`). Use it for any UI work. Work within the existing brand (Bricolage Grotesque + Figtree, the tokens in `site.css`, the logo in `/brand/`) instead of reinventing it.
+
+3. **Components: the 21st.dev Magic MCP** (`.mcp.json`, server `21st-magic`). Use it to search for and generate component ideas. It needs a `TWENTY_FIRST_API_KEY` from https://21st.dev/magic/console. Its output is React + Tailwind, so always port it to semantic HTML + `site.css` before adding it here. Never add React or Tailwind to the site.
+
+## Checks before finishing
+- Keep the layout working at phone width (no horizontal scroll) and keep keyboard focus visible.
+- Bump the `site.css?v=` query string on every page when `site.css` changes.
