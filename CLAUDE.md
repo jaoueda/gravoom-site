@@ -25,6 +25,8 @@ The setup has three parts.
 ## Checks before finishing
 - Keep the layout working at phone width (no horizontal scroll) and keep keyboard focus visible.
 - Bump the `site.css?v=` query string on every page when `site.css` changes.
+- Shared animation code lives in `/motion.js` (one home-page load sequence, FAQ open/close, visit dialog entrance). Pages with a FAQ or the visit dialog load it with `<script type="module" src="/motion.js?v=...">`; bump that `v` when it changes.
+- Layout vocabulary: `.wrap.ledger` with `.sec-head` and `.ledger-body` for ruled sections; prices are `.prices > .price` rows. Keep surfaces flat (borders, no card shadows) and labels in sentence case.
 
 ## Content map
 - `/conseils/` holds the French guides (SEO articles) and `/en/grave-care-in-france/` the English guide. `/partenaires/` is the page for professionals. They are plain HTML like every other page.
