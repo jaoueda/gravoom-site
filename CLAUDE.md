@@ -20,7 +20,7 @@ The setup has three parts.
 
 2. **Design: the `frontend-design` skill** (`.claude/skills/frontend-design/`). Use it for any UI work. Work within the existing brand (Bricolage Grotesque + Figtree, the tokens in `site.css`, the logo in `/brand/`) instead of reinventing it.
 
-3. **Components: the 21st.dev Magic MCP** (`.mcp.json`, server `21st-magic`). Use it to search for and generate component ideas. It needs a `TWENTY_FIRST_API_KEY` from https://21st.dev/magic/console. Its output is React + Tailwind, so always port it to semantic HTML + `site.css` before adding it here. Never add React or Tailwind to the site.
+3. **Components: the 21st.dev Magic MCP** (`.mcp.json`, server `21st-magic`). Use it to search for and generate component ideas. It needs a `TWENTY_FIRST_API_KEY` from https://21st.dev/magic/console. Locally, set that variable. In cloud sessions the key is a network secret for `21st.dev` (header `x-api-key`) that the proxy injects, so `.mcp.json` passes a placeholder and sets `NODE_USE_ENV_PROXY=1`, without which Node's `fetch` skips the proxy and the server reports "Not authenticated". Its output is React + Tailwind, so always port it to semantic HTML + `site.css` before adding it here. Never add React or Tailwind to the site.
 
 ## Checks before finishing
 - Keep the layout working at phone width (no horizontal scroll) and keep keyboard focus visible.
