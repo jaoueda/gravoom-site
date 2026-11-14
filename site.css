@@ -1,7 +1,7 @@
 /* Layout: a limestone page read like a visit report. Sections are ruled entries (heading left, content right), prices are a priced list, photos carry their captions underneath. Chrysanthemum gold is the only action colour; moss marks what is done. Shadows are kept for the hero photo and dialogs only. */
 :root{
   --ground:#EEF1EC; --band:#E5EAE4; --raised:#FAFBF8; --sunk:#DCE3DB;
-  --ink:#17201C; --ink-2:#44514B; --ink-3:#63706A; --line:#CBD4CC; --on-ink:#F7F9F6;
+  --ink:#17201C; --ink-2:#44514B; --ink-3:#56625C; --line:#CBD4CC; --on-ink:#F7F9F6;
   --chrys:#D8861A; --chrys-soft:#F5E3C4; --chrys-ink:#844B06; --on-chrys:#1A1205;
   --moss:#2D6A54; --moss-soft:#D5E7DC; --on-moss:#FFFFFF;
   --wa:#25D366; --wa-ink:#0E7A3E; --wa-soft:#DDF7E7;
@@ -151,7 +151,8 @@ section:has(> .ledger){padding-block:64px}
 /* full-bleed photograph */
 .cine{position:relative;isolation:isolate;overflow:hidden;color:#fff;padding-block:200px 72px}
 .cine img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-.cine::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(12,17,15,.15),rgba(12,17,15,.35) 45%,rgba(12,17,15,.78))}
+.cine::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,17,15,.78) 0%,rgba(12,17,15,.6) 45%,rgba(12,17,15,.2) 100%),linear-gradient(180deg,rgba(12,17,15,.1),rgba(12,17,15,.55))}
+.cine h2,.cine p{text-shadow:0 1px 18px rgba(0,0,0,.35)}
 .cine h2{font-size:clamp(36px,5.2vw,68px);max-width:12em;letter-spacing:-.035em}
 .cine p{max-width:32em;margin-top:18px;font-size:18px;opacity:.92}
 .cine .eyebrow{color:rgba(255,255,255,.85);margin-bottom:12px}
@@ -173,6 +174,7 @@ section:has(> .ledger){padding-block:64px}
 .price.pop{background:var(--chrys-soft);border-bottom-color:transparent;border-radius:18px;margin-top:-1px}
 .tag{justify-self:start;align-self:start;font-size:13.5px;font-weight:700;color:var(--chrys-ink);background:var(--chrys-soft);padding:4px 11px;border-radius:999px;margin-bottom:12px}
 .price.pop .tag{background:var(--raised)}
+.price.pop .amount small,.price.pop .amount .from{color:var(--ink-2)}
 .amount{font-family:var(--font-display);font-size:38px;font-weight:600;letter-spacing:-.03em;line-height:1;margin:0;font-variant-numeric:tabular-nums;white-space:nowrap}
 .amount small{display:block;font-family:var(--font-ui);font-size:14px;font-weight:600;letter-spacing:0;color:var(--ink-3);margin-top:6px}
 .amount .from{font-family:var(--font-ui);font-size:14px;font-weight:600;letter-spacing:0;color:var(--ink-3);margin-right:8px}
@@ -289,6 +291,7 @@ footer p + p{margin-top:8px}
 .result p{opacity:.9;font-size:15.5px}
 .note{font-size:13px;color:var(--ink-3);margin-top:6px}
 .table-wrap{overflow-x:auto;border-radius:18px}
+.table-wrap:focus-visible{outline:2px solid var(--chrys);outline-offset:3px}
 .vs{width:100%;border-collapse:separate;border-spacing:0;background:var(--raised);border:1px solid var(--line);border-radius:18px;overflow:hidden}
 .vs th,.vs td{padding:18px 24px;text-align:left;vertical-align:top;font-size:15.5px;border-top:1px solid var(--line)}
 .vs thead th{border-top:0;font-family:var(--font-display);font-weight:600;font-size:18px;background:var(--band)}
@@ -316,7 +319,7 @@ footer p + p{margin-top:8px}
 .row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .row2.cp{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)}
 .jf input[type=text],.jf input[type=tel],.jf input[type=email],.jf select{width:100%;height:52px;padding:0 16px;font:inherit;font-size:16px;color:var(--ink);background:var(--ground);border:1.5px solid var(--line);border-radius:12px;transition:border-color 160ms ease,background-color 160ms ease;appearance:none;-webkit-appearance:none}
-.jf select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2363706A' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:18px;padding-right:42px}
+.jf select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2356625C' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:18px;padding-right:42px}
 .jf input:focus,.jf select:focus{outline:none;border-color:var(--ink);background-color:var(--raised)}
 .jf input:focus-visible,.jf select:focus-visible{outline:2px solid var(--chrys);outline-offset:2px}
 .jf [aria-invalid=true]{border-color:#C2412D}
@@ -527,7 +530,7 @@ footer p + p{margin-top:8px}
 .guide .guide-cta p{color:inherit;opacity:.92;margin:0}
 .guide-cta .town-cta{margin-top:24px}
 .guide .guide-cta a.btn{color:var(--moss);font-weight:700}
-.guide .guide-cta a.btn-wa{color:#fff}
+.guide .guide-cta a.btn-wa{color:#06341A}
 .guide + .more-guides{margin-top:72px}
 @media (min-width:881px){.ledger .dates li{grid-template-columns:150px minmax(0,1fr) auto;gap:6px 24px}}
 .ledger-body > .dates:first-child{border-top:0}

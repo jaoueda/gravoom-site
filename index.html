@@ -24,10 +24,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400..800&display=swap">
-<link rel="stylesheet" href="/site.css?v=20261114b">
+<link rel="stylesheet" href="/site.css?v=20261114c">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://gravoom.com/#org", "name": "Gravoom", "legalName": "Advaltis Limited", "url": "https://gravoom.com/", "email": "info@gravoom.com", "image": "https://gravoom.com/brand/og-fr.jpg"}, {"@type": "Service", "name": "Entretien et fleurissement de tombes", "serviceType": "Entretien de sépulture", "url": "https://gravoom.com/", "provider": {"@id": "https://gravoom.com/#org"}, "areaServed": {"@type": "Country", "name": "France"}, "offers": [{"@type": "Offer", "name": "L’entretien", "price": "79", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Entretien et fleurs", "price": "99", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Les quatre saisons, quatre visites par an", "price": "349", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "La remise en état, à partir de", "price": "129", "priceCurrency": "EUR"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Et si je ne sais plus exactement où se trouve la tombe ?", "acceptedAnswer": {"@type": "Answer", "text": "Ce n’est pas grave, cela arrive souvent. Sur la carte, placez un repère là où vous pensez qu’elle se trouve, et dites-nous ce dont vous vous souvenez ; au besoin, nous consultons le registre du cimetière auprès de la mairie."}}, {"@type": "Question", "name": "Où intervenez-vous ?", "acceptedAnswer": {"@type": "Answer", "text": "Nous commençons dans le Nord : Douai, Somain, Aniche, Denain, Valenciennes et les communes alentour. Ailleurs en France, indiquez-nous la commune du cimetière : nous cherchons quelqu’un sur place et nous vous disons franchement si c’est possible."}}, {"@type": "Question", "name": "Et s’il n’y a encore personne près du cimetière ?", "acceptedAnswer": {"@type": "Answer", "text": "Nous vous le disons franchement, et nous cherchons quelqu’un dans le secteur. Vous ne payez rien tant que la visite n’est pas confirmée."}}, {"@type": "Question", "name": "Combien de temps à l’avance faut-il demander ?", "acceptedAnswer": {"@type": "Answer", "text": "Comptez environ une semaine. Pour la Toussaint, les Rameaux ou la fête des Mères, écrivez-nous deux à trois semaines avant."}}, {"@type": "Question", "name": "Puis-je choisir les fleurs ?", "acceptedAnswer": {"@type": "Answer", "text": "Bien sûr. Chrysanthème jaune, bronze ou violet, ou bouquet de saison : dites-nous simplement ce qui leur aurait plu."}}, {"@type": "Question", "name": "Comment se passe le paiement ?", "acceptedAnswer": {"@type": "Answer", "text": "Vous ne payez rien au moment de la demande. Une fois la visite confirmée, nous vous envoyons un lien de paiement sécurisé par carte bancaire ; le virement est aussi possible. Si la visite ne peut finalement pas avoir lieu, vous êtes intégralement remboursé. Le détail figure dans nos conditions générales de vente."}}, {"@type": "Question", "name": "Et si le résultat ne me convient pas ?", "acceptedAnswer": {"@type": "Answer", "text": "Dites-le-nous dans les sept jours qui suivent l’envoi des photos : nous repassons sans frais, ou nous vous remboursons."}}, {"@type": "Question", "name": "Quand vais-je recevoir les photos ?", "acceptedAnswer": {"@type": "Answer", "text": "Le jour même de la visite, par e-mail ou sur WhatsApp, avec le détail de ce qui a été fait."}}]}]}</script>
 <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("m-pre");setTimeout(function(){document.documentElement.classList.remove("m-pre")},1600)}</script>
-<script type="module" src="/motion.js?v=20261114b"></script>
+<link rel="modulepreload" href="/motion.js?v=20261114c">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/motion@14.9.0/+esm" crossorigin>
+<script type="module" src="/motion.js?v=20261114c"></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -277,6 +279,9 @@
       </div>
     </div>
   </section>
+<a class="fab" data-wa="visite" href="https://wa.me/447717536635" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp">
+  <span class="wa-dot"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg></span><span class="fab-label">WhatsApp</span>
+</a>
 </main>
 
 <dialog class="finder" id="finder" aria-labelledby="finder-title">
@@ -324,9 +329,6 @@
   </div>
 </dialog>
 
-<a class="fab" data-wa="visite" href="https://wa.me/447717536635" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp">
-  <span class="wa-dot"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg></span><span class="fab-label">WhatsApp</span>
-</a>
 
 <footer>
   <div class="wrap cols">
