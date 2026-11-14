@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400..800&display=swap">
-<link rel="stylesheet" href="/site.css?v=20261111">
+<link rel="stylesheet" href="/site.css?v=20261114">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://gravoom.com/#org", "name": "Gravoom", "legalName": "Advaltis Limited", "url": "https://gravoom.com/", "email": "info@gravoom.com", "image": "https://gravoom.com/brand/og-fr.jpg"}, {"@type": "Service", "name": "Entretien et fleurissement de tombes", "serviceType": "Entretien de sépulture", "url": "https://gravoom.com/", "provider": {"@id": "https://gravoom.com/#org"}, "areaServed": {"@type": "Country", "name": "France"}, "offers": [{"@type": "Offer", "name": "L’entretien", "price": "79", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Entretien et fleurs", "price": "99", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Les quatre saisons, quatre visites par an", "price": "349", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "La remise en état, à partir de", "price": "129", "priceCurrency": "EUR"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Et si je ne sais plus exactement où se trouve la tombe ?", "acceptedAnswer": {"@type": "Answer", "text": "Ce n’est pas grave, cela arrive souvent. Sur la carte, placez un repère là où vous pensez qu’elle se trouve, et dites-nous ce dont vous vous souvenez ; au besoin, nous consultons le registre du cimetière auprès de la mairie."}}, {"@type": "Question", "name": "Où intervenez-vous ?", "acceptedAnswer": {"@type": "Answer", "text": "Nous commençons dans le Nord : Douai, Somain, Aniche, Denain, Valenciennes et les communes alentour. Ailleurs en France, indiquez-nous la commune du cimetière : nous cherchons quelqu’un sur place et nous vous disons franchement si c’est possible."}}, {"@type": "Question", "name": "Et s’il n’y a encore personne près du cimetière ?", "acceptedAnswer": {"@type": "Answer", "text": "Nous vous le disons franchement, et nous cherchons quelqu’un dans le secteur. Vous ne payez rien tant que la visite n’est pas confirmée."}}, {"@type": "Question", "name": "Puis-je choisir les fleurs ?", "acceptedAnswer": {"@type": "Answer", "text": "Bien sûr. Chrysanthème jaune, bronze ou violet, ou bouquet de saison : dites-nous simplement ce qui leur aurait plu."}}, {"@type": "Question", "name": "Comment se passe le paiement ?", "acceptedAnswer": {"@type": "Answer", "text": "Vous ne payez rien au moment de la demande. Une fois la visite confirmée, nous vous envoyons un lien de paiement sécurisé par carte bancaire ; le virement est aussi possible. Si la visite ne peut finalement pas avoir lieu, vous êtes intégralement remboursé. Le détail figure dans nos conditions générales de vente."}}, {"@type": "Question", "name": "Et si le résultat ne me convient pas ?", "acceptedAnswer": {"@type": "Answer", "text": "Dites-le-nous dans les sept jours qui suivent l’envoi des photos : nous repassons sans frais, ou nous vous remboursons."}}, {"@type": "Question", "name": "Quand vais-je recevoir les photos ?", "acceptedAnswer": {"@type": "Answer", "text": "Le jour même de la visite, par e-mail ou sur WhatsApp, avec le détail de ce qui a été fait."}}]}]}</script>
 </head>
 <body>
@@ -131,7 +131,7 @@
           <span class="tag">Notre conseil</span>
           <h3>Les quatre saisons</h3>
           <p class="amount">349&nbsp;€ <small>par an</small></p>
-          <ul><li>Une visite à chaque saison, avec des fleurs</li><li>Une tombe soignée toute l’année</li><li>47&nbsp;€ de moins que quatre visites séparées</li></ul>
+          <ul><li>Une visite à chaque saison, avec des fleurs</li><li>Une tombe soignée toute l’année</li><li>47&nbsp;€ de moins que quatre visites séparées</li><li>Moins d’un euro par jour</li></ul>
           <a class="btn btn-primary" data-mail="saisons" data-finder="saisons" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Choisir les quatre saisons</a>
         </article>
         <article class="price">
@@ -157,7 +157,32 @@
     </div>
   </section>
 
-  <section>
+  <section id="dates">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Les dates qui comptent</p>
+        <h2>Des fleurs le jour où vous pensez à eux</h2>
+        <p>Comptez environ une semaine pour organiser une visite, et deux à trois semaines avant la Toussaint, les Rameaux ou la fête des Mères.</p>
+      </div>
+      <ul class="dates" id="dates-list" data-locale="fr-FR" data-next="Prochaine date">
+          <li data-date="rameaux"><span class="when">Mars ou avril</span><div><h3>Les Rameaux</h3><p>Dans le Nord, on fleurit les tombes aux Rameaux comme à la Toussaint. Un bouquet de printemps, sur une pierre nettoyée après l’hiver.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="Les Rameaux" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Demander<span class="sr"> une visite pour les Rameaux</span></a></li>
+          <li data-date="meres"><span class="when">Fin mai</span><div><h3>La fête des Mères</h3><p>Des fleurs pour elle, déposées ce week-end-là.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="La fête des Mères" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Demander<span class="sr"> une visite pour la fête des Mères</span></a></li>
+          <li data-date="peres"><span class="when">En juin</span><div><h3>La fête des Pères</h3><p>Une visite et des fleurs pour lui.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="La fête des Pères" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Demander<span class="sr"> une visite pour la fête des Pères</span></a></li>
+          <li data-date="toussaint"><span class="when">1er novembre</span><div><h3>La Toussaint</h3><p>Des chrysanthèmes sur une tombe propre. C’est la période la plus chargée de l’année dans les cimetières&nbsp;: écrivez-nous dès le début d’octobre.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="La Toussaint" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Demander<span class="sr"> une visite pour la Toussaint</span></a></li>
+          <li data-date="noel"><span class="when">25 décembre</span><div><h3>Noël</h3><p>Un bouquet de saison pour les fêtes, et des photos à partager en famille.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="Noël" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Demander<span class="sr"> une visite pour Noël</span></a></li>
+          <li data-date="perso"><span class="when">Votre date</span><div><h3>Une date à vous</h3><p>Un anniversaire, la date d’un départ, un anniversaire de mariage&nbsp;: dites-nous le jour qui compte.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Demander<span class="sr"> une visite pour une date à vous</span></a></li>
+      </ul>
+      <div class="price-wide">
+        <div>
+          <h3>Pour un parent qui ne peut plus se rendre au cimetière</h3>
+          <p>Offrez-lui la visite. Vous faites la demande et vous réglez&nbsp;; nous envoyons les photos à la personne de votre choix, le jour même.</p>
+        </div>
+        <a class="btn btn-ghost" data-mail="visite" data-finder="visite" data-occasion="Cadeau, photos à envoyer à : " href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Offrir une visite</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Notre engagement</p>
@@ -213,6 +238,15 @@
         <details><summary>Comment se passe le paiement&nbsp;?</summary><p>Vous ne payez rien au moment de la demande. Une fois la visite confirmée, nous vous envoyons un lien de paiement sécurisé par carte bancaire&nbsp;; le virement est aussi possible. Si la visite ne peut finalement pas avoir lieu, vous êtes intégralement remboursé. Le détail figure dans nos <a href="/cgv/">conditions générales de vente</a>.</p></details>
         <details><summary>Et si le résultat ne me convient pas&nbsp;?</summary><p>Dites-le-nous dans les sept jours qui suivent l’envoi des photos&nbsp;: nous repassons sans frais, ou nous vous remboursons.</p></details>
         <details><summary>Quand vais-je recevoir les photos&nbsp;?</summary><p>Le jour même de la visite, par e-mail ou sur WhatsApp, avec le détail de ce qui a été fait.</p></details>
+      </div>
+      <div class="more-guides">
+        <h3>Nos conseils pour entretenir une tombe</h3>
+        <ul class="guide-list">
+          <li><a href="/conseils/nettoyer-une-tombe/"><b>Nettoyer une tombe sans abîmer la pierre</b><span>Granit, marbre, pierre bleue&nbsp;: les bons gestes et les produits à éviter.</span></a></li>
+          <li><a href="/conseils/qui-doit-entretenir-une-tombe/"><b>Qui doit entretenir une tombe&nbsp;?</b><span>Ce que dit la loi, et ce que risque une tombe laissée à l’abandon.</span></a></li>
+          <li><a href="/conseils/fleurir-une-tombe-a-distance/"><b>Fleurir une tombe à distance</b><span>Les solutions quand on vit loin, et ce qu’il faut préparer.</span></a></li>
+          <li><a href="/conseils/"><b>Tous nos conseils</b><span>Fleurs de saison, prix, démarches.</span></a></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -270,6 +304,8 @@
         <option value="nettoyage">L’entretien, 79&nbsp;€</option>
         <option value="remise">La remise en état, à partir de 129&nbsp;€</option>
       </select>
+      <label class="sr" for="fd-date">Date ou occasion souhaitée</label>
+      <input id="fd-date" type="text" placeholder="Date ou occasion souhaitée (facultatif)" autocomplete="off">
       <p class="fd-err" id="fd-err" aria-live="assertive"></p>
       <div class="fd-send">
         <button class="btn btn-wa" type="button" data-send="wa"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Envoyer sur WhatsApp</button>
@@ -290,7 +326,7 @@
       <p class="tagline">Loin des yeux, jamais loin du cœur. Entretien et fleurissement de tombes, partout en France.</p>
     </div>
     <div>
-      <p class="links"><a href="/">Gravoom pour les familles</a><a href="/devenir-gravoomer/">Devenir Gravoomer</a><a href="#tarifs">Nos tarifs</a><a href="#contact">Contact</a><a href="/cgv/">Conditions générales de vente</a><a href="/mentions-legales/">Mentions légales</a><a href="/en/" hreflang="en" lang="en">English</a></p>
+      <p class="links"><a href="/">Gravoom pour les familles</a><a href="/devenir-gravoomer/">Devenir Gravoomer</a><a href="#tarifs">Nos tarifs</a><a href="#contact">Contact</a><a href="/conseils/">Conseils</a><a href="/partenaires/">Partenaires</a><a href="/cgv/">Conditions générales de vente</a><a href="/mentions-legales/">Mentions légales</a><a href="/en/" hreflang="en" lang="en">English</a></p>
       <p class="near">Dans le Nord&nbsp;: <a href="/entretien-tombe-douai/">Douai</a><a href="/entretien-tombe-somain/">Somain</a><a href="/entretien-tombe-aniche/">Aniche</a><a href="/entretien-tombe-denain/">Denain</a><a href="/entretien-tombe-valenciennes/">Valenciennes</a></p>
       <p>Gravoom est une marque d’Advaltis Limited. © <span id="year">2026</span> Gravoom.</p>
     </div>
@@ -438,8 +474,9 @@
     map.flyToBounds(x.poly.getBounds(), {padding: [30, 30], maxZoom: 19, duration: .9});
     if (!st.pin) hint.textContent = 'Touchez l’endroit de la tombe pour y placer un repère (facultatif).';
   }
-  function openFinder(q, kind){
+  function openFinder(q, kind, occ){
     finder.showModal();
+    if (occ != null) $('fd-date').value = occ;
     if (kind && kind !== 'visite') $('fd-formule').value = kind;
     if (q) $('fd-q').value = q;
     hint.textContent = 'Chargement de la carte…';
@@ -451,11 +488,11 @@
   $('fd-town').addEventListener('submit', function(e){ e.preventDefault(); if (map) searchTown($('fd-q').value); });
   finder.querySelector('.fd-close').addEventListener('click', function(){ finder.close(); });
   finder.addEventListener('click', function(e){ if (e.target === finder) finder.close(); });
-  var qp = new URLSearchParams(window.location.search).get('commune');
-  if (qp && window.HTMLDialogElement) openFinder(qp.slice(0, 60), 'visite');
+  var qs = new URLSearchParams(window.location.search), qp = qs.get('commune'), qf = qs.get('formule');
+  if ((qp || qs.has('visite')) && window.HTMLDialogElement) openFinder((qp || '').slice(0, 60), services[qf] ? qf : 'visite');
   document.getElementById('lookup').addEventListener('submit', function(e){ e.preventDefault(); openFinder(document.getElementById('lookup-q').value.trim(), 'visite'); });
   document.querySelectorAll('[data-finder]').forEach(function(a){
-    a.addEventListener('click', function(e){ if (!window.HTMLDialogElement) return; e.preventDefault(); openFinder('', a.getAttribute('data-finder')); });
+    a.addEventListener('click', function(e){ if (!window.HTMLDialogElement) return; e.preventDefault(); openFinder('', a.getAttribute('data-finder'), a.getAttribute('data-occasion')); });
   });
   function gmaps(ll){ return 'https://www.google.com/maps?q=' + ll.lat.toFixed(6) + ',' + ll.lng.toFixed(6); }
   finder.querySelectorAll('[data-send]').forEach(function(b){
@@ -468,11 +505,39 @@
       else lines.push('• Plan du cimetière : ' + gmaps({lat: st.cem.c[0], lng: st.cem.c[1]}));
       var nom = $('fd-nom').value.trim(); if (nom) lines.push('• Nom inscrit sur la tombe : ' + nom);
       var f = $('fd-formule').value; lines.push('• Formule : ' + (services[f] || 'je ne sais pas encore'));
+      var when = $('fd-date').value.trim(); if (when) lines.push('• Date ou occasion : ' + when);
       var text = lines.join('\n');
       if (b.getAttribute('data-send') === 'mail') window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent('Demande de visite : ' + t.nom) + '&body=' + encodeURIComponent(text + '\n\nMerci beaucoup,\n');
       else window.open('https://wa.me/' + wa + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
     });
   });
+
+  /* ---------- dates that matter: real dates, next one first ---------- */
+  var dl = document.getElementById('dates-list');
+  if (dl){
+    var now = new Date(), today = new Date(now.getFullYear(), now.getMonth(), now.getDate()), loc = dl.getAttribute('data-locale');
+    var add = function(d, n){ return new Date(d.getFullYear(), d.getMonth(), d.getDate() + n); };
+    var easter = function(y){ var a = y % 19, b = Math.floor(y / 100), c = y % 100, d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25), g = Math.floor((b - f + 1) / 3), h = (19 * a + b - d - g + 15) % 30, i = Math.floor(c / 4), k = c % 4, l = (32 + 2 * e + 2 * i - h - k) % 7, m = Math.floor((a + 11 * h + 22 * l) / 451), n = h + l - 7 * m + 114; return new Date(y, Math.floor(n / 31) - 1, n % 31 + 1); };
+    var nthSun = function(y, m, n){ return new Date(y, m, 1 + (7 - new Date(y, m, 1).getDay()) % 7 + 7 * (n - 1)); };
+    var lastSun = function(y, m){ var d = new Date(y, m + 1, 0); return add(d, -d.getDay()); };
+    var calc = {
+      rameaux: function(y){ return add(easter(y), -7); },
+      meres: function(y){ var d = lastSun(y, 4); return +d === +add(easter(y), 49) ? nthSun(y, 5, 1) : d; },
+      peres: function(y){ return nthSun(y, 5, 3); },
+      toussaint: function(y){ return new Date(y, 10, 1); },
+      noel: function(y){ return new Date(y, 11, 25); }
+    };
+    var rows = [].slice.call(dl.children), yr = today.getFullYear();
+    rows.forEach(function(li){
+      var fn = calc[li.getAttribute('data-date')]; li._t = Infinity; if (!fn) return;
+      var d = fn(yr); if (d < today) d = fn(yr + 1); li._t = +d;
+      var s = d.toLocaleDateString(loc, {day: 'numeric', month: 'long'});
+      if (loc === 'fr-FR') s = s.replace(/^1 /, '1er ');
+      li.querySelector('.when').textContent = s;
+    });
+    rows.sort(function(a, b){ return a._t - b._t; }).forEach(function(li){ dl.appendChild(li); });
+    if (rows[0]._t < Infinity){ var tag = document.createElement('small'); tag.textContent = dl.getAttribute('data-next'); rows[0].querySelector('.when').appendChild(tag); }
+  }
 
   var header = document.querySelector('header'), fab = document.querySelector('.fab'), contact = document.getElementById('contact');
   function onScroll(){ header.classList.toggle('is-scrolled', window.scrollY > 8); }

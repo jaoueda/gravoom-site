@@ -25,3 +25,9 @@ The setup has three parts.
 ## Checks before finishing
 - Keep the layout working at phone width (no horizontal scroll) and keep keyboard focus visible.
 - Bump the `site.css?v=` query string on every page when `site.css` changes.
+
+## Content map
+- `/conseils/` holds the French guides (SEO articles) and `/en/grave-care-in-france/` the English guide. `/partenaires/` is the page for professionals. They are plain HTML like every other page.
+- When you add or rename a page, update `sitemap.xml` and the footer links on every page.
+- Facts in the guides (law, dates, prices) must be true and must match `/cgv/`. Don't invent testimonials, figures or partner terms.
+- The home page opens the visit request from a link: `/?visite`, `/?commune=Douai`, `/?visite&formule=saisons`.
