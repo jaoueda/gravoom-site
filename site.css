@@ -395,6 +395,15 @@ footer p + p{margin-top:8px}
 .fd-send .btn{width:100%}
 .fd-err{color:#B33A27;font-size:13.5px;font-weight:600}
 .fd-err:empty{display:none}
+.fd-side > [hidden]{display:none}
+.fd-side > .btn{width:100%}
+.fd-fine{font-size:13.5px;color:var(--ink-3)}
+.fd-done{text-align:center;padding:36px 8px;display:grid;gap:12px;justify-items:center}
+.fd-done .big-tick{width:56px;height:56px;border-radius:50%;background:var(--moss);color:var(--on-moss);display:grid;place-items:center;font-size:26px;font-weight:800}
+.fd-done h3{font-size:24px}
+.fd-done p{color:var(--ink-2);font-size:15.5px;max-width:30em}
+.fd-done:focus{outline:none}
+.finder.is-sent .fd-side > :not(.fd-done){display:none}
 .fd-num{width:30px;height:30px;border-radius:50%;background:var(--moss);color:#fff;display:grid;place-items:center;font:800 13px/1 var(--font-ui);border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.35)}
 .fd-num.on{background:var(--chrys)}
 .fd-pin{width:34px;height:44px}

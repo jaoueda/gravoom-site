@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400..800&display=swap">
-<link rel="stylesheet" href="/site.css?v=20261114c">
+<link rel="stylesheet" href="/site.css?v=20261115">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://gravoom.com/#org", "name": "Gravoom", "legalName": "Advaltis Limited", "url": "https://gravoom.com/", "email": "info@gravoom.com", "image": "https://gravoom.com/brand/og-fr.jpg"}, {"@type": "Service", "name": "Entretien et fleurissement de tombes", "serviceType": "Entretien de sépulture", "url": "https://gravoom.com/", "provider": {"@id": "https://gravoom.com/#org"}, "areaServed": {"@type": "Country", "name": "France"}, "offers": [{"@type": "Offer", "name": "L’entretien", "price": "79", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Entretien et fleurs", "price": "99", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Les quatre saisons, quatre visites par an", "price": "349", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "La remise en état, à partir de", "price": "129", "priceCurrency": "EUR"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Et si je ne sais plus exactement où se trouve la tombe ?", "acceptedAnswer": {"@type": "Answer", "text": "Ce n’est pas grave, cela arrive souvent. Sur la carte, placez un repère là où vous pensez qu’elle se trouve, et dites-nous ce dont vous vous souvenez ; au besoin, nous consultons le registre du cimetière auprès de la mairie."}}, {"@type": "Question", "name": "Où intervenez-vous ?", "acceptedAnswer": {"@type": "Answer", "text": "Nous commençons dans le Nord : Douai, Somain, Aniche, Denain, Valenciennes et les communes alentour. Ailleurs en France, indiquez-nous la commune du cimetière : nous cherchons quelqu’un sur place et nous vous disons franchement si c’est possible."}}, {"@type": "Question", "name": "Et s’il n’y a encore personne près du cimetière ?", "acceptedAnswer": {"@type": "Answer", "text": "Nous vous le disons franchement, et nous cherchons quelqu’un dans le secteur. Vous ne payez rien tant que la visite n’est pas confirmée."}}, {"@type": "Question", "name": "Combien de temps à l’avance faut-il demander ?", "acceptedAnswer": {"@type": "Answer", "text": "Comptez environ une semaine. Pour la Toussaint, les Rameaux ou la fête des Mères, écrivez-nous deux à trois semaines avant."}}, {"@type": "Question", "name": "Puis-je choisir les fleurs ?", "acceptedAnswer": {"@type": "Answer", "text": "Bien sûr. Chrysanthème jaune, bronze ou violet, ou bouquet de saison : dites-nous simplement ce qui leur aurait plu."}}, {"@type": "Question", "name": "Comment se passe le paiement ?", "acceptedAnswer": {"@type": "Answer", "text": "Vous ne payez rien au moment de la demande. Une fois la visite confirmée, nous vous envoyons un lien de paiement sécurisé par carte bancaire ; le virement est aussi possible. Si la visite ne peut finalement pas avoir lieu, vous êtes intégralement remboursé. Le détail figure dans nos conditions générales de vente."}}, {"@type": "Question", "name": "Et si le résultat ne me convient pas ?", "acceptedAnswer": {"@type": "Answer", "text": "Dites-le-nous dans les sept jours qui suivent l’envoi des photos : nous repassons sans frais, ou nous vous remboursons."}}, {"@type": "Question", "name": "Quand vais-je recevoir les photos ?", "acceptedAnswer": {"@type": "Answer", "text": "Le jour même de la visite, par e-mail ou sur WhatsApp, avec le détail de ce qui a été fait."}}]}]}</script>
 <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("m-pre");setTimeout(function(){document.documentElement.classList.remove("m-pre")},1600)}</script>
 <link rel="modulepreload" href="/motion.js?v=20261114c">
@@ -320,10 +320,22 @@
       </select>
       <label class="sr" for="fd-date">Date ou occasion souhaitée</label>
       <input id="fd-date" type="text" placeholder="Date ou occasion souhaitée (facultatif)" autocomplete="off">
+      <p class="fd-step" data-direct hidden><i>5</i>Pour vous répondre</p>
+      <label class="sr" for="fd-contact">Votre e-mail ou votre téléphone</label>
+      <input id="fd-contact" type="text" placeholder="Votre e-mail ou votre téléphone" autocomplete="email" data-direct hidden>
+      <input id="fd-hp" type="checkbox" class="sr" tabindex="-1" autocomplete="off" aria-hidden="true">
       <p class="fd-err" id="fd-err" aria-live="assertive"></p>
+      <button class="btn btn-primary" type="button" data-send="form" data-direct hidden>Envoyer ma demande</button>
+      <p class="fd-fine" data-direct hidden>Votre demande nous arrive par e-mail. Vous pouvez aussi l’envoyer vous-même&nbsp;:</p>
       <div class="fd-send">
         <button class="btn btn-wa" type="button" data-send="wa"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Envoyer sur WhatsApp</button>
         <button class="btn btn-ghost" type="button" data-send="mail">Par e-mail</button>
+      </div>
+      <div class="fd-done" id="fd-done" tabindex="-1" hidden>
+        <span class="big-tick" aria-hidden="true">✓</span>
+        <h3>Demande envoyée</h3>
+        <p>Nous vous répondons rapidement, à l’adresse ou au numéro que vous avez indiqué, pour confirmer la date et le prix. Vous ne payez rien avant cette confirmation.</p>
+        <button class="btn btn-ghost" type="button" data-close>Fermer</button>
       </div>
     </div>
   </div>
@@ -347,6 +359,7 @@
 <script>
 (function(){
   var to = 'info@gravoom.com', wa = '447717536635';
+  var formKey = '5d5cfab4-2385-4321-a14e-1384bbefaed3'; /* Web3Forms access key: public by design; the direct request form is hidden if this is empty */
   var services = {visite:'', nettoyage:'L’entretien (79 €)', fleurs:'Entretien et fleurs (99 €)', saisons:'Les quatre saisons (349 € par an)', remise:'La remise en état (à partir de 129 €)'};
   document.querySelectorAll('[data-mail]').forEach(function(a){
     var kind = a.getAttribute('data-mail'), subject, body;
@@ -487,6 +500,7 @@
   }
   function openFinder(q, kind, occ){
     finder.showModal();
+    finder.classList.remove('is-sent'); $('fd-done').hidden = true;
     if (occ != null) $('fd-date').value = occ;
     if (kind && kind !== 'visite') $('fd-formule').value = kind;
     if (q) $('fd-q').value = q;
@@ -498,6 +512,8 @@
   }
   $('fd-town').addEventListener('submit', function(e){ e.preventDefault(); if (map) searchTown($('fd-q').value); });
   finder.querySelector('.fd-close').addEventListener('click', function(){ finder.close(); });
+  finder.querySelector('[data-close]').addEventListener('click', function(){ finder.close(); });
+  if (formKey) finder.querySelectorAll('[data-direct]').forEach(function(el){ el.hidden = false; });
   finder.addEventListener('click', function(e){ if (e.target === finder) finder.close(); });
   var qs = new URLSearchParams(window.location.search), qp = qs.get('commune'), qf = qs.get('formule');
   if ((qp || qs.has('visite')) && window.HTMLDialogElement) openFinder((qp || '').slice(0, 60), services[qf] ? qf : 'visite');
@@ -518,6 +534,19 @@
       var f = $('fd-formule').value; lines.push('• Formule : ' + (services[f] || 'je ne sais pas encore'));
       var when = $('fd-date').value.trim(); if (when) lines.push('• Date ou occasion : ' + when);
       var text = lines.join('\n');
+      if (b.getAttribute('data-send') === 'form'){
+        var c = $('fd-contact').value.trim(), isMail = /^\S+@\S+\.\S+$/.test(c);
+        if (!isMail && c.replace(/\D/g, '').length < 8){ err.textContent = 'Indiquez un e-mail ou un numéro de téléphone pour que nous puissions vous répondre.'; $('fd-contact').focus(); return; }
+        var label = b.textContent, body = {access_key: formKey, subject: 'Demande de visite : ' + t.nom, from_name: 'gravoom.com', message: text + '\n• Pour me répondre : ' + c, botcheck: $('fd-hp').checked};
+        if (isMail) body.email = c;
+        err.textContent = ''; b.disabled = true; b.textContent = 'Envoi…';
+        fetch('https://api.web3forms.com/submit', {method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify(body)})
+          .then(function(r){ return r.json(); })
+          .then(function(j){ if (!j.success) throw new Error('refused'); finder.classList.add('is-sent'); var d = $('fd-done'); d.hidden = false; d.focus(); })
+          .catch(function(){ err.textContent = 'L’envoi n’a pas abouti. Réessayez, ou envoyez votre demande sur WhatsApp ou par e-mail.'; })
+          .then(function(){ b.disabled = false; b.textContent = label; });
+        return;
+      }
       if (b.getAttribute('data-send') === 'mail') window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent('Demande de visite : ' + t.nom) + '&body=' + encodeURIComponent(text + '\n\nMerci beaucoup,\n');
       else window.open('https://wa.me/' + wa + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
     });
