@@ -336,6 +336,9 @@ footer p + p{margin-top:8px}
 .jf .send{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:4px}
 .jf .send .btn{width:100%}
 .jf .fine{font-size:13px;color:var(--ink-3)}
+.jf > .btn{width:100%}
+.jf .form-err{color:#B33A27;font-size:13.5px;font-weight:600}
+.jf .form-err:empty{display:none}
 .jf [hidden],.jf[hidden]{display:none!important}
 .done{text-align:center;padding:26px 6px}
 .done .big-tick{width:64px;height:64px;border-radius:50%;background:var(--moss);color:var(--on-moss);display:grid;place-items:center;margin:0 auto 16px;font-size:30px;font-weight:800}

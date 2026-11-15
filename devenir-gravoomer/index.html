@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400..800&display=swap">
-<link rel="stylesheet" href="/site.css?v=20261115">
+<link rel="stylesheet" href="/site.css?v=20261115b">
 <link rel="modulepreload" href="/motion.js?v=20261114c">
 <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/motion@14.9.0/+esm" crossorigin>
 <script type="module" src="/motion.js?v=20261114c"></script>
@@ -127,6 +127,10 @@
             <option>J’ai déjà une entreprise</option>
           </select>
         </div>
+        <input id="jf-hp" type="checkbox" class="sr" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="form-err" id="jf-err" aria-live="assertive"></p>
+        <button class="btn btn-primary" type="submit" data-via="form">Envoyer mon inscription</button>
+        <p class="fine">Vous pouvez aussi l’envoyer vous-même&nbsp;:</p>
         <div class="send">
           <button class="btn btn-wa" type="submit" data-via="wa"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Envoyer sur WhatsApp</button>
           <button class="btn btn-ghost" type="submit" data-via="mail">Par e-mail</button>
@@ -135,8 +139,8 @@
       </form>
       <div class="jf done" id="jf-done" hidden tabindex="-1">
         <div class="big-tick" aria-hidden="true">✓</div>
-        <h3>Votre message est prêt</h3>
-        <p>Il ne vous reste qu’à appuyer sur «&nbsp;Envoyer&nbsp;» dans WhatsApp ou dans votre messagerie. Nous vous rappelons très vite.</p>
+        <h3 id="jf-done-h">Votre message est prêt</h3>
+        <p id="jf-done-p">Il ne vous reste qu’à appuyer sur «&nbsp;Envoyer&nbsp;» dans WhatsApp ou dans votre messagerie. Nous vous rappelons très vite.</p>
         <p style="margin-top:18px"><button class="btn btn-ghost" type="button" id="jf-again">Modifier mes réponses</button></p>
       </div>
       </div>
@@ -397,7 +401,8 @@
       })
       .catch(function(){ commune.innerHTML = '<option value="">Commune indiquée avec le code postal</option>'; });
   });
-  var via = 'wa';
+  var via = 'form', formKey = '5d5cfab4-2385-4321-a14e-1384bbefaed3'; /* Web3Forms access key, public by design */
+  var doneH = document.getElementById('jf-done-h'), doneP = document.getElementById('jf-done-p'), doneOwn = [doneH.textContent, doneP.innerHTML], jfErr = document.getElementById('jf-err');
   form.querySelectorAll('button[type=submit]').forEach(function(b){ b.addEventListener('click', function(){ via = b.getAttribute('data-via'); }); });
   function check(id, ok){ var f = form.querySelector('[data-f=' + id + ']'), i = f.querySelector('input'); f.classList.toggle('has-err', !ok); i.setAttribute('aria-invalid', String(!ok)); return ok; }
   form.addEventListener('submit', function(e){
@@ -419,6 +424,18 @@
       '• Téléphone : ' + tel
     ];
     var text = lines.join('\n');
+    jfErr.textContent = '';
+    if (via === 'form'){
+      var sb = form.querySelector('[data-via=form]'), label = sb.textContent;
+      sb.disabled = true; sb.textContent = 'Envoi…';
+      fetch('https://api.web3forms.com/submit', {method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify({access_key: formKey, subject: (profil() === 'Professionnel' ? 'Partenariat' : 'Devenir Gravoomer') + ' : ' + cp.value, from_name: 'gravoom.com', message: text, botcheck: document.getElementById('jf-hp').checked})})
+        .then(function(r){ return r.json(); })
+        .then(function(j){ if (!j.success) throw new Error('refused'); doneH.textContent = 'Inscription envoyée'; doneP.textContent = 'Nous vous rappelons très vite pour faire connaissance.'; form.hidden = true; done.hidden = false; done.focus(); })
+        .catch(function(){ jfErr.textContent = 'L’envoi n’a pas abouti. Réessayez, ou envoyez votre inscription sur WhatsApp ou par e-mail.'; })
+        .then(function(){ sb.disabled = false; sb.textContent = label; });
+      return;
+    }
+    doneH.textContent = doneOwn[0]; doneP.innerHTML = doneOwn[1];
     var url = via === 'mail'
       ? 'mailto:' + to + '?subject=' + encodeURIComponent((profil() === 'Professionnel' ? 'Partenariat' : 'Devenir Gravoomer') + ' : ' + cp.value) + '&body=' + encodeURIComponent(text + '\n\nMerci et à bientôt,\n')
       : 'https://wa.me/' + wa + '?text=' + encodeURIComponent(text);
