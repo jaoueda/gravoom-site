@@ -592,3 +592,8 @@ footer p + p{margin-top:8px}
 }
 footer .near{display:flex;flex-wrap:wrap;gap:4px 14px}
 footer .near a{margin-right:0}
+.story{margin:0 0 40px;padding:0 0 36px;border-bottom:1px solid var(--line)}
+.story blockquote{margin:0;padding-left:22px;border-left:3px solid var(--chrys)}
+.story blockquote p{font-size:clamp(18px,1.7vw,21px);line-height:1.55;color:var(--ink)}
+.story blockquote p + p{margin-top:14px}
+.story figcaption{margin-top:16px;padding-left:25px;font-size:15px;color:var(--ink-3)}
