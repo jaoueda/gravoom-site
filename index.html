@@ -23,7 +23,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M10 25V12a6 6 0 0 1 12 0v13' fill='none' stroke='%2317211D' stroke-width='2'/%3E%3Crect x='7' y='25.5' width='18' height='2.5' fill='none' stroke='%2317211D' stroke-width='1.6'/%3E%3C/svg%3E">
 <link rel="preload" href="/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/site.css?v=20261123e">
+<link rel="stylesheet" href="/site.css?v=20261123f">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://gravoom.com/#org", "name": "Gravoom", "legalName": "Advaltis Limited", "url": "https://gravoom.com/", "email": "info@gravoom.com", "image": "https://gravoom.com/brand/og-fr.jpg"}, {"@type": "Service", "name": "Entretien et fleurissement de tombes", "serviceType": "Entretien de sépulture", "url": "https://gravoom.com/", "provider": {"@id": "https://gravoom.com/#org"}, "areaServed": {"@type": "Country", "name": "France"}, "offers": [{"@type": "Offer", "name": "L’entretien", "price": "79", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Entretien et fleurs", "price": "99", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Les quatre saisons, quatre visites par an", "price": "349", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "La remise en état, à partir de", "price": "129", "priceCurrency": "EUR"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Et si je ne sais plus exactement où se trouve la tombe ?", "acceptedAnswer": {"@type": "Answer", "text": "Ce n’est pas grave, cela arrive souvent. Sur la carte, placez un repère là où vous pensez qu’elle se trouve, et dites-nous ce dont vous vous souvenez ; au besoin, nous consultons le registre du cimetière auprès de la mairie."}}, {"@type": "Question", "name": "Où intervenez-vous ?", "acceptedAnswer": {"@type": "Answer", "text": "Nous commençons dans le Nord : Douai, Somain, Aniche, Denain, Valenciennes et les communes alentour. Ailleurs en France, indiquez-nous la commune du cimetière : nous cherchons quelqu’un sur place et nous vous disons franchement si c’est possible."}}, {"@type": "Question", "name": "Et s’il n’y a encore personne près du cimetière ?", "acceptedAnswer": {"@type": "Answer", "text": "Nous vous le disons franchement, et nous cherchons quelqu’un dans le secteur. Vous ne payez rien tant que la visite n’est pas confirmée."}}, {"@type": "Question", "name": "Combien de temps à l’avance faut-il demander ?", "acceptedAnswer": {"@type": "Answer", "text": "Comptez environ une semaine. Pour la Toussaint, les Rameaux ou la fête des Mères, écrivez-nous deux à trois semaines avant."}}, {"@type": "Question", "name": "Puis-je choisir les fleurs ?", "acceptedAnswer": {"@type": "Answer", "text": "Bien sûr. Chrysanthème jaune, bronze ou violet, ou bouquet de saison : dites-nous simplement ce qui leur aurait plu."}}, {"@type": "Question", "name": "Puis-je demander seulement l’entretien, sans fleurs ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. L’entretien seul, à 79 €, comprend le nettoyage de la pierre, de la plaque et de l’entourage, et les photos avant et après. Beaucoup de familles préfèrent une tombe simplement propre et soignée."}}, {"@type": "Question", "name": "Comment se passe le paiement ?", "acceptedAnswer": {"@type": "Answer", "text": "Vous ne payez rien au moment de la demande. Une fois la visite confirmée, nous vous envoyons un lien de paiement sécurisé Stripe, par carte bancaire ; le virement est aussi possible. Si la visite ne peut finalement pas avoir lieu, vous êtes intégralement remboursé. Le détail figure dans nos conditions générales de vente."}}, {"@type": "Question", "name": "Et si le résultat ne me convient pas ?", "acceptedAnswer": {"@type": "Answer", "text": "Dites-le-nous dans les sept jours qui suivent l’envoi des photos : nous repassons sans frais, ou nous vous remboursons."}}, {"@type": "Question", "name": "Quand vais-je recevoir les photos ?", "acceptedAnswer": {"@type": "Answer", "text": "Le jour même de la visite, par e-mail ou sur WhatsApp, avec le détail de ce qui a été fait."}}]}]}</script>
 <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("m-pre");setTimeout(function(){document.documentElement.classList.remove("m-pre")},1600)}</script>
 <link rel="modulepreload" href="/motion.js?v=20261114c">
@@ -357,6 +357,7 @@
       <div class="fd-done" id="fd-done" tabindex="-1" hidden>
         <span class="big-tick" aria-hidden="true">✓</span>
         <h3>Demande envoyée</h3>
+        <p class="fd-ref">Votre référence&nbsp;: <strong id="fd-ref"></strong></p>
         <p>Nous vous répondons rapidement, à l’adresse ou au numéro que vous avez indiqué, pour confirmer la date et le prix. Vous ne payez rien avant cette confirmation.</p>
         <button class="btn btn-ghost" type="button" data-close>Fermer</button>
       </div>
@@ -401,7 +402,14 @@
 
   /* ---------- cemetery finder ---------- */
   var finder = document.getElementById('finder'), map, layers, cemLayer, pin, leafletReady;
-  var st = {town: null, cems: [], cem: null, pin: null};
+  var st = {town: null, cems: [], cem: null, pin: null, ref: null};
+  /* Request reference, e.g. GRV-1123-K7Q: date + 3 unambiguous characters (no database, so not sequential) */
+  function makeRef(){
+    var d = new Date(), a = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789', r = '', n = new Uint32Array(3);
+    (window.crypto || window.msCrypto).getRandomValues(n);
+    for (var i = 0; i < 3; i++) r += a[n[i] % a.length];
+    return 'GRV-' + ('0' + (d.getMonth() + 1)).slice(-2) + ('0' + d.getDate()).slice(-2) + '-' + r;
+  }
   var $ = function(id){ return document.getElementById(id); };
   var hint = $('fd-hint'), err = $('fd-err');
   var IGN = 'https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&LAYER=';
@@ -523,7 +531,7 @@
   }
   function openFinder(q, kind, occ){
     finder.showModal();
-    finder.classList.remove('is-sent'); $('fd-done').hidden = true;
+    finder.classList.remove('is-sent'); $('fd-done').hidden = true; st.ref = null;
     if (occ != null) $('fd-date').value = occ;
     if (kind && kind !== 'visite') $('fd-formule').value = kind;
     if (q) $('fd-q').value = q;
@@ -549,7 +557,7 @@
     b.addEventListener('click', function(){
       if (!st.town){ err.textContent = 'Indiquez d’abord la commune du cimetière.'; $('fd-q').focus(); return; }
       if (!st.cem && !st.pin){ err.textContent = st.cems.length ? 'Choisissez le cimetière, ou placez un repère sur la carte.' : 'Touchez la carte à l’endroit du cimetière.'; return; }
-      var t = st.town, lines = ['Bonjour, je souhaiterais que vous preniez soin de la tombe de mes proches.', ''];
+      var t = st.town, ref = st.ref || (st.ref = makeRef()), lines = ['Bonjour, je souhaiterais que vous preniez soin de la tombe de mes proches.', '', '• Référence : ' + ref];
       lines.push('• Cimetière : ' + (st.cem ? cemName(st.cem) + (st.cem.f.properties.toponyme && st.cem.street ? ' (' + st.cem.street + ')' : '') + ', ' : '') + (st.cem && !st.cem.own && st.cem.city || t.nom) + ' (' + (t.codesPostaux[0] || t.codeDepartement) + ')');
       if (st.pin) lines.push('• Emplacement de la tombe (repère sur la carte) : ' + gmaps(st.pin));
       else lines.push('• Plan du cimetière : ' + gmaps({lat: st.cem.c[0], lng: st.cem.c[1]}));
@@ -562,17 +570,17 @@
       if (b.getAttribute('data-send') === 'form'){
         var c = $('fd-contact').value.trim(), isMail = /^\S+@\S+\.\S+$/.test(c);
         if (!isMail && c.replace(/\D/g, '').length < 8){ err.textContent = 'Indiquez un e-mail ou un numéro de téléphone pour que nous puissions vous répondre.'; $('fd-contact').focus(); return; }
-        var label = b.textContent, body = {access_key: formKey, subject: 'Demande de visite : ' + t.nom, from_name: 'gravoom.com', message: text + '\n• Pour me répondre : ' + c, botcheck: $('fd-hp').checked};
+        var label = b.textContent, body = {access_key: formKey, subject: 'Demande de visite ' + ref + ' : ' + t.nom, from_name: 'gravoom.com', message: text + '\n• Pour me répondre : ' + c, botcheck: $('fd-hp').checked};
         if (isMail) body.email = c;
         err.textContent = ''; b.disabled = true; b.textContent = 'Envoi…';
         fetch('https://api.web3forms.com/submit', {method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify(body)})
           .then(function(r){ return r.json(); })
-          .then(function(j){ if (!j.success) throw new Error('refused'); finder.classList.add('is-sent'); var d = $('fd-done'); d.hidden = false; d.focus(); })
+          .then(function(j){ if (!j.success) throw new Error('refused'); finder.classList.add('is-sent'); $('fd-ref').textContent = ref; var d = $('fd-done'); d.hidden = false; d.focus(); })
           .catch(function(){ err.textContent = 'L’envoi n’a pas abouti. Réessayez, ou envoyez votre demande sur WhatsApp ou par e-mail.'; })
           .then(function(){ b.disabled = false; b.textContent = label; });
         return;
       }
-      if (b.getAttribute('data-send') === 'mail') window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent('Demande de visite : ' + t.nom) + '&body=' + encodeURIComponent(text + '\n\nMerci beaucoup,\n');
+      if (b.getAttribute('data-send') === 'mail') window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent('Demande de visite ' + ref + ' : ' + t.nom) + '&body=' + encodeURIComponent(text + '\n\nMerci beaucoup,\n');
       else window.open('https://wa.me/' + wa + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
     });
   });
