@@ -23,6 +23,7 @@ The setup has three parts.
 3. **Components: the 21st.dev Magic MCP** (`.mcp.json`, server `21st-magic`). Use it to search for and generate component ideas. It needs a `TWENTY_FIRST_API_KEY` from https://21st.dev/magic/console. Locally, set that variable. In cloud sessions the key is a network secret for `21st.dev` (header `x-api-key`) that the proxy injects, so `.mcp.json` passes a placeholder and sets `NODE_USE_ENV_PROXY=1`, without which Node's `fetch` skips the proxy and the server reports "Not authenticated". Its output is React + Tailwind, so always port it to semantic HTML + `site.css` before adding it here. Never add React or Tailwind to the site.
 
 ## Checks before finishing
+- Fonts are self-hosted in `/fonts/` (declared at the top of `site.css`, preloaded in each page head). Never load Google Fonts or any other font CDN: the legal notice says no third party serves the fonts.
 - Keep the layout working at phone width (no horizontal scroll) and keep keyboard focus visible.
 - Bump the `site.css?v=` query string on every page when `site.css` changes.
 - Shared animation code lives in `/motion.js` (one home-page load sequence, FAQ open/close, visit dialog entrance). Pages with a FAQ or the visit dialog load it with `<script type="module" src="/motion.js?v=...">`; bump that `v` when it changes.
