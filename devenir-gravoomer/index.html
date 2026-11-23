@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Devenir Gravoomer · Gravoom</title>
-<meta name="description" content="Partout en France, prenez soin de tombes près de chez vous pour des familles qui vivent loin, et gagnez un complément de revenu. Inscription gratuite en 2 minutes, particuliers et professionnels.">
+<meta name="description" content="Partout en France, prenez soin de tombes près de chez vous pour des familles qui vivent loin, et gagnez un complément de revenu. Retraité, étudiant ou en activité : inscription gratuite en 2 minutes, sans statut.">
 <meta property="og:title" content="Devenez Gravoomer · Prenez soin d’une tombe voisine">
 <meta property="og:description" content="Des familles qui vivent loin vous confient la tombe de leurs proches. Près de chez vous, quand vous voulez, payé à chaque visite.">
 <meta property="og:type" content="website">
@@ -53,10 +53,10 @@
   <div class="wrap hero-join">
     <p class="eyebrow">Devenir Gravoomer, Partout en France</p>
     <h1>Vous allez déjà au cimetière&nbsp;? <em>Prenez soin d’une tombe voisine.</em></h1>
-    <p class="lead">Partout en France, des familles vivent loin de la tombe de leurs proches. Gravoom leur trouve quelqu’un près du cimetière pour l’entretenir. Ce quelqu’un, ce peut être vous&nbsp;: près de chez vous, quand vous le souhaitez, et payé à chaque visite. L’inscription est gratuite et prend deux minutes.</p>
+    <p class="lead">Partout en France, des familles vivent loin de la tombe de leurs proches. Gravoom leur trouve quelqu’un près du cimetière pour l’entretenir. Ce quelqu’un, ce peut être vous&nbsp;: près de chez vous, quand vous le souhaitez, et payé à chaque visite. Retraité, étudiant ou en activité&nbsp;: l’inscription est gratuite, prend deux minutes, et ne demande aucun statut.</p>
     <div class="ctas">
-      <a class="btn btn-primary" href="#inscription" data-profil="Particulier">M’inscrire en 2 minutes</a>
-      <a class="btn btn-ghost" href="#inscription" data-profil="Professionnel">Je suis un professionnel</a>
+      <a class="btn btn-primary" href="#inscription">M’inscrire en 2 minutes</a>
+      <a class="btn btn-ghost" href="/partenaires/#entretien">Je suis un professionnel</a>
     </div>
   </div>
   </div>
@@ -72,17 +72,19 @@
           <li><span class="tick">✓</span>Sans exclusivité et sans minimum de missions</li>
           <li><span class="tick">✓</span>Vous choisissez votre zone et vos jours</li>
           <li><span class="tick">✓</span>Payé pour chaque visite réalisée</li>
-          <li><span class="tick">✓</span>Statut, assurance&nbsp;: on vous guide pas à pas</li>
+          <li><span class="tick">✓</span>Pas besoin de statut pour vous inscrire&nbsp;: nous créons votre micro-entreprise avec vous, avant votre première mission</li>
         </ul>
       </div>
       <div>
       <form class="jf" id="jf" novalidate>
         <div class="jf-body">
           <fieldset>
-            <legend>Vous êtes</legend>
-            <div class="seg">
-              <label class="pill"><input type="radio" name="profil" value="Particulier" checked><span>Particulier</span></label>
-              <label class="pill"><input type="radio" name="profil" value="Professionnel"><span>Professionnel</span></label>
+            <legend>Votre situation</legend>
+            <div class="pills">
+              <label class="pill"><input type="radio" name="situation" value="Retraité" checked><span>Retraité</span></label>
+              <label class="pill"><input type="radio" name="situation" value="Étudiant"><span>Étudiant</span></label>
+              <label class="pill"><input type="radio" name="situation" value="En activité"><span>En activité</span></label>
+              <label class="pill"><input type="radio" name="situation" value="Autre"><span>Autre</span></label>
             </div>
           </fieldset>
         </div>
@@ -90,7 +92,6 @@
           <div class="f" data-f="nom"><label class="lab" for="jf-nom">Prénom et nom</label><input type="text" id="jf-nom" autocomplete="name" required><p class="err">Indiquez votre prénom et votre nom.</p></div>
           <div class="f" data-f="tel"><label class="lab" for="jf-tel">Téléphone</label><input type="tel" id="jf-tel" autocomplete="tel" inputmode="tel" required><p class="err">Indiquez un numéro pour vous rappeler.</p></div>
         </div>
-        <div class="f" data-f="societe" hidden><label class="lab" for="jf-societe">Nom de votre entreprise</label><input type="text" id="jf-societe" autocomplete="organization"></div>
         <div class="row2 cp">
           <div class="f" data-f="cp"><label class="lab" for="jf-cp">Code postal</label><input type="text" id="jf-cp" inputmode="numeric" autocomplete="postal-code" maxlength="5" pattern="[0-9]{5}" required><p class="err">Cinq chiffres, par exemple 59490.</p></div>
           <div class="f" data-f="commune"><label class="lab" for="jf-commune">Commune</label><select id="jf-commune" disabled><option value="">Saisissez d’abord le code postal</option></select></div>
@@ -109,7 +110,13 @@
           <div class="pills">
             <label class="pill"><input type="checkbox" name="service" value="Nettoyage" checked><span>Nettoyage</span></label>
             <label class="pill"><input type="checkbox" name="service" value="Fleurissement" checked><span>Fleurissement</span></label>
-            <label class="pill"><input type="checkbox" name="service" value="Rénovation, gravure"><span>Rénovation, gravure</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Avez-vous une voiture&nbsp;?</legend>
+          <div class="pills">
+            <label class="pill"><input type="radio" name="voiture" value="Oui" checked><span>Oui</span></label>
+            <label class="pill"><input type="radio" name="voiture" value="Non"><span>Non</span></label>
           </div>
         </fieldset>
         <fieldset>
@@ -122,8 +129,8 @@
         </fieldset>
         <div class="f"><label class="lab" for="jf-statut">Votre statut</label>
           <select id="jf-statut">
-            <option>Pas encore de statut, j’aimerais être guidé</option>
-            <option>Je suis micro-entrepreneur</option>
+            <option>Pas encore de statut&nbsp;: nous le créerons ensemble</option>
+            <option>Je suis déjà micro-entrepreneur</option>
             <option>J’ai déjà une entreprise</option>
           </select>
         </div>
@@ -157,27 +164,26 @@
         <article class="track">
           <span class="tag">Particulier</span>
           <h3>Gravoomer</h3>
-          <p class="who">Retraité, parent, voisin du cimetière… Vous avez quelques heures par mois et le goût du travail bien fait.</p>
+          <p class="who">Retraité, étudiant, voisin du cimetière… Vous avez quelques heures par mois et le goût du travail bien fait.</p>
           <ul>
             <li>Vous choisissez vos cimetières et vos disponibilités</li>
             <li>Vous acceptez ou refusez chaque mission</li>
             <li>Un complément de revenu, tout près de chez vous</li>
-            <li>On vous guide pour le statut et l’assurance</li>
+            <li>Pas de statut pour vous inscrire&nbsp;: nous créons votre micro-entreprise avec vous</li>
           </ul>
-          <a class="btn btn-primary" href="#inscription" data-profil="Particulier">Je deviens Gravoomer</a>
+          <a class="btn btn-primary" href="#inscription">Je deviens Gravoomer</a>
         </article>
         <article class="track dark">
           <span class="tag tag--moss">Professionnel</span>
           <h3>Partenaire</h3>
-          <p class="who">Entretien de sépultures, fleuriste, marbrier, services à la personne… Vous avez déjà votre activité.</p>
+          <p class="who">Vous entretenez déjà des sépultures, vous êtes fleuriste ou marbrier&nbsp;: vous avez votre activité et vos tarifs.</p>
           <ul>
-            <li>Des clients en plus, sans démarchage</li>
-            <li>Des familles de toute la France et de l’étranger, que vous ne toucheriez pas seul</li>
-            <li>Un paiement garanti, sans relance</li>
-            <li>Des abonnements qui remplissent l’agenda en dehors de la Toussaint</li>
+            <li>Vous gardez vos tarifs et vos méthodes</li>
+            <li>Des familles qui vivent loin, en plus de vos clients</li>
+            <li>Des visites regroupées par secteur quand c’est possible</li>
             <li>Vos propres clients restent les vôtres</li>
           </ul>
-          <a class="btn btn-ghost" href="#inscription" data-profil="Professionnel">Devenir partenaire</a>
+          <a class="btn btn-ghost" href="/partenaires/#entretien">Voir l’espace partenaires</a>
         </article>
       </div>
     </div>
@@ -255,27 +261,6 @@
     </div>
   </section>
 
-  <section>
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow">Pour les professionnels</p>
-        <h2>Seul, ou avec Gravoom</h2>
-      </div>
-      <div class="table-wrap" tabindex="0" role="region" aria-label="Seul, ou avec Gravoom">
-        <table class="vs">
-          <thead><tr><th scope="col"><span class="eyebrow">Votre activité</span></th><th scope="col">Seul</th><th scope="col">Avec Gravoom</th></tr></thead>
-          <tbody>
-            <tr><td>Trouver des clients</td><td>Bouche-à-oreille, annonces, démarchage</td><td>Les familles réservent sur gravoom.com</td></tr>
-            <tr><td>Les familles qui vivent loin</td><td>Difficiles à atteindre</td><td>Notre cœur de cible, partout en France</td></tr>
-            <tr><td>Devis et paiements</td><td>Devis, relances, chèques</td><td>Prix fixés à l’avance, paiement garanti</td></tr>
-            <tr><td>En dehors de la Toussaint</td><td>Activité irrégulière</td><td>Des abonnements toute l’année</td></tr>
-            <tr><td>Vos clients actuels</td><td>Les vôtres</td><td>Toujours les vôtres</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
   <section id="fonctionnement" class="band">
     <div class="wrap">
       <div class="sec-head">
@@ -283,10 +268,10 @@
         <h2>De votre premier message à votre première mission</h2>
       </div>
       <ol class="steps steps--4">
-        <li><h3>Vous vous inscrivez</h3><p>Deux minutes avec le formulaire ci-dessus&nbsp;: votre commune, votre zone, vos disponibilités.</p></li>
-        <li><h3>On fait connaissance</h3><p>Un appel de dix minutes, et nous vous envoyons notre guide de visite, simple et illustré.</p></li>
-        <li><h3>Vous recevez des missions</h3><p>Près de chez vous, avec tout le détail&nbsp;: la tombe, son emplacement, les fleurs, les souhaits de la famille.</p></li>
-        <li><h3>Vous êtes payé</h3><p>Vous envoyez les photos avant et après, la famille est rassurée, et la visite vous est payée.</p></li>
+        <li><h3>Vous vous inscrivez</h3><p>Deux minutes avec le formulaire ci-dessus&nbsp;: votre commune, votre zone, vos disponibilités. Aucun statut n’est demandé à ce stade.</p></li>
+        <li><h3>On fait connaissance</h3><p>Un appel de bienvenue. Si vous n’avez pas de statut, nous créons votre micro-entreprise ensemble, en ligne, pendant l’appel. Puis nous vous envoyons notre guide de visite illustré.</p></li>
+        <li><h3>Une visite d’essai</h3><p>Sur une tombe que vous entretenez déjà, celle d’un proche par exemple. Vous nous envoyez les photos avant et après, et nous vérifions ensemble le nettoyage et le cadrage.</p></li>
+        <li><h3>Vos missions, payées</h3><p>Près de chez vous, avec tout le détail&nbsp;: la tombe, son emplacement, les fleurs. Vous envoyez les photos, et la visite vous est payée.</p></li>
       </ol>
     </div>
   </section>
@@ -301,7 +286,7 @@
         <li><span class="dot">1</span><span><b>Du soin et du respect.</b> Chaque tombe est traitée comme si c’était celle de votre propre famille.</span></li>
         <li><span class="dot">2</span><span><b>Des photos avant et après.</b> Avec le même cadrage, envoyées le jour même. C’est ce qui rassure les familles.</span></li>
         <li><span class="dot">3</span><span><b>Un nettoyage doux.</b> Eau claire et brosse douce. Jamais de nettoyeur haute pression ni de produit acide.</span></li>
-        <li><span class="dot">4</span><span><b>Un statut et une assurance.</b> Une micro-entreprise, ou votre entreprise existante, et une assurance responsabilité civile professionnelle. On vous explique tout, pas à pas.</span></li>
+        <li><span class="dot">4</span><span><b>Un statut et une assurance, avant la première mission.</b> Une micro-entreprise, que nous créons avec vous pendant l’appel de bienvenue, et une assurance responsabilité civile professionnelle. Rien n’est demandé pour vous inscrire.</span></li>
       </ul>
     </div>
   </section>
@@ -313,7 +298,9 @@
         <h2>Ce que l’on nous demande souvent</h2>
       </div>
       <div class="faq">
-        <details><summary>Ai-je besoin d’un statut&nbsp;?</summary><p>Oui, pour être payé en toute légalité. La micro-entreprise se crée gratuitement, en ligne, sur le site officiel de l’URSSAF. Si vous avez déjà une entreprise, elle suffit. Nous vous guidons à chaque étape.</p></details>
+        <details><summary>Ai-je besoin d’un statut&nbsp;?</summary><p>Pas pour vous inscrire. Pour être payé en toute légalité, oui&nbsp;: une micro-entreprise, gratuite et créée en ligne sur le site officiel de l’URSSAF. Nous la créons avec vous pendant l’appel de bienvenue, avant votre première mission. Les cotisations sont calculées sur ce que vous encaissez&nbsp;: un mois sans mission, rien à payer.</p></details>
+        <details><summary>Je suis retraité ou étudiant, est-ce possible&nbsp;?</summary><p>Oui. On peut être micro-entrepreneur en étant retraité ou étudiant. Ce que vous gagnez s’ajoute à vos autres revenus&nbsp;: si vous recevez une aide, renseignez-vous auprès de l’organisme qui vous la verse.</p></details>
+        <details><summary>À quoi sert la visite d’essai&nbsp;?</summary><p>À vous lancer sans pression. Vous la faites sur une tombe que vous entretenez déjà, avec notre guide, puis vous nous envoyez les photos avant et après. Nous vérifions ensemble le nettoyage et le cadrage avant votre première mission pour une famille.</p></details>
         <details><summary>Et l’assurance&nbsp;?</summary><p>Une assurance responsabilité civile professionnelle est nécessaire. Nous vous indiquons ce qu’elle doit couvrir et où la trouver simplement.</p></details>
         <details><summary>Faut-il du matériel&nbsp;?</summary><p>Très peu&nbsp;: une brosse douce, une éponge, un seau, des gants et un sac pour les déchets verts. Aucun produit agressif.</p></details>
         <details><summary>Combien de temps dure une visite&nbsp;?</summary><p>En général entre trois quarts d’heure et une heure et demie, selon l’état de la tombe.</p></details>
@@ -366,8 +353,7 @@
 (function(){
   var to = 'info@gravoom.com', wa = '447717536635';
   var mails = {
-    gravoomer: {s:'Devenir Gravoomer', b:'Bonjour,\n\nJ’aimerais devenir Gravoomer.\n\n• J’habite à :\n• Les cimetières près de chez moi :\n• Mes disponibilités :\n• Mon numéro de téléphone :\n• Quelques mots sur moi :\n\nMerci et à bientôt,\n'},
-    partenaire: {s:'Partenariat professionnel Gravoom', b:'Bonjour,\n\nJe suis un professionnel et je souhaite devenir partenaire de Gravoom.\n\n• Mon entreprise :\n• Mon activité (entretien de sépultures, fleuriste, marbrier…) :\n• Les communes où j’interviens :\n• Mon numéro de téléphone :\n\nBien cordialement,\n'}
+    gravoomer: {s:'Devenir Gravoomer', b:'Bonjour,\n\nJ’aimerais devenir Gravoomer.\n\n• J’habite à :\n• Les cimetières près de chez moi :\n• Mes disponibilités :\n• Mon numéro de téléphone :\n• Quelques mots sur moi :\n\nMerci et à bientôt,\n'}
   };
   document.querySelectorAll('[data-mail]').forEach(function(a){
     var m = mails[a.getAttribute('data-mail')] || mails.gravoomer;
@@ -378,13 +364,8 @@
   });
 
   var form = document.getElementById('jf'), done = document.getElementById('jf-done');
-  var cp = document.getElementById('jf-cp'), commune = document.getElementById('jf-commune'), societe = form.querySelector('[data-f=societe]');
-  function profil(){ return form.querySelector('input[name=profil]:checked').value; }
-  function syncProfil(){ societe.hidden = profil() !== 'Professionnel'; }
-  form.querySelectorAll('input[name=profil]').forEach(function(r){ r.addEventListener('change', syncProfil); });
-  document.querySelectorAll('[data-profil]').forEach(function(a){
-    a.addEventListener('click', function(){ var r = form.querySelector('input[name=profil][value="' + a.getAttribute('data-profil') + '"]'); if (r){ r.checked = true; syncProfil(); } });
-  });
+  var cp = document.getElementById('jf-cp'), commune = document.getElementById('jf-commune');
+  function pick(name){ var r = form.querySelector('input[name=' + name + ']:checked'); return r ? r.value : ''; }
   var lastCp = '';
   cp.addEventListener('input', function(){
     cp.value = cp.value.replace(/\D/g, '').slice(0, 5);
@@ -412,14 +393,15 @@
     if (ok.indexOf(false) !== -1){ form.querySelector('[aria-invalid=true]').focus(); return; }
     var services = [].map.call(form.querySelectorAll('input[name=service]:checked'), function(c){ return c.value; });
     var lines = [
-      'Bonjour, je souhaite devenir ' + (profil() === 'Professionnel' ? 'partenaire' : 'Gravoomer') + '.',
+      'Bonjour, je souhaite devenir Gravoomer.',
       '',
-      '• Profil : ' + profil() + (profil() === 'Professionnel' && document.getElementById('jf-societe').value.trim() ? ' (' + document.getElementById('jf-societe').value.trim() + ')' : ''),
+      '• Situation : ' + pick('situation'),
       '• Nom : ' + nom,
       '• Commune : ' + cp.value + ' ' + (commune.disabled ? '' : commune.value),
-      '• Distance : jusqu’à ' + form.querySelector('input[name=rayon]:checked').value,
+      '• Distance : jusqu’à ' + pick('rayon'),
       '• Je propose : ' + (services.join(', ') || 'à voir ensemble'),
-      '• Disponibilités : ' + form.querySelector('input[name=dispo]:checked').value,
+      '• Voiture : ' + pick('voiture'),
+      '• Disponibilités : ' + pick('dispo'),
       '• Statut : ' + document.getElementById('jf-statut').value,
       '• Téléphone : ' + tel
     ];
@@ -428,7 +410,7 @@
     if (via === 'form'){
       var sb = form.querySelector('[data-via=form]'), label = sb.textContent;
       sb.disabled = true; sb.textContent = 'Envoi…';
-      fetch('https://api.web3forms.com/submit', {method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify({access_key: formKey, subject: (profil() === 'Professionnel' ? 'Partenariat' : 'Devenir Gravoomer') + ' : ' + cp.value, from_name: 'gravoom.com', message: text, botcheck: document.getElementById('jf-hp').checked})})
+      fetch('https://api.web3forms.com/submit', {method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify({access_key: formKey, subject: 'Devenir Gravoomer' + ' : ' + cp.value, from_name: 'gravoom.com', message: text, botcheck: document.getElementById('jf-hp').checked})})
         .then(function(r){ return r.json(); })
         .then(function(j){ if (!j.success) throw new Error('refused'); doneH.textContent = 'Inscription envoyée'; doneP.textContent = 'Nous vous rappelons très vite pour faire connaissance.'; form.hidden = true; done.hidden = false; done.focus(); })
         .catch(function(){ jfErr.textContent = 'L’envoi n’a pas abouti. Réessayez, ou envoyez votre inscription sur WhatsApp ou par e-mail.'; })
@@ -437,7 +419,7 @@
     }
     doneH.textContent = doneOwn[0]; doneP.innerHTML = doneOwn[1];
     var url = via === 'mail'
-      ? 'mailto:' + to + '?subject=' + encodeURIComponent((profil() === 'Professionnel' ? 'Partenariat' : 'Devenir Gravoomer') + ' : ' + cp.value) + '&body=' + encodeURIComponent(text + '\n\nMerci et à bientôt,\n')
+      ? 'mailto:' + to + '?subject=' + encodeURIComponent('Devenir Gravoomer' + ' : ' + cp.value) + '&body=' + encodeURIComponent(text + '\n\nMerci et à bientôt,\n')
       : 'https://wa.me/' + wa + '?text=' + encodeURIComponent(text);
     if (via === 'mail') window.location.href = url; else window.open(url, '_blank', 'noopener');
     form.hidden = true; done.hidden = false; done.focus();
