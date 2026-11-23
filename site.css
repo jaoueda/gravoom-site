@@ -81,6 +81,10 @@ nav .btn{min-height:44px;padding:0 20px;font-size:15px;color:var(--on-chrys)}
 .ba-tag{position:absolute;top:16px;z-index:2;font-size:13.5px;font-weight:700;color:#fff;padding:6px 12px;border-radius:999px;background:rgba(15,20,18,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .ba-tag.l{left:16px}
 .ba-tag.r{right:16px;background:rgba(216,134,26,.9);color:#1A1205}
+/* fade the label of the side the visitor moved away from */
+.ba-tag{transition:opacity 220ms ease}
+.ba-tag.l{opacity:clamp(.15,calc((var(--p,50) - 12) / 28),1)}
+.ba-tag.r{opacity:clamp(.15,calc((88 - var(--p,50)) / 28),1)}
 .ba-line{position:absolute;z-index:2;top:0;bottom:0;left:var(--pos);width:2px;margin-left:-1px;background:#fff;box-shadow:0 0 10px rgba(0,0,0,.35);pointer-events:none}
 .ba-knob{position:absolute;z-index:3;top:50%;left:var(--pos);width:50px;height:50px;margin:-25px 0 0 -25px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.3);pointer-events:none;transition:transform 160ms var(--ease-out)}
 .ba-knob svg{width:24px;height:24px;fill:none;stroke:#17201C;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
