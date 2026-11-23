@@ -24,7 +24,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M10 25V12a6 6 0 0 1 12 0v13' fill='none' stroke='%2317211D' stroke-width='2'/%3E%3Crect x='7' y='25.5' width='18' height='2.5' fill='none' stroke='%2317211D' stroke-width='1.6'/%3E%3C/svg%3E">
 <link rel="preload" href="/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/site.css?v=20261123e">
+<link rel="stylesheet" href="/site.css?v=20261123f">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://gravoom.com/#org", "name": "Gravoom", "legalName": "Advaltis Limited", "url": "https://gravoom.com/", "email": "info@gravoom.com", "image": "https://gravoom.com/brand/og-en.jpg"}, {"@type": "Service", "name": "Grave care and flowers in France", "serviceType": "Grave maintenance", "url": "https://gravoom.com/en/", "provider": {"@id": "https://gravoom.com/#org"}, "areaServed": {"@type": "Country", "name": "France"}, "offers": [{"@type": "Offer", "name": "Cleaning", "price": "79", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Cleaning and flowers", "price": "99", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Four seasons, four visits a year", "price": "349", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Restoring visit, from", "price": "129", "priceCurrency": "EUR"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What if I don’t remember exactly where the grave is?", "acceptedAnswer": {"@type": "Answer", "text": "That’s fine, it happens a lot. Drop a pin on the map where you think it is and tell us what you remember. If needed, we check the cemetery register at the town hall."}}, {"@type": "Question", "name": "Where do you operate?", "acceptedAnswer": {"@type": "Answer", "text": "We are starting in the north of France: Douai, Somain, Aniche, Denain, Valenciennes and the towns around them. Elsewhere in France, tell us the town of the cemetery: we look for someone local and tell you honestly whether we can do it. You can book from anywhere in the world."}}, {"@type": "Question", "name": "What if there is nobody near the cemetery yet?", "acceptedAnswer": {"@type": "Answer", "text": "We will tell you honestly and look for someone in the area. You pay nothing until the visit is confirmed."}}, {"@type": "Question", "name": "How far ahead should I ask?", "acceptedAnswer": {"@type": "Answer", "text": "Allow about a week. For All Saints’ Day (1 November), Palm Sunday or Mother’s Day, write to us two to three weeks before."}}, {"@type": "Question", "name": "Can I choose the flowers?", "acceptedAnswer": {"@type": "Answer", "text": "Of course. A yellow, bronze or purple chrysanthemum, or a seasonal bouquet: just tell us what they would have liked."}}, {"@type": "Question", "name": "Can I ask for cleaning only, without flowers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Cleaning on its own, at €79, covers the headstone, the plaque and the surround, with before and after photos. Many families prefer a grave that is simply clean and cared for."}}, {"@type": "Question", "name": "How do I pay?", "acceptedAnswer": {"@type": "Answer", "text": "You pay nothing when you send your request. Once the visit is confirmed, we send you a secure Stripe link to pay by card; a bank transfer is also possible. If the visit cannot take place after all, you are refunded in full. The details are in our terms of sale."}}, {"@type": "Question", "name": "What if I’m not happy with the result?", "acceptedAnswer": {"@type": "Answer", "text": "Tell us within seven days of receiving the photos: we go back at no charge, or we refund you."}}, {"@type": "Question", "name": "When will I get the photos?", "acceptedAnswer": {"@type": "Answer", "text": "On the day of the visit, by email or WhatsApp, with a note of what was done."}}]}]}</script>
 <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("m-pre");setTimeout(function(){document.documentElement.classList.remove("m-pre")},1600)}</script>
 <link rel="modulepreload" href="/motion.js?v=20261114c">
@@ -355,6 +355,7 @@
       <div class="fd-done" id="fd-done" tabindex="-1" hidden>
         <span class="big-tick" aria-hidden="true">✓</span>
         <h3>Request sent</h3>
+        <p class="fd-ref">Your reference: <strong id="fd-ref"></strong></p>
         <p>We reply quickly, at the address or number you gave, to confirm the date and the price. You pay nothing before that confirmation.</p>
         <button class="btn btn-ghost" type="button" data-close>Close</button>
       </div>
@@ -398,7 +399,14 @@
 
   /* ---------- cemetery finder ---------- */
   var finder = document.getElementById('finder'), map, layers, cemLayer, pin, leafletReady;
-  var st = {town: null, cems: [], cem: null, pin: null};
+  var st = {town: null, cems: [], cem: null, pin: null, ref: null};
+  /* Request reference, e.g. GRV-1123-K7Q: date + 3 unambiguous characters (no database, so not sequential) */
+  function makeRef(){
+    var d = new Date(), a = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789', r = '', n = new Uint32Array(3);
+    (window.crypto || window.msCrypto).getRandomValues(n);
+    for (var i = 0; i < 3; i++) r += a[n[i] % a.length];
+    return 'GRV-' + ('0' + (d.getMonth() + 1)).slice(-2) + ('0' + d.getDate()).slice(-2) + '-' + r;
+  }
   var $ = function(id){ return document.getElementById(id); };
   var hint = $('fd-hint'), err = $('fd-err');
   var IGN = 'https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&LAYER=';
@@ -520,7 +528,7 @@
   }
   function openFinder(q, kind, occ){
     finder.showModal();
-    finder.classList.remove('is-sent'); $('fd-done').hidden = true;
+    finder.classList.remove('is-sent'); $('fd-done').hidden = true; st.ref = null;
     if (occ != null) $('fd-date').value = occ;
     if (kind && kind !== 'visite') $('fd-formule').value = kind;
     if (q) $('fd-q').value = q;
@@ -546,7 +554,7 @@
     b.addEventListener('click', function(){
       if (!st.town){ err.textContent = 'Enter the town of the cemetery first.'; $('fd-q').focus(); return; }
       if (!st.cem && !st.pin){ err.textContent = st.cems.length ? 'Choose the cemetery, or drop a pin on the map.' : 'Tap the map where the cemetery is.'; return; }
-      var t = st.town, lines = ['Hello, I would like you to look after my loved one’s grave.', ''];
+      var t = st.town, ref = st.ref || (st.ref = makeRef()), lines = ['Hello, I would like you to look after my loved one’s grave.', '', '• Reference: ' + ref];
       lines.push('• Cemetery: ' + (st.cem ? cemName(st.cem) + (st.cem.f.properties.toponyme && st.cem.street ? ' (' + st.cem.street + ')' : '') + ', ' : '') + (st.cem && !st.cem.own && st.cem.city || t.nom) + ' (' + (t.codesPostaux[0] || t.codeDepartement) + ')');
       if (st.pin) lines.push('• Grave location (pin on the map): ' + gmaps(st.pin));
       else lines.push('• Cemetery map: ' + gmaps({lat: st.cem.c[0], lng: st.cem.c[1]}));
@@ -559,17 +567,17 @@
       if (b.getAttribute('data-send') === 'form'){
         var c = $('fd-contact').value.trim(), isMail = /^\S+@\S+\.\S+$/.test(c);
         if (!isMail && c.replace(/\D/g, '').length < 8){ err.textContent = 'Enter an email address or a phone number so we can reply.'; $('fd-contact').focus(); return; }
-        var label = b.textContent, body = {access_key: formKey, subject: 'Visit request: ' + t.nom, from_name: 'gravoom.com', message: text + '\n• Reply to me at: ' + c, botcheck: $('fd-hp').checked};
+        var label = b.textContent, body = {access_key: formKey, subject: 'Visit request ' + ref + ': ' + t.nom, from_name: 'gravoom.com', message: text + '\n• Reply to me at: ' + c, botcheck: $('fd-hp').checked};
         if (isMail) body.email = c;
         err.textContent = ''; b.disabled = true; b.textContent = 'Sending…';
         fetch('https://api.web3forms.com/submit', {method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify(body)})
           .then(function(r){ return r.json(); })
-          .then(function(j){ if (!j.success) throw new Error('refused'); finder.classList.add('is-sent'); var d = $('fd-done'); d.hidden = false; d.focus(); })
+          .then(function(j){ if (!j.success) throw new Error('refused'); finder.classList.add('is-sent'); $('fd-ref').textContent = ref; var d = $('fd-done'); d.hidden = false; d.focus(); })
           .catch(function(){ err.textContent = 'The request could not be sent. Try again, or send it on WhatsApp or by email.'; })
           .then(function(){ b.disabled = false; b.textContent = label; });
         return;
       }
-      if (b.getAttribute('data-send') === 'mail') window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent('Visit request: ' + t.nom) + '&body=' + encodeURIComponent(text + '\n\nThank you very much,\n');
+      if (b.getAttribute('data-send') === 'mail') window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent('Visit request ' + ref + ': ' + t.nom) + '&body=' + encodeURIComponent(text + '\n\nThank you very much,\n');
       else window.open('https://wa.me/' + wa + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
     });
   });
