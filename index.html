@@ -397,7 +397,7 @@
     a.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   });
   document.querySelectorAll('[data-wa]').forEach(function(a){
-    a.href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent('Bonjour, je souhaiterais que vous preniez soin de la tombe de mes proches, au cimetière de : ');
+    a.href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent('Bonjour, je souhaiterais que vous preniez soin de la tombe de mes proches.\n\n• Référence : ' + makeRef() + '\n• Commune du cimetière : \n• Nom inscrit sur la tombe : \n• Emplacement, si vous le connaissez (allée, rang, repère) : \n• Formule (L’entretien 79 € / Entretien et fleurs 99 € / Les quatre saisons 349 € par an) : \n• Fleurs souhaitées (type, couleur) : \n• Date ou occasion : \n• Votre prénom et nom : \n• Votre e-mail, pour recevoir les photos : \n\nSi vous avez une photo de la tombe, vous pouvez l’envoyer ici.');
   });
 
   /* ---------- cemetery finder ---------- */

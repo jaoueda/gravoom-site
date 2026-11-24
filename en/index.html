@@ -394,7 +394,7 @@
     a.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   });
   document.querySelectorAll('[data-wa]').forEach(function(a){
-    a.href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent('Hello, I would like you to look after my loved one’s grave, at the cemetery of: ');
+    a.href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent('Hello, I would like you to look after my loved one’s grave.\n\n• Reference: ' + makeRef() + '\n• Town of the cemetery: \n• Name on the grave: \n• Location, if you know it (path, row, landmark): \n• Plan (Cleaning €79 / Cleaning and flowers €99 / Four seasons €349 a year): \n• Flowers you would like (type, colour): \n• Date or occasion: \n• Your first and last name: \n• Your email, to receive the photos: \n\nIf you have a photo of the grave, you can send it here.');
   });
 
   /* ---------- cemetery finder ---------- */
