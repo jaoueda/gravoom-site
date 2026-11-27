@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Compte rendu de visite · Gravoom</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#EEF1EC">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M10 25V12a6 6 0 0 1 12 0v13' fill='none' stroke='%2317211D' stroke-width='2'/%3E%3Crect x='7' y='25.5' width='18' height='2.5' fill='none' stroke='%2317211D' stroke-width='1.6'/%3E%3C/svg%3E">
+<link rel="preload" href="/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css?v=20261128a">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a href="/" aria-label="Gravoom, page d’accueil"><span class="logo" role="img" aria-label="Gravoom"></span></a>
+    <nav aria-label="Navigation principale">
+      <a href="/#fonctionnement">Comment ça se passe</a>
+      <a href="/#tarifs">Nos tarifs</a>
+      <a href="/#faq">Vos questions</a>
+      <a href="/devenir-gravoomer/">Devenir Gravoomer</a>
+      <a class="lang" href="/en/" hreflang="en" lang="en" aria-label="English version">EN</a>
+      <a class="btn btn-primary" href="/#contact">Réserver une visite</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap vr">
+      <p class="eyebrow">Espace Gravoomer</p>
+      <h1>Compte rendu de visite</h1>
+      <p class="lead">À remplir le jour de la visite, en deux minutes. Vos réponses servent à préparer le compte rendu envoyé à la famille.</p>
+
+      <form class="jf" id="vr" novalidate>
+        <div class="row2">
+          <div class="f" data-f="ref"><label class="lab" for="vr-ref">Référence de la visite</label><input type="text" id="vr-ref" placeholder="GRV-1123-K7Q" autocomplete="off" required><p class="err">Indiquez la référence donnée par Gravoom.</p></div>
+          <div class="f" data-f="lieu"><label class="lab" for="vr-lieu">Cimetière (commune)</label><input type="text" id="vr-lieu" placeholder="Somain" required><p class="err">Indiquez la commune du cimetière.</p></div>
+        </div>
+        <div class="row2">
+          <div class="f" data-f="prenom"><label class="lab" for="vr-prenom">Votre prénom</label><input type="text" id="vr-prenom" autocomplete="given-name" required><p class="err">Indiquez votre prénom.</p></div>
+          <div class="f" data-f="date"><label class="lab" for="vr-date">Date de la visite</label><input type="date" id="vr-date" required><p class="err">Indiquez la date de la visite.</p></div>
+        </div>
+        <div class="row2">
+          <div class="f"><label class="lab" for="vr-heure">Heure d’arrivée</label><input type="time" id="vr-heure"></div>
+          <div class="f"><label class="lab" for="vr-duree">Durée de la visite</label>
+            <select id="vr-duree"><option>Environ 30 minutes</option><option>Environ 45 minutes</option><option selected>Environ 1 heure</option><option>Plus d’une heure</option></select>
+          </div>
+        </div>
+        <fieldset>
+          <legend>État de la tombe à votre arrivée</legend>
+          <div class="pills">
+              <label class="pill"><input type="checkbox" name="etat" value="Mousse ou lichen"><span>Mousse ou lichen</span></label>
+              <label class="pill"><input type="checkbox" name="etat" value="Fleurs fanées"><span>Fleurs fanées</span></label>
+              <label class="pill"><input type="checkbox" name="etat" value="Herbes"><span>Herbes</span></label>
+              <label class="pill"><input type="checkbox" name="etat" value="Terre ou feuilles"><span>Terre ou feuilles</span></label>
+              <label class="pill"><input type="checkbox" name="etat" value="Plutôt propre"><span>Plutôt propre</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Ce que vous avez fait</legend>
+          <div class="pills">
+              <label class="pill"><input type="checkbox" name="fait" value="Pierre et plaque lavées à l’eau claire, à la brosse douce"><span>Pierre et plaque lavées à l’eau claire, à la brosse douce</span></label>
+              <label class="pill"><input type="checkbox" name="fait" value="Mousse ou lichen retirés"><span>Mousse ou lichen retirés</span></label>
+              <label class="pill"><input type="checkbox" name="fait" value="Fleurs fanées retirées"><span>Fleurs fanées retirées</span></label>
+              <label class="pill"><input type="checkbox" name="fait" value="Entourage désherbé et balayé"><span>Entourage désherbé et balayé</span></label>
+          </div>
+        </fieldset>
+        <div class="f"><label class="lab" for="vr-fleurs">Fleurs déposées <span class="opt">(type et couleur, si vous en avez déposé)</span></label><input type="text" id="vr-fleurs" placeholder="Chrysanthème jaune"></div>
+        <div class="f" data-f="mot"><label class="lab" for="vr-mot">Votre mot pour la famille</label><textarea id="vr-mot" rows="4" placeholder="Deux ou trois phrases : ce que vous avez remarqué, et un conseil pour la suite." required></textarea><p class="err">Écrivez quelques mots pour la famille.</p></div>
+        <div class="f"><label class="lab" for="vr-prochaine">Prochaine visite conseillée</label>
+          <select id="vr-prochaine"><option>Dans trois mois</option><option>Au printemps</option><option>Avant l’été</option><option>À l’automne</option><option>Pas avant un an</option></select>
+        </div>
+        <fieldset>
+          <legend>Acceptez-vous que votre prénom et ces photos apparaissent sur gravoom.com, comme exemple de compte rendu&nbsp;?</legend>
+          <div class="pills">
+              <label class="pill"><input type="radio" name="accord" value="Oui"><span>Oui</span></label>
+              <label class="pill"><input type="radio" name="accord" value="Non" checked><span>Non</span></label>
+          </div>
+        </fieldset>
+        <div class="vr-photos">
+          <b>Les 6 photos, à envoyer sur WhatsApp juste après</b>
+          <ol>
+            <li>Vue d’ensemble de la tombe&nbsp;: avant, puis après</li>
+            <li>La plaque de près&nbsp;: avant, puis après</li>
+            <li>L’entourage et les fleurs&nbsp;: avant, puis après</li>
+          </ol>
+          <p>Même endroit et même angle pour chaque paire, en plein jour, sans personne dans le cadre. Sur WhatsApp, envoyez-les «&nbsp;en tant que document&nbsp;» pour garder la qualité d’origine.</p>
+        </div>
+        <input id="vr-hp" type="checkbox" class="sr" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="form-err" id="vr-err" aria-live="assertive"></p>
+        <button class="btn btn-primary" type="submit" data-via="form">Envoyer le compte rendu</button>
+        <p class="fine">Vous pouvez aussi l’envoyer vous-même&nbsp;:</p>
+        <div class="send">
+          <button class="btn btn-wa" type="submit" data-via="wa"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Envoyer sur WhatsApp</button>
+          <button class="btn btn-ghost" type="submit" data-via="mail">Par e-mail</button>
+        </div>
+        <p class="fine">Vos réponses nous arrivent par e-mail. Rien n’est enregistré sur ce site.</p>
+      </form>
+
+      <div class="jf done" id="vr-done" hidden tabindex="-1">
+        <span class="big-tick" aria-hidden="true">✓</span>
+        <h2 id="vr-done-h">Compte rendu envoyé</h2>
+        <p id="vr-done-p">Merci. Il ne reste plus qu’à envoyer vos 6 photos sur WhatsApp, en tant que document.</p>
+        <a class="btn btn-wa" id="vr-photos-wa" href="https://wa.me/447717536635" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Envoyer les photos sur WhatsApp</a>
+        <button class="btn btn-ghost" type="button" id="vr-again">Modifier mes réponses</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <span class="logo" role="img" aria-label="Gravoom"></span>
+      <p class="tagline">Loin des yeux, jamais loin du cœur. Entretien et fleurissement de tombes, dans le Nord et ailleurs en France.</p>
+    </div>
+    <div>
+      <p class="links"><a href="/">Gravoom pour les familles</a><a href="/devenir-gravoomer/">Devenir Gravoomer</a><a href="/#tarifs">Nos tarifs</a><a href="/#contact">Contact</a><a href="/conseils/">Conseils</a><a href="/partenaires/">Partenaires</a><a href="/cgv/">Conditions générales de vente</a><a href="/mentions-legales/">Mentions légales</a><a href="/en/" hreflang="en" lang="en">English</a></p>
+      <p>Gravoom est une marque d’Advaltis Limited. © <span id="year">2026</span> Gravoom.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var header = document.querySelector('header');
+  function onScroll(){ header.classList.toggle('is-scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+
+  var to = 'info@gravoom.com', wa = '447717536635', formKey = '5d5cfab4-2385-4321-a14e-1384bbefaed3'; /* Web3Forms access key, public by design */
+  var form = document.getElementById('vr'), done = document.getElementById('vr-done'), err = document.getElementById('vr-err'), via = 'form';
+  function $(id){ return document.getElementById(id); }
+  /* The link sent to the Gravoomer can carry the reference and the town: /compte-rendu/?ref=GRV-1123-K7Q&lieu=Somain */
+  var q = new URLSearchParams(location.search);
+  if (q.get('ref')) $('vr-ref').value = q.get('ref').slice(0, 40);
+  if (q.get('lieu')) $('vr-lieu').value = q.get('lieu').slice(0, 60);
+  var d = new Date(); $('vr-date').value = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+
+  form.querySelectorAll('button[type=submit]').forEach(function(b){ b.addEventListener('click', function(){ via = b.getAttribute('data-via'); }); });
+  function check(id, ok){ var f = form.querySelector('[data-f=' + id + ']'), i = f.querySelector('input,textarea'); f.classList.toggle('has-err', !ok); i.setAttribute('aria-invalid', String(!ok)); return ok; }
+  function all(name){ return [].map.call(form.querySelectorAll('input[name=' + name + ']:checked'), function(c){ return c.value; }); }
+  function niceDate(iso){ try { return new Date(iso + 'T12:00:00').toLocaleDateString('fr-FR', {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'}); } catch(e){ return iso; } }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var ref = $('vr-ref').value.trim().toUpperCase(), lieu = $('vr-lieu').value.trim(), prenom = $('vr-prenom').value.trim(), date = $('vr-date').value, mot = $('vr-mot').value.trim();
+    var ok = [check('ref', ref.length > 3), check('lieu', lieu.length > 1), check('prenom', prenom.length > 1), check('date', !!date), check('mot', mot.length > 9)];
+    if (ok.indexOf(false) !== -1){ form.querySelector('[aria-invalid=true]').focus(); return; }
+    var fait = all('fait'), etat = all('etat'), fleurs = $('vr-fleurs').value.trim(), heure = $('vr-heure').value;
+    var lines = [
+      'COMPTE RENDU DE VISITE',
+      '',
+      '• Référence : ' + ref,
+      '• Cimetière : ' + lieu,
+      '• Gravoomer : ' + prenom,
+      '• Date : ' + niceDate(date) + (heure ? ', arrivée à ' + heure.replace(':', ' h ') : ''),
+      '• Durée : ' + $('vr-duree').value,
+      '• État à l’arrivée : ' + (etat.join(', ') || 'non précisé'),
+      '• Fait : ' + (fait.join(' ; ') || 'non précisé'),
+      '• Fleurs déposées : ' + (fleurs || 'aucune'),
+      '• Mot pour la famille : ' + mot,
+      '• Prochaine visite conseillée : ' + $('vr-prochaine').value,
+      '• Accord pour gravoom.com (prénom et photos) : ' + (all('accord')[0] || 'Non')
+    ];
+    var text = lines.join('\n'), subject = 'Compte rendu ' + ref + ' : ' + lieu;
+    $('vr-photos-wa').href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent('Photos de la visite ' + ref + ' (' + lieu + ')');
+    err.textContent = '';
+    function finish(sent){
+      $('vr-done-h').textContent = sent ? 'Compte rendu envoyé' : 'Votre compte rendu est prêt';
+      $('vr-done-p').textContent = sent ? 'Merci. Il ne reste plus qu’à envoyer vos 6 photos sur WhatsApp, en tant que document.' : 'Appuyez sur « Envoyer » dans WhatsApp ou dans votre messagerie, puis envoyez vos 6 photos sur WhatsApp, en tant que document.';
+      form.hidden = true; done.hidden = false; done.focus();
+    }
+    if (via === 'form'){
+      var sb = form.querySelector('[data-via=form]'), label = sb.textContent;
+      sb.disabled = true; sb.textContent = 'Envoi…';
+      fetch('https://api.web3forms.com/submit', {method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify({access_key: formKey, subject: subject, from_name: 'gravoom.com', message: text, botcheck: $('vr-hp').checked})})
+        .then(function(r){ return r.json(); })
+        .then(function(j){ if (!j.success) throw new Error('refused'); finish(true); })
+        .catch(function(){ err.textContent = 'L’envoi n’a pas abouti. Réessayez, ou envoyez votre compte rendu sur WhatsApp ou par e-mail.'; })
+        .then(function(){ sb.disabled = false; sb.textContent = label; });
+      return;
+    }
+    var url = via === 'mail' ? 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text) : 'https://wa.me/' + wa + '?text=' + encodeURIComponent(text);
+    if (via === 'mail') window.location.href = url; else window.open(url, '_blank', 'noopener');
+    finish(false);
+  });
+  $('vr-again').addEventListener('click', function(){ done.hidden = true; form.hidden = false; $('vr-mot').focus(); });
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "bda95e0ba5834c2fad80bac558e3f94b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
