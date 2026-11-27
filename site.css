@@ -608,3 +608,5 @@ footer .near a{margin-right:0}
 @media (max-width:880px){.price{grid-template-areas:"tag tag" "name amount" "list list" "btn btn" "pay pay"}.price .pay-link{justify-self:center}}
 .fd-done .fd-ref{color:var(--ink);font-size:16px}
 .fd-done .fd-ref strong{font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.price .pay-link{margin-top:0;padding:11px 0}
+.legal h1 + p{margin-top:16px}
