@@ -610,3 +610,9 @@ footer .near a{margin-right:0}
 .fd-done .fd-ref strong{font-variant-numeric:tabular-nums;letter-spacing:.04em}
 .price .pay-link{margin-top:0;padding:11px 0}
 .legal h1 + p{margin-top:16px}
+.occasions{margin-top:36px}
+.occasions h3{font-size:20px}
+.occasions > p:not(.town-links){color:var(--ink-2);font-size:15.5px;margin:8px 0 14px;max-width:46em}
+section.slim{padding-block:8px 56px}
+.join-line{border-top:1px solid var(--line);padding-top:26px;color:var(--ink-2);font-size:16px;text-align:center}
+.join-line a{color:var(--ink);font-weight:700}
