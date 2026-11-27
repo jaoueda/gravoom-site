@@ -25,7 +25,7 @@
 <link rel="preload" href="/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/photos/ba-apres.webp" as="image" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="/site.css?v=20261127a">
+<link rel="stylesheet" href="/site.css?v=20261127b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://gravoom.com/#org", "name": "Gravoom", "legalName": "Advaltis Limited", "url": "https://gravoom.com/", "email": "info@gravoom.com", "image": "https://gravoom.com/brand/og-en.jpg"}, {"@type": "Service", "name": "Grave care and flowers in France", "serviceType": "Grave maintenance", "url": "https://gravoom.com/en/", "provider": {"@id": "https://gravoom.com/#org"}, "areaServed": {"@type": "Country", "name": "France"}, "offers": [{"@type": "Offer", "name": "Cleaning", "price": "79", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Cleaning and flowers", "price": "99", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Four seasons, four visits a year", "price": "349", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Restoring visit, from", "price": "129", "priceCurrency": "EUR"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What if I don’t remember exactly where the grave is?", "acceptedAnswer": {"@type": "Answer", "text": "That’s fine, it happens a lot. Drop a pin on the map where you think it is and tell us what you remember. If needed, we check the cemetery register at the town hall."}}, {"@type": "Question", "name": "Where do you operate?", "acceptedAnswer": {"@type": "Answer", "text": "We work across the north of France: Lille and its suburbs (Roubaix, Tourcoing, Villeneuve-d’Ascq), Douai, Somain, Aniche, Denain, Valenciennes, Cambrai, Maubeuge, Dunkirk, Armentières and the towns around them. Elsewhere in France, tell us the town of the cemetery: we look for someone local and tell you honestly whether we can do it. You can book from anywhere in the world."}}, {"@type": "Question", "name": "What if there is nobody near the cemetery yet?", "acceptedAnswer": {"@type": "Answer", "text": "We will tell you honestly and look for someone in the area. You pay nothing until the visit is confirmed."}}, {"@type": "Question", "name": "How far ahead should I ask?", "acceptedAnswer": {"@type": "Answer", "text": "Allow about a week. For All Saints’ Day (1 November), Palm Sunday or Mother’s Day, write to us two to three weeks before."}}, {"@type": "Question", "name": "Can I choose the flowers?", "acceptedAnswer": {"@type": "Answer", "text": "Of course. A yellow, bronze or purple chrysanthemum, or a seasonal bouquet: just tell us what they would have liked."}}, {"@type": "Question", "name": "Can I ask for cleaning only, without flowers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Cleaning on its own, at €79, covers the headstone, the plaque and the surround, with before and after photos. Many families prefer a grave that is simply clean and cared for."}}, {"@type": "Question", "name": "How do I pay?", "acceptedAnswer": {"@type": "Answer", "text": "You pay nothing when you send your request. Once the visit is confirmed, we send you a secure Stripe link to pay by card; a bank transfer is also possible. If the visit cannot take place after all, you are refunded in full. The details are in our terms of sale."}}, {"@type": "Question", "name": "What if I’m not happy with the result?", "acceptedAnswer": {"@type": "Answer", "text": "Tell us within seven days of receiving the photos: we go back at no charge, or we refund you."}}, {"@type": "Question", "name": "When will I get the photos?", "acceptedAnswer": {"@type": "Answer", "text": "On the day of the visit, by email or WhatsApp, with a note of what was done."}}]}]}</script>
 <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("m-pre");setTimeout(function(){document.documentElement.classList.remove("m-pre")},1600)}</script>
 <link rel="modulepreload" href="/motion.js?v=20261114c">
@@ -63,7 +63,7 @@
           <input id="lookup-q" type="text" placeholder="Town of the cemetery, e.g. Somain" autocomplete="off">
           <button class="btn btn-primary" type="submit">Request a visit</button>
         </form>
-        <p class="lookup-note" data-in>From €79, travel included. Nothing to pay until the visit is confirmed. Prefer email? <a data-mail="visite" href="mailto:info@gravoom.com?subject=Gravoom%20visit%20request">Write to us</a>.</p>
+        <p class="lookup-note" data-in><a href="#tarifs">From €79</a>, travel included. Nothing to pay until the visit is confirmed. Prefer email? <a data-mail="visite" href="mailto:info@gravoom.com?subject=Gravoom%20visit%20request">Write to us</a>.</p>
       </div>
       <div class="showcase" data-in>
         <figure class="ba" aria-label="Example of a grave before and after a visit">
@@ -109,20 +109,6 @@
     </div>
   </section>
 
-  <section id="attentions">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>What you would do yourself, with the same care</h2>
-      </div>
-      <div class="gallery">
-        <figure class="shot"><img src="/photos/g-fleurs.webp" alt="Yellow and purple chrysanthemums" width="800" height="1000" loading="lazy"><figcaption><b>Seasonal flowers</b><span>A yellow, bronze or purple chrysanthemum, or a bouquet: you choose.</span></figcaption></figure>
-        <figure class="shot"><img src="/photos/g-cimetiere.webp" alt="A path in a cemetery in northern France, lined with graves and flowers" width="800" height="1000" loading="lazy"><figcaption><b>Someone local</b><span>A person who knows the cemetery and its paths.</span></figcaption></figure>
-        <figure class="shot"><img src="/photos/g-pierre.webp" alt="A clean granite headstone engraved “In memoriam”" width="800" height="1000" loading="lazy"><figcaption><b>A clean stone</b><span>Clear water and a soft brush, nothing more.</span></figcaption></figure>
-      </div>
-      <p class="photo-credit">Illustrative photos. Flowers: Pexels. Engraved stone: Unsplash.</p>
-    </div>
-  </section>
-
   <section id="tarifs">
     <div class="wrap ledger">
       <div class="sec-head">
@@ -162,44 +148,18 @@
           </article>
         </div>
         <p class="extras">You pay nothing when you send your request. Once the visit is confirmed, we send you a secure Stripe link to pay by card; a bank transfer is also possible. If the visit cannot take place, you are refunded in full.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="dates">
-    <div class="wrap ledger">
-      <div class="sec-head">
-        <h2>Flowers on the day you think of them</h2>
-        <p>Allow about a week to arrange a visit, and two to three weeks before All Saints’ Day, Palm Sunday or Mother’s Day.</p>
-      </div>
-      <div class="ledger-body">
-      <ul class="dates" id="dates-list" data-locale="en-GB" data-next="Next date">
-          <li data-date="rameaux"><span class="when">March or April</span><div><h3>Palm Sunday</h3><p>In northern France, families flower graves on Palm Sunday as they do on All Saints’ Day. A spring bouquet, on a stone cleaned after winter.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="Palm Sunday" href="mailto:info@gravoom.com?subject=Gravoom%20visit%20request">Ask<span class="sr"> for a visit for Palm Sunday</span></a></li>
-          <li data-date="meres"><span class="when">Late May</span><div><h3>Mother’s Day in France</h3><p>Flowers for her, laid that weekend.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="Mother’s Day in France" href="mailto:info@gravoom.com?subject=Gravoom%20visit%20request">Ask<span class="sr"> for a visit for Mother’s Day</span></a></li>
-          <li data-date="peres"><span class="when">In June</span><div><h3>Father’s Day in France</h3><p>A visit and flowers for him.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="Father’s Day in France" href="mailto:info@gravoom.com?subject=Gravoom%20visit%20request">Ask<span class="sr"> for a visit for Father’s Day</span></a></li>
-          <li data-date="toussaint"><span class="when">1 November</span><div><h3>All Saints’ Day</h3><p>Chrysanthemums on a clean grave. It is the busiest time of the year in French cemeteries: write to us from early October.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="All Saints’ Day" href="mailto:info@gravoom.com?subject=Gravoom%20visit%20request">Ask<span class="sr"> for a visit for All Saints’ Day</span></a></li>
-          <li data-date="noel"><span class="when">25 December</span><div><h3>Christmas</h3><p>A seasonal bouquet for the holidays, and photos to share with the family.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="Christmas" href="mailto:info@gravoom.com?subject=Gravoom%20visit%20request">Ask<span class="sr"> for a visit for Christmas</span></a></li>
-          <li data-date="perso"><span class="when">Your date</span><div><h3>A date of your own</h3><p>A birthday, the day they passed, a wedding anniversary: tell us the day that matters.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="" href="mailto:info@gravoom.com?subject=Gravoom%20visit%20request">Ask<span class="sr"> for a visit for a date of your own</span></a></li>
-      </ul>
-      <div class="price-wide">
+        <div class="occasions">
+          <h3>For a date that matters</h3>
+          <p>Allow about a week to arrange a visit, and two to three weeks before All Saints’ Day, Palm Sunday or Mother’s Day.</p>
+          <p class="town-links"><a data-mail="fleurs" data-finder="fleurs" data-occasion="Christmas" href="mailto:info@gravoom.com?subject=Gravoom%20visit%20request">Christmas<span class="sr">: request a visit</span></a><a data-mail="fleurs" data-finder="fleurs" data-occasion="Palm Sunday" href="mailto:info@gravoom.com?subject=Gravoom%20visit%20request">Palm Sunday<span class="sr">: request a visit</span></a><a data-mail="fleurs" data-finder="fleurs" data-occasion="Mother’s Day in France" href="mailto:info@gravoom.com?subject=Gravoom%20visit%20request">Mother’s Day in France<span class="sr">: request a visit</span></a><a data-mail="fleurs" data-finder="fleurs" data-occasion="Father’s Day in France" href="mailto:info@gravoom.com?subject=Gravoom%20visit%20request">Father’s Day in France<span class="sr">: request a visit</span></a><a data-mail="fleurs" data-finder="fleurs" data-occasion="All Saints’ Day" href="mailto:info@gravoom.com?subject=Gravoom%20visit%20request">All Saints’ Day<span class="sr">: request a visit</span></a><a data-mail="fleurs" data-finder="fleurs" data-occasion="" href="mailto:info@gravoom.com?subject=Gravoom%20visit%20request">A date of your own<span class="sr">: request a visit</span></a></p>
+        </div>
+        <div class="price-wide">
         <div>
           <h3>For a parent who can no longer get to the cemetery</h3>
           <p>Give them the visit. You make the request and pay; we send the photos to the person you choose, the same day.</p>
         </div>
         <a class="btn btn-ghost" data-mail="visite" data-finder="visite" data-occasion="Gift, send the photos to: " href="mailto:info@gravoom.com?subject=Gravoom%20visit%20request">Give a visit</a>
       </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cine" aria-label="We go there for you">
-    <img src="/photos/band-cimetiere.webp" alt="" width="1800" height="990" loading="lazy">
-    <div class="wrap">
-      <h2>You are far away. We go there for you.</h2>
-      <p>A visit, some flowers, a few photos the same day: the distance feels a little gentler.</p>
-      <div class="ctas">
-        <a class="btn btn-wa" data-wa="visite" href="https://wa.me/447717536635" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Message us on WhatsApp</a>
-        <a class="btn btn-glass" data-mail="visite" data-finder="visite" href="mailto:info@gravoom.com?subject=Gravoom%20visit%20request">Request a visit</a>
       </div>
     </div>
   </section>
@@ -222,8 +182,6 @@
           <figcaption>The founder of Gravoom</figcaption>
         </figure>
         <div class="why">
-          <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.8l1.5-2h6.4l1.5 2h1.8A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.5" r="3.5"/></svg></span><h3>You see everything</h3><p>Every visit is photographed before and after, with the date, time and place.</p></div>
-          <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><h3>Someone local</h3><p>Your Gravoomer lives near the cemetery and knows it. From one visit to the next, the same person looks after the grave.</p></div>
           <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span><h3>Gentle on the stone</h3><p>A soft brush and clear water, nothing more. If the stone needs repair or an inscription needs restoring, we put you in touch with a stonemason.</p></div>
           <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.6.8 2.6 2.6 3 5.2"/></svg></span><h3>The whole family together</h3><p>Share the photos in one tap with your brothers, sisters or children, wherever they live.</p></div>
         </div>
@@ -235,7 +193,7 @@
     <div class="wrap ledger">
       <div class="sec-head">
         <h2>Questions</h2>
-        <p>Something else? <a href="#contact">Write to us</a>, we reply in English or French.</p>
+        <p>Something else? <a href="#contact">Write to us</a>, we reply in English or French. Living abroad? Read our guide to <a href="/en/grave-care-in-france/">looking after a family grave in France</a>.</p>
       </div>
       <div class="ledger-body">
         <div class="faq">
@@ -248,12 +206,6 @@
           <details><summary>How do I pay?</summary><p>You pay nothing when you send your request. Once the visit is confirmed, we send you a secure Stripe link to pay by card; a bank transfer is also possible. If the visit cannot take place after all, you are refunded in full. The details are in our <a href="/en/terms/">terms of sale</a>.</p></details>
           <details><summary>What if I’m not happy with the result?</summary><p>Tell us within seven days of receiving the photos: we go back at no charge, or we refund you.</p></details>
           <details><summary>When will I get the photos?</summary><p>On the day of the visit, by email or WhatsApp, with a note of what was done.</p></details>
-        </div>
-        <div class="more-guides">
-          <h3>Living abroad?</h3>
-          <ul class="guide-list">
-            <li><a href="/en/grave-care-in-france/"><b>Looking after a family grave in France from abroad</b><span>Who is responsible, what happens when a plot lease runs out, and how to find a grave.</span></a></li>
-          </ul>
         </div>
       </div>
     </div>
@@ -280,16 +232,9 @@
     </div>
   </section>
 
-  <section id="gravoomer">
+  <section id="gravoomer" class="slim">
     <div class="wrap">
-      <div class="join">
-        <div>
-          <p class="eyebrow">Recruiting across the north of France</p>
-          <h2>Become a Gravoomer</h2>
-          <p>Live in the north of France and already visit the cemetery? Look after a nearby grave for a family who lives far away, and earn extra income close to home. Free sign-up in two minutes, for individuals and professionals.</p>
-        </div>
-        <a class="btn btn-light" href="/en/become-a-gravoomer/#inscription">Become a Gravoomer</a>
-      </div>
+      <p class="join-line">Live in the north of France and already visit the cemetery? <a href="/en/become-a-gravoomer/">Become a Gravoomer</a> and look after a nearby grave for a family who lives far away.</p>
     </div>
   </section>
 <a class="fab" data-wa="visite" href="https://wa.me/447717536635" target="_blank" rel="noopener" aria-label="Message us on WhatsApp">

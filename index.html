@@ -24,7 +24,7 @@
 <link rel="preload" href="/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/photos/ba-apres.webp" as="image" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="/site.css?v=20261127a">
+<link rel="stylesheet" href="/site.css?v=20261127b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://gravoom.com/#org", "name": "Gravoom", "legalName": "Advaltis Limited", "url": "https://gravoom.com/", "email": "info@gravoom.com", "image": "https://gravoom.com/brand/og-fr.jpg"}, {"@type": "Service", "name": "Entretien et fleurissement de tombes", "serviceType": "Entretien de sépulture", "url": "https://gravoom.com/", "provider": {"@id": "https://gravoom.com/#org"}, "areaServed": {"@type": "Country", "name": "France"}, "offers": [{"@type": "Offer", "name": "L’entretien", "price": "79", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Entretien et fleurs", "price": "99", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Les quatre saisons, quatre visites par an", "price": "349", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "La remise en état, à partir de", "price": "129", "priceCurrency": "EUR"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Et si je ne sais plus exactement où se trouve la tombe ?", "acceptedAnswer": {"@type": "Answer", "text": "Ce n’est pas grave, cela arrive souvent. Sur la carte, placez un repère là où vous pensez qu’elle se trouve, et dites-nous ce dont vous vous souvenez ; au besoin, nous consultons le registre du cimetière auprès de la mairie."}}, {"@type": "Question", "name": "Où intervenez-vous ?", "acceptedAnswer": {"@type": "Answer", "text": "Nous intervenons dans le Nord : Lille et sa métropole (Roubaix, Tourcoing, Villeneuve-d’Ascq), Douai, Somain, Aniche, Denain, Valenciennes, Cambrai, Maubeuge, Dunkerque, Armentières et les communes alentour. Ailleurs en France, indiquez-nous la commune du cimetière : nous cherchons quelqu’un sur place et nous vous disons franchement si c’est possible."}}, {"@type": "Question", "name": "Et s’il n’y a encore personne près du cimetière ?", "acceptedAnswer": {"@type": "Answer", "text": "Nous vous le disons franchement, et nous cherchons quelqu’un dans le secteur. Vous ne payez rien tant que la visite n’est pas confirmée."}}, {"@type": "Question", "name": "Combien de temps à l’avance faut-il demander ?", "acceptedAnswer": {"@type": "Answer", "text": "Comptez environ une semaine. Pour la Toussaint, les Rameaux ou la fête des Mères, écrivez-nous deux à trois semaines avant."}}, {"@type": "Question", "name": "Puis-je choisir les fleurs ?", "acceptedAnswer": {"@type": "Answer", "text": "Bien sûr. Chrysanthème jaune, bronze ou violet, ou bouquet de saison : dites-nous simplement ce qui leur aurait plu."}}, {"@type": "Question", "name": "Puis-je demander seulement l’entretien, sans fleurs ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. L’entretien seul, à 79 €, comprend le nettoyage de la pierre, de la plaque et de l’entourage, et les photos avant et après. Beaucoup de familles préfèrent une tombe simplement propre et soignée."}}, {"@type": "Question", "name": "Comment se passe le paiement ?", "acceptedAnswer": {"@type": "Answer", "text": "Vous ne payez rien au moment de la demande. Une fois la visite confirmée, nous vous envoyons un lien de paiement sécurisé Stripe, par carte bancaire ; le virement est aussi possible. Si la visite ne peut finalement pas avoir lieu, vous êtes intégralement remboursé. Le détail figure dans nos conditions générales de vente."}}, {"@type": "Question", "name": "Et si le résultat ne me convient pas ?", "acceptedAnswer": {"@type": "Answer", "text": "Dites-le-nous dans les sept jours qui suivent l’envoi des photos : nous repassons sans frais, ou nous vous remboursons."}}, {"@type": "Question", "name": "Quand vais-je recevoir les photos ?", "acceptedAnswer": {"@type": "Answer", "text": "Le jour même de la visite, par e-mail ou sur WhatsApp, avec le détail de ce qui a été fait."}}]}]}</script>
 <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("m-pre");setTimeout(function(){document.documentElement.classList.remove("m-pre")},1600)}</script>
 <link rel="modulepreload" href="/motion.js?v=20261114c">
@@ -62,7 +62,7 @@
           <input id="lookup-q" type="text" placeholder="Commune du cimetière, ex. Somain" autocomplete="off">
           <button class="btn btn-primary" type="submit">Demander une visite</button>
         </form>
-        <p class="lookup-note" data-in>À partir de 79&nbsp;€, déplacement compris. Rien à payer avant la confirmation de la visite. Vous préférez l’e-mail&nbsp;? <a data-mail="visite" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Écrivez-nous</a>.</p>
+        <p class="lookup-note" data-in><a href="#tarifs">À partir de 79&nbsp;€</a>, déplacement compris. Rien à payer avant la confirmation de la visite. Vous préférez l’e-mail&nbsp;? <a data-mail="visite" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Écrivez-nous</a>.</p>
       </div>
       <div class="showcase" data-in>
         <figure class="ba" aria-label="Exemple de tombe avant et après une visite">
@@ -108,20 +108,6 @@
     </div>
   </section>
 
-  <section id="attentions">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Ce que vous feriez vous-même, avec le même soin</h2>
-      </div>
-      <div class="gallery">
-        <figure class="shot"><img src="/photos/g-fleurs.webp" alt="Chrysanthèmes jaunes et pourpres" width="800" height="1000" loading="lazy"><figcaption><b>Des fleurs de saison</b><span>Chrysanthème jaune, bronze ou violet, ou un bouquet&nbsp;: vous choisissez.</span></figcaption></figure>
-        <figure class="shot"><img src="/photos/g-cimetiere.webp" alt="Allée d’un cimetière du Nord, bordée de tombes fleuries" width="800" height="1000" loading="lazy"><figcaption><b>Quelqu’un du secteur</b><span>Une personne qui connaît le cimetière et ses allées.</span></figcaption></figure>
-        <figure class="shot"><img src="/photos/g-pierre.webp" alt="Pierre tombale en granit propre, gravée « In memoriam »" width="800" height="1000" loading="lazy"><figcaption><b>Une pierre propre</b><span>Eau claire et brosse douce, rien d’autre.</span></figcaption></figure>
-      </div>
-      <p class="photo-credit">Photos d’illustration. Fleurs&nbsp;: Pexels. Pierre gravée&nbsp;: Unsplash.</p>
-    </div>
-  </section>
-
   <section id="tarifs">
     <div class="wrap ledger">
       <div class="sec-head">
@@ -161,44 +147,18 @@
           </article>
         </div>
         <p class="extras">Vous ne payez rien au moment de la demande. Une fois la visite confirmée, nous vous envoyons un lien de paiement sécurisé Stripe, par carte&nbsp;; le virement est aussi possible. Si la visite ne peut pas avoir lieu, vous êtes intégralement remboursé.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="dates">
-    <div class="wrap ledger">
-      <div class="sec-head">
-        <h2>Des fleurs le jour où vous pensez à eux</h2>
-        <p>Comptez environ une semaine pour organiser une visite, et deux à trois semaines avant la Toussaint, les Rameaux ou la fête des Mères.</p>
-      </div>
-      <div class="ledger-body">
-      <ul class="dates" id="dates-list" data-locale="fr-FR" data-next="Prochaine date">
-          <li data-date="rameaux"><span class="when">Mars ou avril</span><div><h3>Les Rameaux</h3><p>Dans le Nord, on fleurit les tombes aux Rameaux comme à la Toussaint. Un bouquet de printemps, sur une pierre nettoyée après l’hiver.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="Les Rameaux" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Demander<span class="sr"> une visite pour les Rameaux</span></a></li>
-          <li data-date="meres"><span class="when">Fin mai</span><div><h3>La fête des Mères</h3><p>Des fleurs pour elle, déposées ce week-end-là.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="La fête des Mères" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Demander<span class="sr"> une visite pour la fête des Mères</span></a></li>
-          <li data-date="peres"><span class="when">En juin</span><div><h3>La fête des Pères</h3><p>Une visite et des fleurs pour lui.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="La fête des Pères" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Demander<span class="sr"> une visite pour la fête des Pères</span></a></li>
-          <li data-date="toussaint"><span class="when">1er novembre</span><div><h3>La Toussaint</h3><p>Des chrysanthèmes sur une tombe propre. C’est la période la plus chargée de l’année dans les cimetières&nbsp;: écrivez-nous dès le début d’octobre.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="La Toussaint" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Demander<span class="sr"> une visite pour la Toussaint</span></a></li>
-          <li data-date="noel"><span class="when">25 décembre</span><div><h3>Noël</h3><p>Un bouquet de saison pour les fêtes, et des photos à partager en famille.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="Noël" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Demander<span class="sr"> une visite pour Noël</span></a></li>
-          <li data-date="perso"><span class="when">Votre date</span><div><h3>Une date à vous</h3><p>Un anniversaire, la date d’un départ, un anniversaire de mariage&nbsp;: dites-nous le jour qui compte.</p></div><a class="btn btn-ghost" data-mail="fleurs" data-finder="fleurs" data-occasion="" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Demander<span class="sr"> une visite pour une date à vous</span></a></li>
-      </ul>
-      <div class="price-wide">
+        <div class="occasions">
+          <h3>Pour une date qui compte</h3>
+          <p>Comptez environ une semaine pour organiser une visite, et deux à trois semaines avant la Toussaint, les Rameaux ou la fête des Mères.</p>
+          <p class="town-links"><a data-mail="fleurs" data-finder="fleurs" data-occasion="Noël" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Noël<span class="sr"> : demander une visite</span></a><a data-mail="fleurs" data-finder="fleurs" data-occasion="Les Rameaux" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Les Rameaux<span class="sr"> : demander une visite</span></a><a data-mail="fleurs" data-finder="fleurs" data-occasion="La fête des Mères" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">La fête des Mères<span class="sr"> : demander une visite</span></a><a data-mail="fleurs" data-finder="fleurs" data-occasion="La fête des Pères" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">La fête des Pères<span class="sr"> : demander une visite</span></a><a data-mail="fleurs" data-finder="fleurs" data-occasion="La Toussaint" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">La Toussaint<span class="sr"> : demander une visite</span></a><a data-mail="fleurs" data-finder="fleurs" data-occasion="" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Une date à vous<span class="sr"> : demander une visite</span></a></p>
+        </div>
+        <div class="price-wide">
         <div>
           <h3>Pour un parent qui ne peut plus se rendre au cimetière</h3>
           <p>Offrez-lui la visite. Vous faites la demande et vous réglez&nbsp;; nous envoyons les photos à la personne de votre choix, le jour même.</p>
         </div>
         <a class="btn btn-ghost" data-mail="visite" data-finder="visite" data-occasion="Cadeau, photos à envoyer à : " href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Offrir une visite</a>
       </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cine" aria-label="Nous y allons pour vous">
-    <img src="/photos/band-cimetiere.webp" alt="" width="1800" height="990" loading="lazy">
-    <div class="wrap">
-      <h2>Vous êtes loin. Nous y allons pour vous.</h2>
-      <p>Une visite, des fleurs, quelques photos le jour même&nbsp;: la distance se fait un peu plus douce.</p>
-      <div class="ctas">
-        <a class="btn btn-wa" data-wa="visite" href="https://wa.me/447717536635" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Écrire sur WhatsApp</a>
-        <a class="btn btn-glass" data-mail="visite" data-finder="visite" href="mailto:info@gravoom.com?subject=Demande%20de%20visite%20Gravoom">Demander une visite</a>
       </div>
     </div>
   </section>
@@ -221,8 +181,6 @@
           <figcaption>Le fondateur de Gravoom</figcaption>
         </figure>
         <div class="why">
-          <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.8l1.5-2h6.4l1.5 2h1.8A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.5" r="3.5"/></svg></span><h3>Vous voyez tout</h3><p>Chaque visite est photographiée avant et après, avec la date, l’heure et le lieu.</p></div>
-          <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><h3>Quelqu’un du coin</h3><p>Votre Gravoomer vit près du cimetière et le connaît. D’une visite à l’autre, c’est la même personne qui s’en occupe.</p></div>
           <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span><h3>La pierre ménagée</h3><p>Une brosse douce et de l’eau claire, rien de plus. S’il faut réparer la pierre ou reprendre une gravure, nous vous orientons vers un marbrier.</p></div>
           <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.6.8 2.6 2.6 3 5.2"/></svg></span><h3>Toute la famille réunie</h3><p>Les photos se partagent en un geste avec vos frères, vos sœurs ou vos enfants, où qu’ils vivent.</p></div>
         </div>
@@ -234,7 +192,7 @@
     <div class="wrap ledger">
       <div class="sec-head">
         <h2>Vos questions</h2>
-        <p>Une autre question&nbsp;? <a href="#contact">Écrivez-nous</a>, nous répondons en français ou en anglais.</p>
+        <p>Une autre question&nbsp;? <a href="#contact">Écrivez-nous</a>, nous répondons en français ou en anglais. Nos <a href="/conseils/">conseils pour entretenir une tombe</a> répondent aussi à beaucoup de questions.</p>
       </div>
       <div class="ledger-body">
         <div class="faq">
@@ -247,15 +205,6 @@
           <details><summary>Comment se passe le paiement&nbsp;?</summary><p>Vous ne payez rien au moment de la demande. Une fois la visite confirmée, nous vous envoyons un lien de paiement sécurisé Stripe, par carte bancaire&nbsp;; le virement est aussi possible. Si la visite ne peut finalement pas avoir lieu, vous êtes intégralement remboursé. Le détail figure dans nos <a href="/cgv/">conditions générales de vente</a>.</p></details>
           <details><summary>Et si le résultat ne me convient pas&nbsp;?</summary><p>Dites-le-nous dans les sept jours qui suivent l’envoi des photos&nbsp;: nous repassons sans frais, ou nous vous remboursons.</p></details>
           <details><summary>Quand vais-je recevoir les photos&nbsp;?</summary><p>Le jour même de la visite, par e-mail ou sur WhatsApp, avec le détail de ce qui a été fait.</p></details>
-        </div>
-        <div class="more-guides">
-          <h3>Nos conseils pour entretenir une tombe</h3>
-          <ul class="guide-list">
-            <li><a href="/conseils/nettoyer-une-tombe/"><b>Nettoyer une tombe sans abîmer la pierre</b><span>Granit, marbre, pierre bleue&nbsp;: les bons gestes et les produits à éviter.</span></a></li>
-            <li><a href="/conseils/qui-doit-entretenir-une-tombe/"><b>Qui doit entretenir une tombe&nbsp;?</b><span>Ce que dit la loi, et ce que risque une tombe laissée à l’abandon.</span></a></li>
-            <li><a href="/conseils/fleurir-une-tombe-a-distance/"><b>Fleurir une tombe à distance</b><span>Les solutions quand on vit loin, et ce qu’il faut préparer.</span></a></li>
-            <li><a href="/conseils/"><b>Tous nos conseils</b><span>Fleurs de saison, prix, démarches.</span></a></li>
-          </ul>
         </div>
       </div>
     </div>
@@ -282,16 +231,9 @@
     </div>
   </section>
 
-  <section id="gravoomer">
+  <section id="gravoomer" class="slim">
     <div class="wrap">
-      <div class="join">
-        <div>
-          <p class="eyebrow">On recrute dans tout le Nord</p>
-          <h2>Devenez Gravoomer</h2>
-          <p>Vous habitez dans le Nord et vous allez déjà au cimetière&nbsp;? Prenez soin d’une tombe voisine pour une famille qui vit loin, et gagnez un complément de revenu près de chez vous. Inscription gratuite en deux minutes, particuliers et professionnels.</p>
-        </div>
-        <a class="btn btn-light" href="/devenir-gravoomer/#inscription">Devenir Gravoomer</a>
-      </div>
+      <p class="join-line">Vous habitez dans le Nord et vous allez déjà au cimetière&nbsp;? <a href="/devenir-gravoomer/">Devenez Gravoomer</a> et prenez soin d’une tombe voisine pour une famille qui vit loin.</p>
     </div>
   </section>
 <a class="fab" data-wa="visite" href="https://wa.me/447717536635" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp">
