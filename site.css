@@ -616,3 +616,16 @@ footer .near a{margin-right:0}
 section.slim{padding-block:8px 56px}
 .join-line{border-top:1px solid var(--line);padding-top:26px;color:var(--ink-2);font-size:16px;text-align:center}
 .join-line a{color:var(--ink);font-weight:700}
+/* Gravoomer visit report form */
+.vr{max-width:760px}
+.vr h1{font-size:clamp(32px,4.4vw,48px);margin-top:14px}
+.vr .lead{color:var(--ink-2);font-size:17.5px;margin:14px 0 28px;max-width:38em}
+.jf input[type=date],.jf input[type=time],.jf textarea{width:100%;padding:0 16px;font:inherit;font-size:16px;color:var(--ink);background:var(--ground);border:1.5px solid var(--line);border-radius:12px}
+.jf input[type=date],.jf input[type=time]{height:52px}
+.jf textarea{padding:14px 16px;line-height:1.5;resize:vertical;min-height:120px}
+.jf textarea:focus{outline:none;border-color:var(--ink);background-color:var(--raised)}
+.jf textarea:focus-visible,.jf input[type=date]:focus-visible,.jf input[type=time]:focus-visible{outline:2px solid var(--chrys);outline-offset:2px}
+.vr-photos{background:var(--moss-soft);border-radius:14px;padding:16px 18px;font-size:15px;color:var(--ink)}
+.vr-photos ol{margin:8px 0;padding-left:20px;display:grid;gap:4px}
+.vr-photos p{color:var(--ink-2);font-size:14.5px}
+.jf.done{text-align:center;justify-items:center}
